@@ -1,7 +1,6 @@
 menu "OSCam build options"
 	depends on PACKAGE_oscam
 
-
 config OSCAM_USE_LIBCRYPTO
 	bool "Build with OpenSSL libcrypto"
 	help
@@ -9,9 +8,8 @@ config OSCAM_USE_LIBCRYPTO
 	default n
 
 config OSCAM_USE_LIBUSB
-	bool "Build with libusb"
+	bool
 	default n
-
 
 	menu "Protocols"
 	depends on PACKAGE_oscam
@@ -34,7 +32,7 @@ config OSCAM_USE_LIBUSB
 
 	config OSCAM_MODULE_CCCAM
 		bool "CCcam"
-		default n
+		default y
 
 	config OSCAM_MODULE_CCCSHARE
 		bool "CCcam share"
@@ -127,12 +125,12 @@ config OSCAM_USE_LIBUSB
 	depends on PACKAGE_oscam
 
 	config OSCAM_USE_PCSC
-		bool "PCSC"
+		bool "PCSC compatible readers"
 		select OSCAM_USE_LIBUSB
 		default n
 
 	config OSCAM_CARDREADER_PHOENIX
-		bool "Phoenix/mouse"
+		bool "Phoenix/mouse USB readers"
 		select OSCAM_USE_LIBUSB
 		default n
 
@@ -152,8 +150,12 @@ config OSCAM_USE_LIBUSB
 		default n
 
 	config OSCAM_CARDREADER_STINGER
-		bool "STINGER"
+		bool "Stinger USB Dual Smartcard Reader"
 		select OSCAM_USE_LIBUSB
+		default n
+
+	config OSCAM_CARDREADER_DRECAS
+		bool "DRECAS reader"
 		default n
 
 	endmenu
@@ -210,7 +212,6 @@ config OSCAM_CLOCKFIX
 config OSCAM_IPV6SUPPORT
 	bool "IPv6 support (experimental)"
 	default n
-
 
 config OSCAM_WEBIF
 	bool "Web Interface"
