@@ -1,0 +1,22 @@
+--- a/PLUGINS/src/epgtableid0/Makefile
++++ b/PLUGINS/src/epgtableid0/Makefile
+@@ -16,7 +16,7 @@ VERSION = $(shell grep 'static const cha
+ ### The directory environment:
+ 
+ # Use package data if installed...otherwise assume we're under the VDR source directory:
+-PKGCFG = $(if $(VDRDIR),$(shell pkg-config --variable=$(1) $(VDRDIR)/vdr.pc),$(shell PKG_CONFIG_PATH="$$PKG_CONFIG_PATH:../../.." pkg-config --variable=$(1) vdr))
++PKGCFG = $(if $(VDRDIR),$(shell pkg-config.real --variable=$(1) $(VDRDIR)/vdr.pc),$(shell PKG_CONFIG_PATH="$$PKG_CONFIG_PATH:../../.." pkg-config.real --variable=$(1) vdr))
+ LIBDIR = $(call PKGCFG,libdir)
+ PLGCFG = $(call PKGCFG,plgcfg)
+ #
+--- a/PLUGINS/src/skincurses/Makefile
++++ b/PLUGINS/src/skincurses/Makefile
+@@ -16,7 +16,7 @@ VERSION = $(shell grep 'static const cha
+ ### The directory environment:
+ 
+ # Use package data if installed...otherwise assume we're under the VDR source directory:
+-PKGCFG = $(if $(VDRDIR),$(shell pkg-config --variable=$(1) $(VDRDIR)/vdr.pc),$(shell PKG_CONFIG_PATH="$$PKG_CONFIG_PATH:../../.." pkg-config --variable=$(1) vdr))
++PKGCFG = $(if $(VDRDIR),$(shell pkg-config.real --variable=$(1) $(VDRDIR)/vdr.pc),$(shell PKG_CONFIG_PATH="$$PKG_CONFIG_PATH:../../.." pkg-config.real --variable=$(1) vdr))
+ LIBDIR = $(call PKGCFG,libdir)
+ LOCDIR = $(call PKGCFG,locdir)
+ PLGCFG = $(call PKGCFG,plgcfg)
