@@ -1,0 +1,34 @@
+--- a/v4l/compat.h
++++ b/v4l/compat.h
+@@ -2097,21 +2097,6 @@ static inline void *skb_put_data(struct sk_buff *skb, const void *data,
+ }
+ #endif
+ 
+-#ifdef NEED_PM_RUNTIME_GET
+-static inline int pm_runtime_get_if_in_use(struct device *dev)
+-{
+-	unsigned long flags;
+-	int retval;
+-
+-	spin_lock_irqsave(&dev->power.lock, flags);
+-	retval = dev->power.disable_depth > 0 ? -EINVAL :
+-		dev->power.runtime_status == RPM_ACTIVE
+-			&& atomic_inc_not_zero(&dev->power.usage_count);
+-	spin_unlock_irqrestore(&dev->power.lock, flags);
+-	return retval;
+-}
+-#endif
+-
+ #ifdef NEED_KEY_APPSELECT
+ #define KEY_APPSELECT         0x244   /* AL Select Task/Application */
+ #endif
+--- a/v4l/scripts/make_config_compat.pl
++++ b/v4l/scripts/make_config_compat.pl
+@@ -700,7 +700,6 @@ sub check_other_dependencies()
+ 	check_files_for_func("to_of_node", "NEED_TO_OF_NODE", "include/linux/of.h");
+ 	check_files_for_func("is_of_node", "NEED_IS_OF_NODE", "include/linux/of.h");
+ 	check_files_for_func("skb_put_data", "NEED_SKB_PUT_DATA", "include/linux/skbuff.h");
+-	check_files_for_func("pm_runtime_get_if_in_use", "NEED_PM_RUNTIME_GET", "include/linux/pm_runtime.h");
+ 	check_files_for_func("KEY_APPSELECT", "NEED_KEY_APPSELECT", "include/uapi/linux/input-event-codes.h");
+ 	check_files_for_func("PCI_DEVICE_SUB", "NEED_PCI_DEVICE_SUB", "include/linux/pci.h");
+ 	check_files_for_func("annotate_reachable", "NEED_ANNOTATE_REACHABLE", "include/linux/compiler.h");
