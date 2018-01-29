@@ -1,0 +1,32 @@
+--- a/Makefile.add
++++ b/Makefile.add
+@@ -5,7 +5,7 @@ version:
+ 	@echo "/* AUTOMATICALLY GENERATED - DO NOT EDIT MANUALLY */" > version.h
+ 	@echo "#ifndef W_SCAN_VERSION_H" >> version.h
+ 	@echo "#define W_SCAN_VERSION_H" >> version.h
+-	@echo "uint version=$(__VERSION);" >> version.h
++	@echo "unsigned int version=$(__VERSION);" >> version.h
+ 	@echo "#endif" >> version.h
+ 	@echo "" >> version.h
+ 	@chmod a-x version.h
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -836,7 +836,7 @@ version:
+ 	@echo "/* AUTOMATICALLY GENERATED - DO NOT EDIT MANUALLY */" > version.h
+ 	@echo "#ifndef W_SCAN_VERSION_H" >> version.h
+ 	@echo "#define W_SCAN_VERSION_H" >> version.h
+-	@echo "uint version=$(__VERSION);" >> version.h
++	@echo "unsigned int version=$(__VERSION);" >> version.h
+ 	@echo "#endif" >> version.h
+ 	@echo "" >> version.h
+ 	@chmod a-x version.h
+--- a/version.h
++++ b/version.h
+@@ -1,6 +1,6 @@
+ /* AUTOMATICALLY GENERATED - DO NOT EDIT MANUALLY */
+ #ifndef W_SCAN_VERSION_H
+ #define W_SCAN_VERSION_H
+-uint version=20170107;
++unsigned int version=20170107;
+ #endif
+ 
