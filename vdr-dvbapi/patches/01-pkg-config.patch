@@ -1,0 +1,20 @@
+--- a/Makefile
++++ b/Makefile
+@@ -17,7 +17,7 @@ GITTAG  = $(shell git describe --always 2>/dev/null)
+ ### The directory environment:
+ 
+ # Use package data if installed...otherwise assume we're under the VDR source directory:
+-PKGCFG  = $(if $(VDRDIR),$(shell pkg-config --variable=$(1) $(VDRDIR)/vdr.pc),$(shell PKG_CONFIG_PATH="$$PKG_CONFIG_PATH:../../.." pkg-config --variable=$(1) vdr))
++PKGCFG = $(shell pkg-config.real --variable=$(1) $(STAGING_DIR)/usr/lib/pkgconfig/vdr.pc)
+ LIBDIR  = $(call PKGCFG,libdir)
+ LOCDIR  = $(call PKGCFG,locdir)
+ PLGCFG  = $(call PKGCFG,plgcfg)
+@@ -73,7 +73,7 @@ DECSALIB    = -ldvbcsa
+ DEFINES    += -DLIBDVBCSA
+ endif
+ # libssl libcrypto
+-LIBSSL = $(shell pkg-config --libs --silence-errors libcrypto libssl)
++LIBSSL = $(shell pkg-config.real --libs --silence-errors $(STAGING_DIR)/usr/lib/pkgconfig/libcrypto.pc $(STAGING_DIR)/usr/lib/pkgconfig/libssl.pc)
+ ifneq ($(strip $(LIBSSL)),)
+ DEFINES    += -DLIBSSL
+ DECSALIB   += -lcrypto -lssl
