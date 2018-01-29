@@ -51,8 +51,8 @@ define Package/vdr-streamdev-server/description
 endef
 
 define Build/Configure
-	(cd $(PKG_BUILD_DIR)/client/po; $(TOPDIR)/package/media_feed/vdr/po2unicode.sh; \
-	cd $(PKG_BUILD_DIR)/server/po; $(TOPDIR)/package/media_feed/vdr/po2unicode.sh;)
+	(cd $(PKG_BUILD_DIR)/client/po; $(TOPDIR)/package/openwrt-dvb/vdr/po2unicode.sh; \
+	cd $(PKG_BUILD_DIR)/server/po; $(TOPDIR)/package/openwrt-dvb/vdr/po2unicode.sh;)
 endef
 
 define Package/vdr-streamdev-client/install

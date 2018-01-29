@@ -34,7 +34,7 @@ define Package/vdr-dvbapi/description
 endef
 
 define Build/Configure
-	(cd $(PKG_BUILD_DIR)/po; $(TOPDIR)/package/media_feed/vdr/po2unicode.sh;)
+	(cd $(PKG_BUILD_DIR)/po; $(TOPDIR)/package/openwrt-dvb/vdr/po2unicode.sh;)
 endef
 
 MAKE_FLAGS += LIBDVBCSA=1
