@@ -13,10 +13,10 @@ PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://bitbucket.org/CrazyCat/media_build.git
-PKG_SOURCE_VERSION := 48b08424d630be7ea7aeaa367e4a44f8ca6e26ac
+PKG_SOURCE_VERSION := d59f3f813cb0d81f05fce3032218c40f6fc6da52
 
 V4L_REPO_URL := https://github.com/crazycat69/linux_media.git
-V4L_REPO_VERSION := af020ce55b878709d6e2ab72a0776449e998f52c
+V4L_REPO_VERSION := 7ae4d8a8273b235d8021de889a1d52f024a2887c
 V4L_REPO_NAME := $(shell printf $(V4L_REPO_URL) | awk -F'/' '{sub(/\.git/, "", $$NF); printf $$NF}')
 
 PKG_LICENSE := GPL-2.0
@@ -37,7 +37,7 @@ MAKE_VARS += \
 define Build/Prepare
 	(if [ -d $(DL_DIR)/$(V4L_REPO_NAME) ]; \
 		then (cd $(DL_DIR)/$(V4L_REPO_NAME); git checkout HEAD; git pull); \
-	else git clone --single-branch --depth 1 $(V4L_REPO_URL) $(DL_DIR)/$(V4L_REPO_NAME); \
+	else git clone --single-branch $(V4L_REPO_URL) $(DL_DIR)/$(V4L_REPO_NAME); \
 	fi; \
 	cd $(DL_DIR)/$(V4L_REPO_NAME); git checkout $(V4L_REPO_VERSION))
 
@@ -62,7 +62,7 @@ define KernelPackage/media
 	CONFIG_VIDEO_KERNEL_VERSION=y
   FILES := $(PKG_BUILD_DIR)/v4l/media.ko
   AUTOLOAD := $(call AutoProbe,media)
-  DEPENDS := +kernel
+  DEPENDS := @!TARGET_ar71xx @!TARGET_ath25 +kernel
 endef
 
 define KernelPackage/media/description
