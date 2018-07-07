@@ -123,6 +123,7 @@ $(eval $(call KernelPackage,dvb-tda10048))
 define KernelPackage/dvb-af9013
   TITLE := Afatech AF9013 demodulator
   $(call DvbFrontend,af9013,CONFIG_DVB_AF9013)
+  DEPENDS += @LINUX_4_7
 endef
 
 define KernelPackage/dvb-af9013/description

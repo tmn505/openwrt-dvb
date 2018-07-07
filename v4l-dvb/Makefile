@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2011 OpenWrt.org
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -12,11 +12,11 @@ PKG_NAME := v4l-dvb
 PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
-PKG_SOURCE_URL := https://bitbucket.org/CrazyCat/media_build.git
-PKG_SOURCE_VERSION := d59f3f813cb0d81f05fce3032218c40f6fc6da52
+PKG_SOURCE_URL := https://github.com/tbsdtv/media_build.git
+PKG_SOURCE_VERSION := e109755c5c93e43b7482e123acaea799d540e3de
 
-V4L_REPO_URL := https://github.com/crazycat69/linux_media.git
-V4L_REPO_VERSION := 7ae4d8a8273b235d8021de889a1d52f024a2887c
+V4L_REPO_URL := https://github.com/tbsdtv/linux_media.git
+V4L_REPO_VERSION := 83039708c1a7b823ac5c8383ad64b2574213c4ef
 V4L_REPO_NAME := $(shell printf $(V4L_REPO_URL) | awk -F'/' '{sub(/\.git/, "", $$NF); printf $$NF}')
 
 PKG_LICENSE := GPL-2.0
@@ -54,15 +54,15 @@ DVB_MENU := DVB Drivers
 
 define KernelPackage/media
   SUBMENU := $(DVB_MENU)
-  TITLE := V4L/DVB CrazyCat Edition
-  URL := http://www.linuxtv.org/
+  TITLE := V4L/DVB Drivers from TBS
+  URL := http://www.linuxtv.org
   HIDDEN := y
   V4L_KCONFIG := \
 	CONFIG_MEDIA_SUPPORT=m \
 	CONFIG_VIDEO_KERNEL_VERSION=y
   FILES := $(PKG_BUILD_DIR)/v4l/media.ko
   AUTOLOAD := $(call AutoProbe,media)
-  DEPENDS := @!TARGET_ar71xx @!TARGET_ath25 +kernel
+  DEPENDS := @!TARGET_ar71xx @!TARGET_ath25 @PCI_SUPPORT||USB_SUPPORT +kernel
 endef
 
 define KernelPackage/media/description

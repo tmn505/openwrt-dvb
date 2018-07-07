@@ -20,6 +20,7 @@ define KernelPackage/cxd2099
   V4L_KCONFIG := CONFIG_DVB_CXD2099
   FILES := $(PKG_BUILD_DIR)/v4l/cxd2099.ko
   AUTOLOAD := $(call AutoProbe,cxd2099)
+  DEPENDS += +kmod-regmap
 endef
 
 define KernelPackage/cxd2099/description
