@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016-2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2016-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -7,14 +7,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := oscam
-PKG_REV := 11401
+PKG_REV := 11425
 PKG_VERSION := 1.20-$(PKG_REV)
 PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := svn
 PKG_SOURCE_VERSION := $(PKG_REV)
 PKG_SOURCE_URL := http://www.streamboard.tv/svn/oscam/trunk
-#PKG_SOURCE_URL := http://www.oscam.cc/svn/oscam-mirror/trunk
 
 PKG_LICENSE := GPL-3.0
 PKG_LICENSE_FILE := COPYING
