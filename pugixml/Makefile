@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -7,12 +7,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := pugixml
-PKG_VERSION := 1.8
+PKG_VERSION := 1.9
 PKG_RELEASE := 1
 
 PKG_SOURCE := $(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL := http://github.com/zeux/pugixml/releases/download/v$(PKG_VERSION)/
-PKG_HASH := 8ef26a51c670fbe79a71e9af94df4884d5a4b00a2db38a0608a87c14113b2904
+PKG_HASH := d156d35b83f680e40fd6412c4455fdd03544339779134617b9b28d19e11fdba6
 
 PKG_LICENSE := MIT
 PKG_LICENSE_FILE := readme.txt
