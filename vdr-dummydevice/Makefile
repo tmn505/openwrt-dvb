@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,7 +8,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-dummydevice
 PKG_VERSION := 2.0.0
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_BUILD_DIR := $(BUILD_DIR)/dummydevice-$(PKG_VERSION)
 PKG_SOURCE := $(PKG_NAME)-$(PKG_VERSION).tgz
@@ -35,7 +35,7 @@ define Package/vdr-dummydevice/description
 endef
 
 define Package/vdr-dummydevice/install
-	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install
+	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-lib
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [dummydevice] > $(1)/etc/vdr/conf.d/10-dummydevice.conf

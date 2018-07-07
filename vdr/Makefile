@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2011 OpenWrt.org
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr
 PKG_VERSION := 2.2.0
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_SOURCE := vdr-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL := ftp://ftp.tvdr.de/vdr
@@ -30,7 +30,7 @@ define Package/vdr
   CATEGORY := Multimedia
   TITLE := Video Disk Recorder
   URL := http://www.tvdr.de
-  DEPENDS := +fontconfig +libcap +libfreetype +libjpeg +librt +libstdcpp +dejavu-fonts-ttf-DejaVuSans +libiconv-full +libintl-full
+  DEPENDS := +fontconfig +libcap +libfreetype +libjpeg +librt +libstdcpp +dejavu-fonts-ttf-DejaVuSans
 endef
 
 define Package/vdr/description
@@ -64,14 +64,8 @@ define Build/Configure
 		$(PKG_BUILD_DIR)/PLUGINS/src/rcu \
 		$(PKG_BUILD_DIR)/PLUGINS/src/servicedemo \
 		$(PKG_BUILD_DIR)/PLUGINS/src/status \
-		$(PKG_BUILD_DIR)/PLUGINS/src/svdrpdemo; \
-	cd $(PKG_BUILD_DIR)/po; $(TOPDIR)/$(SOURCE)/po2unicode.sh; \
-	cd $(PKG_BUILD_DIR)/PLUGINS/src/skincurses/po; $(TOPDIR)/$(SOURCE)/po2unicode.sh)
+		$(PKG_BUILD_DIR)/PLUGINS/src/svdrpdemo)
 endef
-
-TARGET_LDFLAGS += \
-	-L$(STAGING_DIR)/usr/lib/libiconv-full/lib \
-	-L$(STAGING_DIR)/usr/lib/libintl-full/lib
 
 MAKE_FLAGS += \
 	PREFIX="/usr" \
@@ -91,7 +85,6 @@ define Package/vdr/install
 	$(MAKE) -C $(PKG_BUILD_DIR) $(MAKE_FLAGS) DESTDIR=$(1) \
 		install-dirs \
 		install-bin \
-		install-i18n \
 		install-conf
 
 	echo [vdr] > $(1)/etc/vdr/conf.d/00-vdr.conf
@@ -103,14 +96,14 @@ define Package/vdr/install
 endef
 
 define Package/vdr-epgtableid0/install
-	$(MAKE) -C $(PKG_BUILD_DIR)/PLUGINS/src/epgtableid0 $(MAKE_FLAGS) DESTDIR=$(1) install
+	$(MAKE) -C $(PKG_BUILD_DIR)/PLUGINS/src/epgtableid0 $(MAKE_FLAGS) DESTDIR=$(1) install-lib
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [epgtableid0] > $(1)/etc/vdr/conf.d/01-epgtableid0.conf
 endef
 
 define Package/vdr-skincurses/install
-	$(MAKE) -C $(PKG_BUILD_DIR)/PLUGINS/src/skincurses $(MAKE_FLAGS) DESTDIR=$(1) install
+	$(MAKE) -C $(PKG_BUILD_DIR)/PLUGINS/src/skincurses $(MAKE_FLAGS) DESTDIR=$(1) install-lib
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [skincurses] > $(1)/etc/vdr/conf.d/02-skincurses.conf

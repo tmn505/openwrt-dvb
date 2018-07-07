@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-streamdev
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_SOURCE_PROTO := git
 #PKG_SOURCE_URL := https://projects.vdr-developer.org/git/vdr-plugin-streamdev.git
@@ -50,16 +50,13 @@ define Package/vdr-streamdev-server/description
   Multicast streaming if you have many clients watching the same channels or as a feed for multicast-only settop boxes.
 endef
 
-define Build/Configure
-	(cd $(PKG_BUILD_DIR)/client/po; $(TOPDIR)/package/openwrt-dvb/vdr/po2unicode.sh; \
-	cd $(PKG_BUILD_DIR)/server/po; $(TOPDIR)/package/openwrt-dvb/vdr/po2unicode.sh;)
-endef
-
 define Package/vdr-streamdev-client/install
 	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-client
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [streamdev-client] > $(1)/etc/vdr/conf.d/30-streamdev-client.conf
+
+	rm -fR $(1)/usr/share
 endef
 
 define Package/vdr-streamdev-server/install
@@ -70,6 +67,8 @@ define Package/vdr-streamdev-server/install
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [streamdev-server] > $(1)/etc/vdr/conf.d/70-streamdev-server.conf
+
+	rm -fR $(1)/usr/share
 endef
 
 $(eval $(call BuildPackage,vdr-streamdev-client))

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-vnsiserver
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/FernetMenta/vdr-plugin-vnsiserver.git
@@ -34,12 +34,8 @@ define Package/vdr-vnsiserver/description
  via the VNSI addon.
 endef
 
-define Build/Configure
-	(cd $(PKG_BUILD_DIR)/po; $(TOPDIR)/package/openwrt-dvb/vdr/po2unicode.sh;)
-endef
-
 define Package/vdr-vnsiserver/install
-	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install
+	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-lib
 
 	$(INSTALL_DIR) $(1)/etc/vdr/plugins/vnsiserver
 	$(CP) $(PKG_BUILD_DIR)/vnsiserver/* $(1)/etc/vdr/plugins/vnsiserver/

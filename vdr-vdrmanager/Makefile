@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,7 +8,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-vdrmanager
 PKG_VERSION := 0.14
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_SOURCE := $(PKG_NAME)-$(PKG_VERSION).tgz
 PKG_SOURCE_URL := https://projects.vdr-developer.org/attachments/download/1971
@@ -34,7 +34,7 @@ define Package/vdr-vdrmanager/description
 endef
 
 define Package/vdr-vdrmanager/install
-	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install
+	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-lib
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [vdrmanager] > $(1)/etc/vdr/conf.d/80-vdrmanager.conf

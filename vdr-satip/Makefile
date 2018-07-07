@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-satip
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/rofafor/vdr-plugin-satip.git
@@ -33,12 +33,8 @@ define Package/vdr-satip/description
  VDR satip frontend device plugin.
 endef
 
-define Build/Configure
-	(cd $(PKG_BUILD_DIR)/po; $(TOPDIR)/package/openwrt-dvb/vdr/po2unicode.sh;)
-endef
-
 define Package/vdr-satip/install
-	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install
+	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-lib install-conf
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [satip] > $(1)/etc/vdr/conf.d/30-satip.conf

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,7 +8,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-dvbapi
 PKG_VERSION := 2.2.4
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/manio/vdr-plugin-dvbapi.git
@@ -33,14 +33,10 @@ define Package/vdr-dvbapi/description
  VDR dvbapi plugin for use with OSCam.
 endef
 
-define Build/Configure
-	(cd $(PKG_BUILD_DIR)/po; $(TOPDIR)/package/openwrt-dvb/vdr/po2unicode.sh;)
-endef
-
 MAKE_FLAGS += LIBDVBCSA=1
 
 define Package/vdr-dvbapi/install
-	$(MAKE) -C $(PKG_BUILD_DIR) $(MAKE_FLAGS) DESTDIR=$(1) install
+	$(MAKE) -C $(PKG_BUILD_DIR) $(MAKE_FLAGS) DESTDIR=$(1) install-lib
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [dvbapi] > $(1)/etc/vdr/conf.d/20-dvbapi.conf
