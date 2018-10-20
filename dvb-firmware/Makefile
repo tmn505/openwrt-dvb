@@ -94,4 +94,19 @@ endef
 $(eval $(call BuildPackage,ngene-firmware))
 
 
+Package/si2168-firmware = $(call Package/firmware-default,Silicon Labs Si2168)
+define Package/si2168-firmware/install
+	$(INSTALL_DIR) $(1)/lib/firmware
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/firmware/dvb-demod-si2168-01.fw \
+		$(PKG_BUILD_DIR)/firmware/dvb-demod-si2168-02.fw \
+		$(PKG_BUILD_DIR)/firmware/dvb-demod-si2168-a20-01.fw \
+		$(PKG_BUILD_DIR)/firmware/dvb-demod-si2168-a30-01.fw \
+		$(PKG_BUILD_DIR)/firmware/dvb-demod-si2168-b40-01.fw \
+		$(PKG_BUILD_DIR)/firmware/dvb-demod-si2168-d60-01.fw \
+		$(1)/lib/firmware
+endef
+$(eval $(call BuildPackage,si2168-firmware))
+
+
 #$(eval $(call BuildPackage,dvb-firmware))

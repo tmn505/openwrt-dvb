@@ -74,7 +74,7 @@ $(eval $(call KernelPackage,dvb-rtl2832))
 define KernelPackage/dvb-si2168
   TITLE := Silicon Labs Si2168
   $(call DvbFrontend,si2168,CONFIG_DVB_SI2168)
-  DEPENDS += +kmod-i2c-mux
+  DEPENDS += +kmod-i2c-mux +si2168-firmware
 endef
 
 define KernelPackage/dvb-si2168/description
