@@ -388,3 +388,27 @@ define KernelPackage/dvb-stb6100/description
 endef
 
 $(eval $(call KernelPackage,dvb-stb6100))
+
+
+define KernelPackage/dvb-sp2
+  TITLE := CIMaX SP2/SP2HF CI
+  $(call DvbFrontend,sp2,CONFIG_DVB_SP2)
+endef
+
+define KernelPackage/dvb-sp2/description
+ CIMaX SP2/SP2HF Common Interface module.
+endef
+
+$(eval $(call KernelPackage,dvb-sp2))
+
+
+define KernelPackage/dvb-ts2020
+  TITLE := Montage Tehnology TS2020 based tuners
+  $(call DvbFrontend,ts2020,CONFIG_DVB_TS2020)
+endef
+
+define KernelPackage/dvb-ts2020/description
+ A DVB-S/S2 silicon tuner. Say Y when you want to support this tuner.
+endef
+
+$(eval $(call KernelPackage,dvb-ts2020))
