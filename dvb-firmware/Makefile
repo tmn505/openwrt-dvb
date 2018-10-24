@@ -94,6 +94,16 @@ endef
 $(eval $(call BuildPackage,ngene-firmware))
 
 
+Package/si2158-firmware = $(call Package/firmware-default,Silicon Labs Si2158)
+define Package/si2158-firmware/install
+	$(INSTALL_DIR) $(1)/lib/firmware
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/firmware/dvb-tuner-si2158-a20-01.fw \
+		$(1)/lib/firmware
+endef
+$(eval $(call BuildPackage,si2158-firmware))
+
+
 Package/si2168-firmware = $(call Package/firmware-default,Silicon Labs Si2168)
 define Package/si2168-firmware/install
 	$(INSTALL_DIR) $(1)/lib/firmware
