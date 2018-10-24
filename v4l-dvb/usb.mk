@@ -167,7 +167,7 @@ define KernelPackage/dvb-usb-dvbsky
   V4L_KCONFIG := CONFIG_DVB_USB_DVBSKY
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-dvbsky.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-dvbsky)
-  $(call AddDepends/dvb-usb-v2,+kmod-dvb-si2168 +kmod-media-tuner-si2157 +kmod-dvb-m88ds3103 +kmod-dvb-sp2 +kmod-dvb-ts2020)
+  $(call AddDepends/dvb-usb-v2,+kmod-dvb-si2168 +kmod-dvb-m88ds3103)
 endef
 
 define KernelPackage/dvb-usb-dvbsky/description
