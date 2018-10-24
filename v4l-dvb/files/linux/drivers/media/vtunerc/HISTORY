@@ -1,0 +1,10 @@
+r0: 2011-06-23
+Initial version publiced on linux-media on 19th July 2011 (slightly modified by removing backward compatibility)
+
+r2: 2011-06-28
+Added DVB-C support. Thanks to Gerald
+
+r3: 2011-06-30
+v1.1 - write() is now reading only whole TS packets. Added module parameter 'tscheck=1' to enable TS data checking
+
+Latest history can be found in source repository

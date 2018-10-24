@@ -1,6 +1,6 @@
 --- a/v4l/compat.h
 +++ b/v4l/compat.h
-@@ -2097,21 +2097,6 @@ static inline void *skb_put_data(struct sk_buff *skb, const void *data,
+@@ -2153,21 +2153,6 @@ static inline void *skb_put_data(struct
  }
  #endif
  

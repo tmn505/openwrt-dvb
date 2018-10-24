@@ -1,0 +1,14 @@
+config DVB_VTUNERC
+	tristate "Virtual DVB adapters support"
+	depends on DVB_CORE
+	---help---
+	  Support for virtual DVB adapter.
+
+	  Choose Y here if you want to access DVB device residing on other
+	  computers using vtuner protocol.  To compile this driver as a module,
+	  choose M here: the module will be called vtunerc.
+
+	  To connect remote DVB device, you also need to install the user space
+	  vtunerc command which can be found in the Dreamtuner package, available
+	  from http://code.google.com/p/dreamtuner/.
+

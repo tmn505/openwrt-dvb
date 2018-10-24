@@ -13,16 +13,19 @@ PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/tbsdtv/media_build.git
-PKG_SOURCE_VERSION := e109755c5c93e43b7482e123acaea799d540e3de
+PKG_SOURCE_VERSION := 4735369fca22122cbc4dffd16c36026747563b0b
 
-V4L_REPO_URL := https://github.com/tbsdtv/linux_media.git
-V4L_REPO_VERSION := 83039708c1a7b823ac5c8383ad64b2574213c4ef
-V4L_REPO_NAME := $(shell printf $(V4L_REPO_URL) | awk -F'/' '{sub(/\.git/, "", $$NF); printf $$NF}')
+V4L_SOURCE_URL := https://github.com/tbsdtv/linux_media.git
+V4L_SOURCE_VERSION := 23087976705d594febef88e9160c3eb76abb2d48
+V4L_REPO_NAME := $(shell printf $(V4L_SOURCE_URL) | awk -F'/' '{sub(/\.git/, "", $$NF); printf $$NF}')
+PKG_SOURCE_DATE := 2018-10-16
+V4L_SOURCE_FILE := $(V4L_REPO_NAME)-$(PKG_SOURCE_DATE)-$(shell printf '%.8s' $(V4L_SOURCE_VERSION)).tar.bz2
 
 PKG_LICENSE := GPL-2.0
 PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
 
-#PKG_JOBS = -j4
+PKG_BUILD_PARALLEL := 1
+PKG_INSTALL := 1
 
 SCAN_DEPS = *.mk
 
@@ -31,23 +34,38 @@ include $(INCLUDE_DIR)/package.mk
 MAKE_VARS += \
 	TOPDIR="" \
 	KDIR=$(LINUX_DIR) \
-	DIR=$(LINUX_DIR)\
+	DIR=$(LINUX_DIR) \
 	SRCDIR=$(LINUX_DIR)
 
 define Build/Prepare
-	(if [ -d $(DL_DIR)/$(V4L_REPO_NAME) ]; \
-		then (cd $(DL_DIR)/$(V4L_REPO_NAME); git checkout HEAD; git pull); \
-	else git clone --single-branch $(V4L_REPO_URL) $(DL_DIR)/$(V4L_REPO_NAME); \
-	fi; \
-	cd $(DL_DIR)/$(V4L_REPO_NAME); git checkout $(V4L_REPO_VERSION))
-
 	$(call Build/Prepare/Default)
-	(cd $(PKG_BUILD_DIR)/linux; make tar DIR=$(DL_DIR)/$(V4L_REPO_NAME))
-	$(call Build/Compile/Default,untar)
+
+	(if [ -s $(DL_DIR)/$(V4L_SOURCE_FILE) ]; \
+		then $(CP) $(DL_DIR)/$(V4L_SOURCE_FILE) $(PKG_BUILD_DIR)/linux/$(subst _,-,$(V4L_REPO_NAME)).tar.bz2; \
+	else if [ -d $(DL_DIR)/$(V4L_REPO_NAME) ]; \
+			then (cd $(DL_DIR)/$(V4L_REPO_NAME); git checkout HEAD; git pull); \
+		else git clone --single-branch $(V4L_SOURCE_URL) $(DL_DIR)/$(V4L_REPO_NAME); \
+		fi; \
+		cd $(DL_DIR)/$(V4L_REPO_NAME); git checkout $(V4L_SOURCE_VERSION); \
+		cd $(PKG_BUILD_DIR)/linux; make tar DIR=$(DL_DIR)/$(V4L_REPO_NAME); \
+		$(CP) $(subst _,-,$(V4L_REPO_NAME)).tar.bz2 $(DL_DIR)/$(V4L_SOURCE_FILE); \
+	fi;)
+
+	$(MAKE) -C $(PKG_BUILD_DIR) untar
+	$(CP) ./files/* $(PKG_BUILD_DIR)/
 endef
 
 define Build/Configure
-	$(call Build/Compile/Default,stagingconfig)
+	$(call Build/Compile/Default,allyesconfig)
+endef
+
+define Build/InstallDev
+	$(INSTALL_DIR) $(1)/usr/include/v4l-dvb
+	$(CP) $(PKG_BUILD_DIR)/linux/include/* $(1)/usr/include/v4l-dvb/
+endef
+
+define Build/Install
+	touch $(PKG_BUILD_DIR)/.built
 endef
 
 DVB_MENU := DVB Drivers
@@ -62,7 +80,7 @@ define KernelPackage/media
 	CONFIG_VIDEO_KERNEL_VERSION=y
   FILES := $(PKG_BUILD_DIR)/v4l/media.ko
   AUTOLOAD := $(call AutoProbe,media)
-  DEPENDS := @!TARGET_ar71xx @!TARGET_ath25 @PCI_SUPPORT||USB_SUPPORT +kernel
+  DEPENDS := @PCI_SUPPORT||USB_SUPPORT
 endef
 
 define KernelPackage/media/description
@@ -70,52 +88,5 @@ define KernelPackage/media/description
 endef
 
 $(eval $(call KernelPackage,media))
-
-
-define KernelPackage/dvb-core
-  SUBMENU := $(DVB_MENU)
-  TITLE := DVB core support
-  V4L_KCONFIG := \
-	CONFIG_DVB_CORE \
-	CONFIG_DVB_DEMUX_SECTION_LOSS_LOG=n \
-	CONFIG_DVB_DYNAMIC_MINORS=n \
-	CONFIG_DVB_MAX_ADAPTERS=16 \
-	CONFIG_DVB_NET=y \
-	CONFIG_MEDIA_DIGITAL_TV_SUPPORT=y
-  FILES := $(PKG_BUILD_DIR)/v4l/dvb-core.ko
-  AUTOLOAD := $(call AutoProbe,dvb-core)
-  DEPENDS += +kmod-media
-endef
-
-define KernelPackage/dvb-core/description
- Kernel modules for DVB support.
-endef
-
-$(eval $(call KernelPackage,dvb-core))
-
-
-define KernelPackage/rc-core
-  SUBMENU := $(DVB_MENU)
-  TITLE := Remote Controller support
-  V4L_KCONFIG := \
-	CONFIG_MEDIA_RC_SUPPORT=y \
-	CONFIG_RC_CORE
-  FILES := $(PKG_BUILD_DIR)/v4l/rc-core.ko
-  AUTOLOAD := $(call AutoProbe,rc-core)
-  DEPENDS := +kmod-media +kmod-input-core
-endef
-
-define KernelPackage/rc-core/description
- Enable support for Remote Controllers on Linux. This is
- needed in order to support several video capture adapters,
- standalone IR receivers/transmitters, and RF receivers.
-
- Enable this option if you have a video capture board even
- if you don't need IR, as otherwise, you may not be able to
- compile the driver for your adapter.
-endef
-
-$(eval $(call KernelPackage,rc-core))
-
 
 include $(sort $(wildcard ./*.mk))
