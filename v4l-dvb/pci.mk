@@ -328,6 +328,7 @@ define KernelPackage/saa716x-core
   FILES := $(PKG_BUILD_DIR)/v4l/saa716x_core.ko
   AUTOLOAD := $(call AutoProbe,saa716x_core)
   $(call AddDepends/dvb-pci)
+  DEPENDS += @PACKAGE_kmod-media_tbsdtv
 endef
 
 define KernelPackage/saa716x-core/description
@@ -343,7 +344,7 @@ define KernelPackage/saa716x-hybrid
   V4L_KCONFIG := CONFIG_DVB_SAA716X_HYBRID
   FILES := $(PKG_BUILD_DIR)/v4l/saa716x_hybrid.ko
   AUTOLOAD := $(call AutoProbe,saa716x_hybrid)
-  DEPENDS := +kmod-saa716x-core
+  DEPENDS := +kmod-saa716x-core @PACKAGE_kmod-media_tbsdtv
 endef
 
 define KernelPackage/saa716x-hybrid/description
@@ -365,7 +366,7 @@ define KernelPackage/saa716x-tbs-dvb
   V4L_KCONFIG := CONFIG_DVB_SAA716X
   FILES := $(PKG_BUILD_DIR)/v4l/saa716x_tbs-dvb.ko
   AUTOLOAD := $(call AutoProbe,saa716x_tbs-dvb)
-  DEPENDS := +kmod-dvb-cx24117 +kmod-dvb-tas2101 +kmod-i2c-algo-bit +kmod-saa716x-core
+  DEPENDS := +kmod-dvb-cx24117 +kmod-dvb-tas2101 +kmod-i2c-algo-bit +kmod-saa716x-core @PACKAGE_kmod-media_tbsdtv
 endef
 
 define KernelPackage/saa716x-tbs-dvb/description
@@ -404,6 +405,7 @@ define KernelPackage/tbs-pcie-dvb
   FILES := $(PKG_BUILD_DIR)/v4l/tbs_pcie-dvb.ko
   AUTOLOAD := $(call AutoProbe,tbs_pcie-dvb)
   $(call AddDepends/dvb-pci,+kmod-sound-core +kmod-videobuf2-dma-sg +kmod-videobuf2-v4l2)
+  DEPENDS += @PACKAGE_kmod-media_tbsdtv
 endef
 
 define KernelPackage/tbs-pcie-dvb/description
@@ -419,6 +421,7 @@ define KernelPackage/tbsecp3
   FILES := $(PKG_BUILD_DIR)/v4l/tbsecp3.ko
   AUTOLOAD := $(call AutoProbe,tbsecp3)
   $(call AddDepends/dvb-pci,+kmod-dvb-tas2101)
+  DEPENDS += @PACKAGE_kmod-media_tbsdtv
 endef
 
 define KernelPackage/tbsecp3/description
