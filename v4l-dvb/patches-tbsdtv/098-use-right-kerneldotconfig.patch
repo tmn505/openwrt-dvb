@@ -1,0 +1,11 @@
+--- a/v4l/scripts/make_kconfig.pl.orig	2018-11-01 18:18:02.387288248 +0100
++++ b/v4l/scripts/make_kconfig.pl	2018-11-01 18:19:52.314960597 +0100
+@@ -546,7 +546,7 @@
+ print "Preparing to compile for kernel version $kernver\n";
+ 
+ # Get Kernel's config settings
+-%kernopts = process_config("$kernel/.config");
++%kernopts = process_config("$kernel/.config.set");
+ 
+ # Modules must be on, or building out of tree drivers makes no sense
+ if(!$kernopts{MODULES}) {
