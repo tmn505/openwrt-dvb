@@ -1,9 +1,9 @@
 choice
     depends on PACKAGE_kmod-media
     prompt "Used DVB (media) tree"
-    default PACKAGE_kmod-media_tbsdtv
+    default V4L_SRC_TBSDTV
 
-    config PACKAGE_kmod-media_tbsdtv
+    config V4L_SRC_TBSDTV
         bool "TBS"
         help
             TBS Technologies is a company which specializes in developing, manufacturing and marketing of
@@ -12,7 +12,7 @@ choice
 
             Repo: https://github.com/tbsdtv/linux_media
 
-    config PACKAGE_kmod-media_linuxtv
+    config V4L_SRC_LINUXTV
         bool "LinuxTV"
         help
             The LinuxTV community develops and maintains the Linux Kernel Media Subsystems.

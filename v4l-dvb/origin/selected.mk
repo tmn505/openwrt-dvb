@@ -1,6 +1,6 @@
-ifeq ($(CONFIG_PACKAGE_kmod-media_tbsdtv),y)
+ifeq ($(CONFIG_V4L_SRC_TBSDTV),y)
 include ./origin/tbsdtv.mk
 endif
-ifeq ($(CONFIG_PACKAGE_kmod-media_linuxtv),y)
+ifeq ($(CONFIG_V4L_SRC_LINUXTV),y)
 include ./origin/linuxtv.mk
 endif
