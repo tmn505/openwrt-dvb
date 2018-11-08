@@ -1,0 +1,31 @@
+--- /dev/null
++++ b/backports/add_vtunerc_build.patch
+@@ -0,0 +1,18 @@
++--- a/drivers/media/Kconfig
+++++ b/drivers/media/Kconfig
++@@ -240,3 +240,5 @@ source "drivers/media/tuners/Kconfig"
++ source "drivers/media/dvb-frontends/Kconfig"
++
++ endif # MEDIA_SUPPORT
+++
+++source "drivers/media/vtunerc/Kconfig"
++--- a/drivers/media/Makefile
+++++ b/drivers/media/Makefile
++@@ -31,6 +31,6 @@ obj-$(CONFIG_CEC_CORE) += cec/
++ # Finally, merge the drivers that require the core
++ #
++ 
++-obj-y += common/ platform/ pci/ usb/ mmc/ firewire/ spi/
+++obj-y += common/ platform/ pci/ usb/ mmc/ firewire/ spi/ vtunerc/
++ obj-$(CONFIG_VIDEO_DEV) += radio/
++ 
+--- a/backports/backports.txt
++++ b/backports/backports.txt
+@@ -22,6 +22,7 @@
+ # All supported versions need those patches
+ [9.255.255]
+ add api_version.patch
++add add_vtunerc_build.patch
+ add pr_fmt.patch
+ add debug.patch
+ add drx39xxj.patch

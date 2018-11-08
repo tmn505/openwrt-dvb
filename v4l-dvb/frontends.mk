@@ -83,6 +83,7 @@ $(eval $(call KernelPackage,dvb-au8522-dig))
 define KernelPackage/dvb-avl6882
   TITLE := Availink AVL6882
   $(call DvbFrontend,avl6882,CONFIG_DVB_AVL6882)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-avl6882))
 
@@ -299,7 +300,7 @@ $(eval $(call KernelPackage,dvb-gp8psk-fe))
 define KernelPackage/dvb-gx1503
   TITLE := National Chip GX1503b
   $(call DvbFrontend,gx1503,CONFIG_DVB_GX1503)
-  DEPENDS += +kmod-i2c-mux +kmod-regmap
+  DEPENDS += +kmod-i2c-mux +kmod-regmap @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-gx1503))
 
@@ -335,6 +336,7 @@ $(eval $(call KernelPackage,dvb-isl6421))
 define KernelPackage/dvb-isl6422
   TITLE := Intersil ISL6422[B]
   $(call DvbFrontend,isl6422,CONFIG_DVB_ISL6422)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-isl6422))
 
@@ -465,7 +467,7 @@ $(eval $(call KernelPackage,dvb-mb86a20s))
 define KernelPackage/dvb-mn88436
   TITLE := Panasonic MN88436
   $(call DvbFrontend,mn88436,CONFIG_DVB_MN88436)
-  DEPENDS += +kmod-regmap
+  DEPENDS += +kmod-regmap @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-mn88436))
 
@@ -511,7 +513,7 @@ $(eval $(call KernelPackage,dvb-mt352))
 define KernelPackage/dvb-mtv23x
   TITLE := RAONTECH mtv23x
   $(call DvbFrontend,mtv23x,CONFIG_DVB_MTV23X)
-  DEPENDS += +kmod-regmap
+  DEPENDS += +kmod-regmap @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-mtv23x))
 
@@ -519,6 +521,7 @@ $(eval $(call KernelPackage,dvb-mtv23x))
 define KernelPackage/dvb-mxl58x
   TITLE := MaxLinear MxL58x
   $(call DvbFrontend,mxl58x,CONFIG_DVB_MXL58X)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-mxl58x))
 
@@ -645,7 +648,7 @@ $(eval $(call KernelPackage,dvb-si2168))
 define KernelPackage/dvb-si2183
   TITLE := Silicon Labs Si2183
   $(call DvbFrontend,si2183,CONFIG_DVB_SI2183)
-  DEPENDS += +kmod-i2c-mux
+  DEPENDS += +kmod-i2c-mux @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-si2183))
 
@@ -754,6 +757,7 @@ $(eval $(call KernelPackage,dvb-stv0910))
 define KernelPackage/dvb-stv091x
   TITLE := STMicroelectronics STV091x
   $(call DvbFrontend,stv091x,CONFIG_DVB_STV091X)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-stv091x))
 
@@ -782,7 +786,7 @@ $(eval $(call KernelPackage,dvb-stv6111))
 define KernelPackage/dvb-tas2101
   TITLE := Tmax TAS2101
   $(call DvbFrontend,tas2101,CONFIG_DVB_TAS2101)
-  DEPENDS += +kmod-i2c-mux
+  DEPENDS += +kmod-i2c-mux @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-tas2101))
 
@@ -790,7 +794,7 @@ $(eval $(call KernelPackage,dvb-tas2101))
 define KernelPackage/dvb-tas2971
   TITLE := Tmax TAS2971
   $(call DvbFrontend,tas2971,CONFIG_DVB_TAS2971)
-  DEPENDS += +kmod-i2c-mux
+  DEPENDS += +kmod-i2c-mux @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-tas2971))
 
@@ -798,6 +802,7 @@ $(eval $(call KernelPackage,dvb-tas2971))
 define KernelPackage/dvb-tbs-priv
   TITLE := TBS private virtual demodulator
   $(call DvbFrontend,tbs_priv,CONFIG_DVB_TBSPRIV)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,dvb-tbs-priv))
 

@@ -15,6 +15,7 @@ endef
 define KernelPackage/media-tuner-av201x
   TITLE := Airoha Technology AV201x
   $(call MediaTuner,av201x,CONFIG_MEDIA_TUNER_AV201X)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,media-tuner-av201x))
 
@@ -139,6 +140,7 @@ $(eval $(call KernelPackage,media-tuner-mxl301rf))
 define KernelPackage/media-tuner-mxl603
   TITLE := MaxLinear MxL603
   $(call MediaTuner,mxl603,CONFIG_MEDIA_TUNER_MXL603)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,media-tuner-mxl603))
 
@@ -188,6 +190,7 @@ $(eval $(call KernelPackage,media-tuner-r820t))
 define KernelPackage/media-tuner-r848
   TITLE := Rafael Micro R848
   $(call MediaTuner,r848,CONFIG_MEDIA_TUNER_R848)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,media-tuner-r848))
 
@@ -218,6 +221,7 @@ $(eval $(call KernelPackage,media-tuner-simple))
 define KernelPackage/media-tuner-stv6120
   TITLE := STMicroelectronics STV6120
   $(call MediaTuner,stv6120,CONFIG_MEDIA_TUNER_STV6120)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,media-tuner-stv6120))
 
@@ -255,6 +259,7 @@ $(eval $(call KernelPackage,media-tuner-tda18271))
 define KernelPackage/media-tuner-tda18273
   TITLE := NXP TDA18273
   $(call MediaTuner,tda18273,CONFIG_MEDIA_TUNER_TDA18273)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 $(eval $(call KernelPackage,media-tuner-tda18273))
 

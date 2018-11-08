@@ -93,7 +93,7 @@ define KernelPackage/cx231xx-dvb-ci
   V4L_KCONFIG := CONFIG_VIDEO_CX231XX CONFIG_VIDEO_CX231XX_DVB
   FILES := $(PKG_BUILD_DIR)/v4l/cx231xx.ko $(PKG_BUILD_DIR)/v4l/cx231xx-dvb-ci.ko
   AUTOLOAD := $(call AutoProbe,cx231xx-dvb-ci)
-  DEPENDS := +kmod-cx2341x +kmod-dvb-core +kmod-dvb-tas2101 +kmod-rc-core +kmod-tveeprom +kmod-usb-core +kmod-videobuf
+  DEPENDS := +kmod-cx2341x +kmod-dvb-core +kmod-dvb-tas2101 +kmod-rc-core +kmod-tveeprom +kmod-usb-core +kmod-videobuf @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/cx231xx-dvb-ci/description
@@ -621,6 +621,7 @@ define KernelPackage/dvb-usb-tbs5220
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5220.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5220)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5220/description
@@ -636,6 +637,7 @@ define KernelPackage/dvb-usb-tbs5301
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5301.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5301)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5301/description
@@ -651,6 +653,7 @@ define KernelPackage/dvb-usb-tbs5520
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5520.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5520)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5520/description
@@ -666,6 +669,7 @@ define KernelPackage/dvb-usb-tbs5520se
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5520se.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5520se)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5520se/description
@@ -681,6 +685,7 @@ define KernelPackage/dvb-usb-tbs5580
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5580.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5580)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5580/description
@@ -696,6 +701,7 @@ define KernelPackage/dvb-usb-tbs5590
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5590.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5590)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5590/description
@@ -711,6 +717,7 @@ define KernelPackage/dvb-usb-tbs5880
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5880.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5880)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5880/description
@@ -726,6 +733,7 @@ define KernelPackage/dvb-usb-tbs5881
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5881.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5881)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5881/description
@@ -741,6 +749,7 @@ define KernelPackage/dvb-usb-tbs5922se
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5922se.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5922se)
   $(call AddDepends/dvb-usb,+kmod-dvb-tas2101)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5922se/description
@@ -756,6 +765,7 @@ define KernelPackage/dvb-usb-tbs5925
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5925.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5925)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5925/description
@@ -771,6 +781,7 @@ define KernelPackage/dvb-usb-tbs5927
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbs5927.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbs5927)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbs5927/description
@@ -786,6 +797,7 @@ define KernelPackage/dvb-usb-tbsqbox2
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbsqbox2.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbsqbox2)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbsqbox2/description
@@ -801,6 +813,7 @@ define KernelPackage/dvb-usb-tbsqbox22
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbsqbox22.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbsqbox22)
   $(call AddDepends/dvb-usb,+kmod-dvb-tas2101)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbsqbox22/description
@@ -816,6 +829,7 @@ define KernelPackage/dvb-usb-tbsqbox
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbsqbox.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbsqbox)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbsqbox/description
@@ -831,6 +845,7 @@ define KernelPackage/dvb-usb-tbsqbox2ci
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbsqbox2ci.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbsqbox2ci)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbsqbox2ci/description
@@ -846,6 +861,7 @@ define KernelPackage/dvb-usb-tbsqboxs2
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-tbsqboxs2.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-tbsqboxs2)
   $(call AddDepends/dvb-usb)
+  DEPENDS += @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/dvb-usb-tbsqboxs2/description
