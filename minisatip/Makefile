@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,7 +8,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME := minisatip
 PKG_VERSION := 0.5.69
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/catalinii/minisatip.git
@@ -39,15 +39,15 @@ define Package/minisatip/config
 
 		config MINISATIP_CI
 			bool "Common Interface"
-			default y
+			default n
 
 		config MINISATIP_AES
 			bool "OpenSSL (AES as part of DVBAPI)"
-			default y
+			default n
 
 		config MINISATIP_DVBCSA
 			bool "DVBCSA"
-			default y
+			default n
 
 		config MINISATIP_CLIENT
 			bool "SatIP Client"
@@ -91,7 +91,7 @@ define Package/minisatip/install
 	$(INSTALL_BIN) ./files/minisatip.init $(1)/etc/init.d/minisatip
 
 	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_CONF) ./files/minisatip.conf $(1)/etc/config/minisatip
+	$(INSTALL_CONF) ./files/minisatip.config $(1)/etc/config/minisatip
 endef
 
 $(eval $(call BuildPackage,minisatip))
