@@ -75,6 +75,10 @@ config OSCAM_USE_LIBUSB
 		bool "Nagravision"
 		default n
 
+	config OSCAM_READER_NAGRA_MERLIN
+		bool "Nagravision Merlin"
+		default n
+
 	config OSCAM_READER_IRDETO
 		bool "Irdeto"
 		default n
@@ -161,6 +165,7 @@ config OSCAM_USE_LIBUSB
 	endmenu
 
 comment "Addons"
+
 config OSCAM_HAVE_DVBAPI
 	bool "DVB API"
 	default y
