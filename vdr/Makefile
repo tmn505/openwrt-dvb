@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr
 PKG_VERSION := 2.2.0
-PKG_RELEASE := 2
+PKG_RELEASE := 3
 
 PKG_SOURCE := vdr-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL := ftp://ftp.tvdr.de/vdr
@@ -93,6 +93,9 @@ define Package/vdr/install
 
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/vdr.init $(1)/etc/init.d/vdr
+
+	$(INSTALL_DIR) $(1)/etc/config
+	$(INSTALL_CONF) ./files/vdr.config $(1)/etc/config/vdr
 endef
 
 define Package/vdr-epgtableid0/install
