@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -11,8 +11,8 @@ PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/Barracuda09/SATPI.git
-PKG_SOURCE_VERSION := d66fe8e4afd7564898649b74426eb372c86b466b
-PKG_VERSION := 1.5.230-$(shell printf '%.8s' $(PKG_SOURCE_VERSION))
+PKG_SOURCE_VERSION := 6d1e45033d8fcb78978a17b839a63658e6c376be
+PKG_VERSION := 1.5.238-$(shell printf '%.8s' $(PKG_SOURCE_VERSION))
 
 PKG_LICENSE := GPL-2.0
 PKG_LICENSE_FILE := LICENSE
@@ -39,8 +39,8 @@ define Package/satpi/config
 	if PACKAGE_satpi
 
 		config SATPI_LIBDVBCSA
-			bool "LIBDVBCSA"
-			default y
+			bool "Channels descrambling with libdvbcsa"
+			default n
 
 	endif
 endef
@@ -61,7 +61,7 @@ define Package/satpi/install
 	$(INSTALL_BIN) ./files/satpi.init $(1)/etc/init.d/satpi
 
 	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_CONF) ./files/satpi.conf $(1)/etc/config/satpi
+	$(INSTALL_CONF) ./files/satpi.config $(1)/etc/config/satpi
 endef
 
 $(eval $(call BuildPackage,satpi))

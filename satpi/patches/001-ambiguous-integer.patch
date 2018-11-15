@@ -1,0 +1,20 @@
+--- a/src/input/dvb/delivery/Lnb.cpp
++++ b/src/input/dvb/delivery/Lnb.cpp
+@@ -92,14 +92,14 @@ namespace delivery {
+ 				if (freq >= _switchlof) {
+ 					hiband = true;
+ 				}
+-				ifreq = abs(freq - (hiband ? _lofHigh : _lofLow));
++				ifreq = (freq - (hiband ? _lofHigh : _lofLow));
+ 			} else {
+ 				// C-Band Multi-point LNB
+-				ifreq = abs(freq - (verticalPolarization ? _lofLow : _lofHigh));
++				ifreq = (freq - (verticalPolarization ? _lofLow : _lofHigh));
+ 			}
+ 		} else {
+ 			// Mono-point LNB without switch
+-			ifreq = abs(freq - _lofLow);
++			ifreq = (freq - _lofLow);
+ 		}
+ 		freq = ifreq;
+ 	}
