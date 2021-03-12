@@ -194,7 +194,7 @@ config OSCAM_WITH_LB
 	bool "Loadbalancing"
 	default y
 
-config OSCAM_S_CACHEEX
+config OSCAM_CS_CACHEEX
 	bool "Cache exchange"
 	default y
 

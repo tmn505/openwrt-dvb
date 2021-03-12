@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := oscam
-PKG_REV := 11438
+PKG_REV := 11532
 PKG_VERSION := 1.20-$(PKG_REV)
 PKG_RELEASE := 1
 
