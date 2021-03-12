@@ -25,7 +25,7 @@ define Package/minisatip
   CATEGORY := Multimedia
   TITLE := SAT>IP server
   URL := https://minisatip.org
-  DEPENDS := +MINISATIP_DVBAPI:libdvbapi +MINISATIP_DVBCSA:libdvbcsa +MINISATIP_CI:libdvben50221 +MINISATIP_AES:libopenssl
+  DEPENDS := @BROKEN +MINISATIP_DVBAPI:libdvbapi +MINISATIP_DVBCSA:libdvbcsa +MINISATIP_CI:libdvben50221 +MINISATIP_AES:libopenssl
   MENU := 1
 endef
 

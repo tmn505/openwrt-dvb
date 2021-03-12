@@ -28,6 +28,7 @@ define Package/w-scan
   CATEGORY := Utilities
   TITLE := w_scan performs frequency scans for DVB and ATSC
   URL := http://wirbel.htpc-forum.de/w_scan/index2.html
+  DEPENDS := @BROKEN
 endef
 
 define Package/w-scan/description

@@ -30,7 +30,7 @@ define Package/vdr
   CATEGORY := Multimedia
   TITLE := Video Disk Recorder
   URL := http://www.tvdr.de
-  DEPENDS := +fontconfig +libcap +libfreetype +libjpeg +librt +libstdcpp +dejavu-fonts-ttf-DejaVuSans
+  DEPENDS := @BROKEN +fontconfig +libcap +libfreetype +libjpeg +librt +libstdcpp +dejavu-fonts-ttf-DejaVuSans
 endef
 
 define Package/vdr/description

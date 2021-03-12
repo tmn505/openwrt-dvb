@@ -33,6 +33,7 @@ define Package/libdvbcsa
   CATEGORY := Libraries
   TITLE := DVB Common Scrambling Algorithm library
   URL := https://www.videolan.org/developers/libdvbcsa.html
+  DEPENDS := @BROKEN
 endef
 
 define Package/libdvbcsa/description

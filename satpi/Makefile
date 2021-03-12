@@ -26,7 +26,7 @@ define Package/satpi
   CATEGORY := Multimedia
   TITLE := SAT>IP server
   URL := http://barracuda09.github.io/SATPI
-  DEPENDS := +libstdcpp +SATPI_LIBDVBCSA:libdvbcsa
+  DEPENDS := @BROKEN +libstdcpp +SATPI_LIBDVBCSA:libdvbcsa
   MENU := 1
 endef
 

@@ -29,7 +29,7 @@ define Package/pugixml
   CATEGORY := Libraries
   TITLE := XML parser for C++
   URL := https://pugixml.org
-  DEPENDS := +libcurl +libstdcpp
+  DEPENDS := @BROKEN +libcurl +libstdcpp
 endef
 
 define Package/pugixml/description

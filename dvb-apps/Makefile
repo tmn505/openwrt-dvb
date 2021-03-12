@@ -52,7 +52,7 @@ define DvbBuildApp
     SECTION := multimedia
     CATEGORY := Multimedia
     TITLE := $(1) application
-    DEPENDS += $$(foreach p,$(3),+lib$$(p)) $$(foreach p,$(4),+dvb-app-$$(p)) $(5)
+    DEPENDS += @BROKEN $$(foreach p,$(3),+lib$$(p)) $$(foreach p,$(4),+dvb-app-$$(p)) $(5)
   endef
 
   define Package/dvb-app-$(1)/description
@@ -101,7 +101,7 @@ define DvbBuildLibrary
     SECTION := libs
     CATEGORY := Libraries
     TITLE := $(2) library
-    DEPENDS += $$(foreach p,$(3),+lib$$(p)) $(4)
+    DEPENDS += @BROKEN $$(foreach p,$(3),+lib$$(p)) $(4)
   endef
 
   define Package/lib$(1)/description
@@ -134,6 +134,7 @@ define Package/dvb-keymaps-av7110
   SECTION := multimedia
   CATEGORY := Multimedia
   TITLE := av7110 keymaps
+  DEPENDS := @BROKEN
 endef
 
 define Package/dvb-keymaps-av7110/description
