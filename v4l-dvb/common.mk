@@ -10,7 +10,6 @@ endef
 define KernelPackage/b2c2-flexcop/description
  B2C2 FlexcopII/II(b)/III digital TV receiver chip.
 endef
-
 $(eval $(call KernelPackage,b2c2-flexcop))
 
 
@@ -26,7 +25,6 @@ endef
 define KernelPackage/cx2341x/description
  Common routines for Conexant cx23415/6/8 drivers.
 endef
-
 $(eval $(call KernelPackage,cx2341x))
 
 
@@ -42,7 +40,6 @@ endef
 define KernelPackage/cypress-firmware/description
  Helper module for Cypress firmware download.
 endef
-
 $(eval $(call KernelPackage,cypress-firmware))
 
 
@@ -58,7 +55,6 @@ endef
 define KernelPackage/saa7146/description
  NXP/Philips SAA7146 multimedia bridge to PCI bus.
 endef
-
 $(eval $(call KernelPackage,saa7146))
 
 
@@ -70,7 +66,6 @@ define KernelPackage/saa7146-vv
   AUTOLOAD := $(call AutoProbe,saa7146_vv)
   DEPENDS := +kmod-saa7146 +kmod-videobuf +kmod-videodev
 endef
-
 $(eval $(call KernelPackage,saa7146-vv))
 
 
@@ -82,7 +77,6 @@ define KernelPackage/smsmdtv
   AUTOLOAD := $(call AutoProbe,smsmdtv)
   DEPENDS := +kmod-dvb-core +kmod-rc-core
 endef
-
 $(eval $(call KernelPackage,smsmdtv))
 
 
@@ -98,7 +92,6 @@ endef
 define KernelPackage/ttpci-eeprom/description
  Decode dvb_net MAC address from EEPROM of PCI DVB cards made by Siemens, Technotrend, Hauppauge.
 endef
-
 $(eval $(call KernelPackage,ttpci-eeprom))
 
 
@@ -114,7 +107,6 @@ endef
 define KernelPackage/tveeprom/description
  Eeprom decoder for tvcard configuration eeproms.
 endef
-
 $(eval $(call KernelPackage,tveeprom))
 
 
@@ -127,7 +119,6 @@ define KernelPackage/videobuf2-common
   DEPENDS := +kmod-dma-buf +kmod-videodev
   CONFLICTS := kmod-video-videobuf2
 endef
-
 $(eval $(call KernelPackage,videobuf2-common))
 
 
@@ -140,7 +131,6 @@ define KernelPackage/videobuf2-dma-sg
   DEPENDS := +kmod-videobuf2-memops
   CONFLICTS := kmod-video-videobuf2
 endef
-
 $(eval $(call KernelPackage,videobuf2-dma-sg))
 
 
@@ -153,7 +143,6 @@ define KernelPackage/videobuf2-dvb
   DEPENDS := +kmod-dvb-core
   CONFLICTS := kmod-video-videobuf2
 endef
-
 $(eval $(call KernelPackage,videobuf2-dvb))
 
 
@@ -168,7 +157,6 @@ define KernelPackage/videobuf2-memops
   DEPENDS := +kmod-videobuf2-common
   CONFLICTS := kmod-video-videobuf2
 endef
-
 $(eval $(call KernelPackage,videobuf2-memops))
 
 
@@ -181,7 +169,6 @@ define KernelPackage/videobuf2-v4l2
   DEPENDS := +kmod-videobuf2-common
   CONFLICTS := kmod-video-videobuf2
 endef
-
 $(eval $(call KernelPackage,videobuf2-v4l2))
 
 
@@ -194,7 +181,6 @@ define KernelPackage/videobuf2-vmalloc
   DEPENDS := +kmod-videobuf2-memops
   CONFLICTS := kmod-video-videobuf2
 endef
-
 $(eval $(call KernelPackage,videobuf2-vmalloc))
 
 
@@ -216,5 +202,4 @@ endef
 define KernelPackage/videobuf/description
  Helper module to manage video4linux buffers.
 endef
-
 $(eval $(call KernelPackage,videobuf))

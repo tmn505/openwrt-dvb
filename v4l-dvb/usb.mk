@@ -19,7 +19,6 @@ define KernelPackage/dvb-usb/description
  For a complete list of supported USB devices see the LinuxTV DVB Wiki:
  <http://www.linuxtv.org/wiki/index.php/DVB_USB>
 endef
-
 $(eval $(call KernelPackage,dvb-usb))
 
 define AddDepends/dvb-usb
@@ -46,7 +45,6 @@ define KernelPackage/dvb-usb-v2/description
  For a complete list of supported USB devices see the LinuxTV DVB Wiki:
  <http://www.linuxtv.org/wiki/index.php/DVB_USB>
 endef
-
 $(eval $(call KernelPackage,dvb-usb-v2))
 
 define AddDepends/dvb-usb-v2
@@ -67,7 +65,6 @@ endef
 define KernelPackage/airspy/description
  This is a video4linux2 driver for AirSpy SDR device.
 endef
-
 $(eval $(call KernelPackage,airspy))
 
 
@@ -83,7 +80,6 @@ endef
 define KernelPackage/b2c2-flexcop-usb/description
  Support for the Air/Sky/Cable2PC USB1.1 box (DVB/ATSC) by Technisat/B2C2.
 endef
-
 $(eval $(call KernelPackage,b2c2-flexcop-usb))
 
 
@@ -99,7 +95,6 @@ endef
 define KernelPackage/cx231xx-dvb-ci/description
  This adds support for DVB cards based on the Conexant cx231xx chips.
 endef
-
 $(eval $(call KernelPackage,cx231xx-dvb-ci))
 
 
@@ -115,7 +110,6 @@ endef
 define KernelPackage/dvb-as102/description
  Support for the Abilis AS102 based DVB-T USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-as102))
 
 
@@ -132,7 +126,6 @@ define KernelPackage/dvb-ttusb-budget/description
  Support for external USB adapters designed by Technotrend and
  produced by Hauppauge, shipped under the brand name 'Nova-USB'.
 endef
-
 $(eval $(call KernelPackage,dvb-ttusb-budget))
 
 
@@ -147,7 +140,6 @@ endef
 define KernelPackage/dvb-usb-a800/description
  Say Y here to support the AVerMedia AverTV DVB-T USB 2.0 (A800) receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-a800))
 
 
@@ -163,7 +155,6 @@ define KernelPackage/dvb-usb-af9005/description
  Say Y here to support the Afatech AF9005 based DVB-T USB1.1 receiver
  and the TerraTec Cinergy T USB XE (Rev.1)
 endef
-
 $(eval $(call KernelPackage,dvb-usb-af9005))
 
 
@@ -178,7 +169,6 @@ endef
 define KernelPackage/dvb-usb-af9015/description
  Support for the Afatech AF9015 based DVB-T USB2.0 receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-af9015))
 
 
@@ -193,7 +183,6 @@ endef
 define KernelPackage/dvb-usb-af9035/description
  Say Y here to support the Afatech AF9035 based DVB USB receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-af9035))
 
 
@@ -208,7 +197,6 @@ endef
 define KernelPackage/dvb-usb-anysee/description
  Anysee DVB-T/C USB2.0 support
 endef
-
 $(eval $(call KernelPackage,dvb-usb-anysee))
 
 
@@ -223,7 +211,6 @@ endef
 define KernelPackage/dvb-usb-au6610/description
  Say Y here to support the Sigmatek DVB-110 DVB-T USB2.0 receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-au6610))
 
 
@@ -238,7 +225,6 @@ endef
 define KernelPackage/dvb-usb-az6007/description
  Say Y here to support the AZ6007 receivers like Terratec H7.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-az6007))
 
 
@@ -253,7 +239,6 @@ endef
 define KernelPackage/dvb-usb-az6027/description
  Say Y here to support the AZ6027 device
 endef
-
 $(eval $(call KernelPackage,dvb-usb-az6027))
 
 
@@ -268,7 +253,6 @@ endef
 define KernelPackage/dvb-usb-ce6230/description
  Say Y here to support the Intel CE6230 DVB-T USB2.0 receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-ce6230))
 
 
@@ -285,7 +269,6 @@ define KernelPackage/dvb-usb-cxusb/description
  Currently, only DVB and ATSC modes are supported, analog mode
  shall be added in the future.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-cxusb))
 
 
@@ -309,7 +292,6 @@ define KernelPackage/dvb-usb-dib0700/description
  Say Y if you own such a device and want to use it. You should build it as
  a module.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dib0700))
 
 
@@ -319,7 +301,6 @@ define KernelPackage/dvb-usb-dibusb-common
   AUTOLOAD := $(call AutoProbe,dvb-usb-dibusb-common)
   $(call AddDepends/dvb-usb,+kmod-dvb-dib3000mc)
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dibusb-common))
 
 
@@ -329,7 +310,6 @@ define KernelPackage/dvb-usb-dibusb-mc-common
   AUTOLOAD := $(call AutoProbe,dvb-usb-dibusb-mc-common)
   $(call AddDepends/dvb-usb,+kmod-dvb-usb-dibusb-common)
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dibusb-mc-common))
 
 
@@ -353,7 +333,6 @@ define KernelPackage/dvb-usb-dibusb-mb/description
  Say Y if you own such a device and want to use it. You should build it as
  a module.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dibusb-mb))
 
 
@@ -375,7 +354,6 @@ define KernelPackage/dvb-usb-dibusb-mc/description
  Say Y if you own such a device and want to use it. You should build it as
  a module.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dibusb-mc))
 
 
@@ -390,7 +368,6 @@ endef
 define KernelPackage/dvb-usb-digitv/description
  Say Y here to support the Nebula Electronics uDigitV USB2.0 DVB-T receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-digitv))
 
 
@@ -407,7 +384,6 @@ define KernelPackage/dvb-usb-dtt200u/description
  The receivers are also known as DTT200U (Yakumo) and UB300 (Yuan).
  The WT-220U and its clones are pen-sized.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dtt200u))
 
 
@@ -422,7 +398,6 @@ endef
 define KernelPackage/dvb-usb-dtv5100/description
  Say Y here to support the AME DTV-5100 USB2.0 DVB-T receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dtv5100))
 
 
@@ -437,7 +412,6 @@ endef
 define KernelPackage/dvb-usb-dvbsky/description
  Say Y here to support the USB receivers from DVBSky.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dvbsky))
 
 
@@ -453,7 +427,6 @@ define KernelPackage/dvb-usb-dw2102/description
  Say Y here to support the DvbWorld, TeVii, Prof, TechnoTrend
  DVB-S/S2 USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-dw2102))
 
 
@@ -468,7 +441,6 @@ endef
 define KernelPackage/dvb-usb-ec168/description
  Say Y here to support the E3C EC168 DVB-T USB2.0 receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-ec168))
 
 
@@ -485,7 +457,6 @@ define KernelPackage/dvb-usb-gl861/description
  receiver with USB ID 0db0:5581, Friio White ISDB-T receiver
  with USB ID 0x7a69:0001.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-gl861))
 
 
@@ -500,7 +471,6 @@ endef
 define KernelPackage/dvb-usb-gp8psk/description
  Say Y here to support the GENPIX 8psk module.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-gp8psk))
 
 
@@ -515,7 +485,6 @@ endef
 define KernelPackage/dvb-usb-lmedm04/description
  Say Y here to support the LME DM04/QQBOX DVB-S USB2.0.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-lmedm04))
 
 
@@ -533,7 +502,6 @@ define KernelPackage/dvb-usb-m920x/description
  "DTV USB MINI" (in cold state) are supported.
  Firmware required.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-m920x))
 
 
@@ -548,7 +516,6 @@ endef
 define KernelPackage/dvb-usb-mxl111sf/description
  Say Y here to support the MxL111SF USB2.0 DTV receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-mxl111sf))
 
 
@@ -563,7 +530,6 @@ endef
 define KernelPackage/dvb-usb-nova-t-usb2/description
  Say Y here to support the Hauppauge WinTV-NOVA-T usb2 DVB-T USB2.0 receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-nova-t-usb2))
 
 
@@ -578,7 +544,6 @@ endef
 define KernelPackage/dvb-usb-opera/description
  Say Y here to support the Opera DVB-S USB2.0 receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-opera))
 
 
@@ -596,7 +561,6 @@ define KernelPackage/dvb-usb-pctv452e/description
  Also supports TT Connect S2-3600/3650 cards.
  Say Y if you own such a device and want to use it.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-pctv452e))
 
 
@@ -611,7 +575,6 @@ endef
 define KernelPackage/dvb-usb-rtl28xxu/description
  Realtek RTL28xxU DVB USB support.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-rtl28xxu))
 
 
@@ -627,7 +590,6 @@ endef
 define KernelPackage/dvb-usb-tbs5220/description
  Say Y here to support the TurboSight TBS5220 DVB-T/T2/C USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5220))
 
 
@@ -643,7 +605,6 @@ endef
 define KernelPackage/dvb-usb-tbs5301/description
  Say Y here to support the TurboSight 5301 hdmi USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5301))
 
 
@@ -659,7 +620,6 @@ endef
 define KernelPackage/dvb-usb-tbs5520/description
  Say Y here to support the Turbosight TBS5520 USB2 DVB-T/T2/C/S/S2 device.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5520))
 
 
@@ -675,7 +635,6 @@ endef
 define KernelPackage/dvb-usb-tbs5520se/description
  Say Y here to support the Turbosight TBS5520se USB2 DVB-T/T2/C/C2/S/S2/S2x device.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5520se))
 
 
@@ -691,7 +650,6 @@ endef
 define KernelPackage/dvb-usb-tbs5580/description
  Say Y here to support the Turbosight TBS5580 CI USB2 DVB-T/T2/C/C2/S/S2/S2x device.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5580))
 
 
@@ -707,7 +665,6 @@ endef
 define KernelPackage/dvb-usb-tbs5590/description
  Say Y here to support the Turbosight TBS5590 USB2.0 DVB-T/T2/C/C2/S/S2/S2x ASI-IN device.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5590))
 
 
@@ -723,7 +680,6 @@ endef
 define KernelPackage/dvb-usb-tbs5880/description
  Say Y here to support the TurboSight TBS5880 DVB-T/T2/C USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5880))
 
 
@@ -739,7 +695,6 @@ endef
 define KernelPackage/dvb-usb-tbs5881/description
  Say Y here to support the TurboSight TBS5881 DVB-T/T2/C USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5881))
 
 
@@ -755,7 +710,6 @@ endef
 define KernelPackage/dvb-usb-tbs5922se/description
  Say Y here to support the TurboSight 5922SE DVB-S USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5922se))
 
 
@@ -771,7 +725,6 @@ endef
 define KernelPackage/dvb-usb-tbs5925/description
  Say Y here to support the TurboSight 5925 DVB-S USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5925))
 
 
@@ -787,7 +740,6 @@ endef
 define KernelPackage/dvb-usb-tbs5927/description
  Say Y here to support the TurboSight 5927 DVB-S USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbs5927))
 
 
@@ -803,7 +755,6 @@ endef
 define KernelPackage/dvb-usb-tbsqbox2/description
  Say Y here to support the TurboSight QBOX2 DVB-S USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbsqbox2))
 
 
@@ -819,7 +770,6 @@ endef
 define KernelPackage/dvb-usb-tbsqbox22/description
  Say Y here to support the TurboSight QBOX22 DVB-S USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbsqbox22))
 
 
@@ -835,7 +785,6 @@ endef
 define KernelPackage/dvb-usb-tbsqbox/description
  Say Y here to support the TurboSight QBOX DVB-S USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbsqbox))
 
 
@@ -851,7 +800,6 @@ endef
 define KernelPackage/dvb-usb-tbsqbox2ci/description
  Say Y here to support the TurboSight QBOX2 CI DVB-S USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbsqbox2ci))
 
 
@@ -867,7 +815,6 @@ endef
 define KernelPackage/dvb-usb-tbsqboxs2/description
  Say Y here to support the TurboSight QBOX S2 DVB-S USB2.0 receivers.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-tbsqboxs2))
 
 
@@ -882,7 +829,6 @@ endef
 define KernelPackage/dvb-usb-technisat-usb2/description
  Say Y here to support the Technisat USB2 DVB-S/S2 device.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-technisat-usb2))
 
 
@@ -900,7 +846,6 @@ define KernelPackage/dvb-usb-ttusb2/description
  firmware protocol used by this module is similar to the one used by the
  old ttusb-driver - that's why the module is called dvb-usb-ttusb2.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-ttusb2))
 
 
@@ -915,7 +860,6 @@ endef
 define KernelPackage/dvb-usb-umt-010/description
  Say Y here to support the HanfTek UMT-010 USB2.0 stick-sized DVB-T receiver.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-umt-010))
 
 
@@ -931,7 +875,6 @@ define KernelPackage/dvb-usb-vp702x/description
  TwinhanDTV StarBox, DigitalRise USB Starbox and
  TYPHOON DVB-S USB 2.0 BOX.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-vp702x))
 
 
@@ -948,7 +891,6 @@ define KernelPackage/dvb-usb-vp7045/description
  DigitalNow TinyUSB 2 DVB-t, DigitalRise USB 2.0 Ter (Beetle) and
  TYPHOON DVB-T USB DRIVE.
 endef
-
 $(eval $(call KernelPackage,dvb-usb-vp7045))
 
 
@@ -964,7 +906,6 @@ endef
 define KernelPackage/em28xx-dvb/description
  This adds support for DVB cards based on the Empiatech em28xx chips.
 endef
-
 $(eval $(call KernelPackage,em28xx-dvb))
 
 
@@ -980,7 +921,6 @@ endef
 define KernelPackage/hackrf/description
  To compile this driver as a module, choose M here, the module will be called hackrf.
 endef
-
 $(eval $(call KernelPackage,hackrf))
 
 
@@ -992,7 +932,6 @@ define KernelPackage/msi2500
   AUTOLOAD := $(call AutoProbe,msi2500)
   DEPENDS := +kmod-usb-core +kmod-videobuf2-v4l2 +kmod-videobuf2-vmalloc
 endef
-
 $(eval $(call KernelPackage,msi2500))
 
 
@@ -1008,7 +947,6 @@ endef
 define KernelPackage/smsusb/description
  Choose if you would like to have Siano's support for USB interface.
 endef
-
 $(eval $(call KernelPackage,smsusb))
 
 
@@ -1024,7 +962,6 @@ endef
 define KernelPackage/tm6000-dvb/description
  This adds support for DVB cards based on the tm5600/tm6000 chip.
 endef
-
 $(eval $(call KernelPackage,tm6000-dvb))
 
 
@@ -1042,7 +979,6 @@ define KernelPackage/ttusb-dec/description
  produced by Hauppauge, shipped under the brand name 'DEC2000-t'
  and 'DEC3000-s'.
 endef
-
 $(eval $(call KernelPackage,ttusb-dec))
 
 
@@ -1057,5 +993,4 @@ endef
 define KernelPackage/zd1301/description
  Say Y here to support the ZyDAS ZD1301 DVB USB receiver.
 endef
-
 $(eval $(call KernelPackage,zd1301))

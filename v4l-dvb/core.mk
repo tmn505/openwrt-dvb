@@ -16,7 +16,6 @@ endef
 define KernelPackage/dvb-core/description
  Kernel modules for DVB support.
 endef
-
 $(eval $(call KernelPackage,dvb-core))
 
 
@@ -40,7 +39,6 @@ define KernelPackage/rc-core/description
  if you don't need IR, as otherwise, you may not be able to
  compile the driver for your adapter.
 endef
-
 $(eval $(call KernelPackage,rc-core))
 
 
@@ -53,5 +51,4 @@ define KernelPackage/videodev
   DEPENDS := +kmod-i2c-core +kmod-mc
   CONFLICTS := kmod-video-core
 endef
-
 $(eval $(call KernelPackage,videodev))

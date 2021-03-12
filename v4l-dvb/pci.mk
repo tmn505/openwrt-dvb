@@ -15,7 +15,6 @@ endef
 define KernelPackage/b2c2-flexcop-pci/description
  Support for the Air/Sky/CableStar2 PCI card (DVB/ATSC) by Technisat/B2C2.
 endef
-
 $(eval $(call KernelPackage,b2c2-flexcop-pci))
 
 define KernelPackage/budget
@@ -31,7 +30,6 @@ define KernelPackage/budget/description
  or Nova-PCI cards) without onboard MPEG2 decoder, and without
  analog inputs or an onboard Common Interface connector.
 endef
-
 $(eval $(call KernelPackage,budget))
 
 
@@ -48,7 +46,6 @@ define KernelPackage/budget-av/description
  (so called Budget- or Nova-PCI cards) without onboard
  MPEG2 decoder, but with one or more analog video inputs.
 endef
-
 $(eval $(call KernelPackage,budget-av))
 
 
@@ -65,7 +62,6 @@ define KernelPackage/budget-ci/description
  (so called Budget- or Nova-PCI cards) without onboard
  MPEG2 decoder, but with onboard Common Interface connector.
 endef
-
 $(eval $(call KernelPackage,budget-ci))
 
 
@@ -82,7 +78,6 @@ define KernelPackage/budget-core/description
  (so called Budget- or Nova-PCI cards) without onboard
  MPEG2 decoder.
 endef
-
 $(eval $(call KernelPackage,budget-core))
 
 
@@ -104,7 +99,6 @@ define KernelPackage/budget-patch/description
  standard AV7110 driver prior to loading this
  driver.
 endef
-
 $(eval $(call KernelPackage,budget-patch))
 
 
@@ -121,7 +115,6 @@ define KernelPackage/cx18/description
  PCI combo video recorder devices.
  This is used in devices such as the Hauppauge HVR-1600 cards.
 endef
-
 $(eval $(call KernelPackage,cx18))
 
 
@@ -139,7 +132,6 @@ endef
 define KernelPackage/cx23885/description
  This is a video4linux driver for Conexant 23885 based TV cards.
 endef
-
 $(eval $(call KernelPackage,cx23885))
 
 
@@ -154,7 +146,6 @@ endef
 define KernelPackage/cx25821/description
  This is a video4linux driver for Conexant 25821 based TV cards.
 endef
-
 $(eval $(call KernelPackage,cx25821))
 
 
@@ -178,7 +169,6 @@ endef
 define KernelPackage/cx88-dvb/description
  This adds support for DVB/ATSC cards based on the Conexant 2388x chip.
 endef
-
 $(eval $(call KernelPackage,cx88-dvb))
 
 
@@ -204,7 +194,6 @@ define KernelPackage/ddbridge/description
   - CineS2 V7/V7A and DuoFlex S2 V4 (ST STV0910-based)
   - Max S4/8
 endef
-
 $(eval $(call KernelPackage,ddbridge))
 
 
@@ -221,7 +210,6 @@ define KernelPackage/dvb-ttpci/description
  by Fujitsu-Siemens, Technotrend, Hauppauge and others.
  This driver only supports the fullfeatured cards with onboard MPEG2 decoder.
 endef
-
 $(eval $(call KernelPackage,dvb-ttpci))
 
 
@@ -239,7 +227,6 @@ endef
 define KernelPackage/mantis/description
  Support for PCI cards based on the Mantis and Hopper PCi bridge.
 endef
-
 $(eval $(call KernelPackage,mantis))
 
 
@@ -257,7 +244,6 @@ define KernelPackage/netup-unidvb/description
  DVB-S/S2, T/T2, C/C2
  Two CI slots available for CAM modules.
 endef
-
 $(eval $(call KernelPackage,netup-unidvb))
 
 
@@ -272,7 +258,6 @@ endef
 define KernelPackage/ngene/description
  Support for Micronas PCI express cards with nGene bridge.
 endef
-
 $(eval $(call KernelPackage,ngene))
 
 
@@ -288,7 +273,6 @@ define KernelPackage/pluto2/description
  Support for PCI cards based on the Pluto2 FPGA like the Satelco
  Easywatch Mobile Terrestrial DVB-T Receiver.
 endef
-
 $(eval $(call KernelPackage,pluto2))
 
 
@@ -303,7 +287,6 @@ endef
 define KernelPackage/saa7134-dvb/description
  This is a video4linux driver for Philips SAA713x based TV cards.
 endef
-
 $(eval $(call KernelPackage,saa7134-dvb))
 
 
@@ -318,7 +301,6 @@ endef
 define KernelPackage/saa7164/description
  This is a video4linux driver for NXP SAA7164 based TV cards.
 endef
-
 $(eval $(call KernelPackage,saa7164))
 
 
@@ -334,7 +316,6 @@ endef
 define KernelPackage/saa716x-core/description
  This is a video4linux driver for NXP SAA7160/1/2 based TV cards.
 endef
-
 $(eval $(call KernelPackage,saa716x-core))
 
 
@@ -356,7 +337,6 @@ define KernelPackage/saa716x-hybrid/description
   * NXP Reference (Nemo) (DVB-T)
   * Twinhan/Azurewave VP-6090 (DVB-S x2, DVB-T x2)
 endef
-
 $(eval $(call KernelPackage,saa716x-hybrid))
 
 
@@ -377,7 +357,6 @@ define KernelPackage/saa716x-tbs-dvb/description
   * Twinhan/Azurewave VP-3071 (DVB-T x2)
   * Twinhan/Azurewave VP-6002 (DVB-S)
 endef
-
 $(eval $(call KernelPackage,saa716x-tbs-dvb))
 
 
@@ -395,7 +374,6 @@ define KernelPackage/smipcie/description
   - DVBSky S952 V3
   - DVBSky T9580 V3
 endef
-
 $(eval $(call KernelPackage,smipcie))
 
 
@@ -411,7 +389,6 @@ endef
 define KernelPackage/tbs-pcie-dvb/description
  Support for TBS PCIe DVB cards.
 endef
-
 $(eval $(call KernelPackage,tbs-pcie-dvb))
 
 
@@ -427,5 +404,4 @@ endef
 define KernelPackage/tbsecp3/description
  Support for cards with TBS ECP3 FPGA based PCIe bridge.
 endef
-
 $(eval $(call KernelPackage,tbsecp3))

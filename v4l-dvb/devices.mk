@@ -14,7 +14,6 @@ endef
 define Package/generic-as102/install
 	$(INSTALL_DIR) $(1)/etc
 endef
-
 $(eval $(call BuildPackage,generic-as102))
 
 
@@ -34,7 +33,6 @@ endef
 define Package/generic-dib0700/install
 	$(INSTALL_DIR) $(1)/etc
 endef
-
 $(eval $(call BuildPackage,generic-dib0700))
 
 
@@ -55,7 +53,6 @@ endef
 define Package/generic-it9135/install
 	$(INSTALL_DIR) $(1)/etc
 endef
-
 $(eval $(call BuildPackage,generic-it9135))
 
 
@@ -76,5 +73,4 @@ endef
 define Package/tt-ct-4650-ci/install
 	$(INSTALL_DIR) $(1)/etc
 endef
-
 $(eval $(call BuildPackage,tt-ct-4650-ci))

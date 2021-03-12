@@ -6,7 +6,6 @@ define KernelPackage/firedtv
   AUTOLOAD := $(call AutoProbe,firedtv)
   DEPENDS := +kmod-dvb-core +kmod-firewire
 endef
-
 $(eval $(call KernelPackage,firedtv))
 
 
@@ -17,5 +16,4 @@ define KernelPackage/vtunerc
   FILES := $(PKG_BUILD_DIR)/v4l/vtunerc.ko
   DEPENDS := +kmod-dvb-core
 endef
-
 $(eval $(call KernelPackage,vtunerc))
