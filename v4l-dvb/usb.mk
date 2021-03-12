@@ -93,7 +93,7 @@ define KernelPackage/cx231xx-dvb-ci
   V4L_KCONFIG := CONFIG_VIDEO_CX231XX CONFIG_VIDEO_CX231XX_DVB
   FILES := $(PKG_BUILD_DIR)/v4l/cx231xx.ko $(PKG_BUILD_DIR)/v4l/cx231xx-dvb-ci.ko
   AUTOLOAD := $(call AutoProbe,cx231xx-dvb-ci)
-  DEPENDS := +kmod-cx2341x +kmod-dvb-core +kmod-dvb-tas2101 +kmod-rc-core +kmod-tveeprom +kmod-usb-core +kmod-videobuf @V4L_SRC_TBSDTV
+  DEPENDS := +kmod-cx2341x +kmod-dvb-core +kmod-dvb-tas2101 +kmod-rc-core +kmod-tveeprom +kmod-usb-core +kmod-videobuf +kmod-videobuf2-v4l2 @V4L_SRC_TBSDTV
 endef
 
 define KernelPackage/cx231xx-dvb-ci/description
@@ -172,7 +172,7 @@ define KernelPackage/dvb-usb-af9015
   V4L_KCONFIG := CONFIG_DVB_USB_AF9015
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-af9015.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-af9015)
-  $(call AddDepends/dvb-usb-v2,+kmod-regmap)
+  $(call AddDepends/dvb-usb-v2,)
 endef
 
 define KernelPackage/dvb-usb-af9015/description
@@ -277,7 +277,7 @@ define KernelPackage/dvb-usb-cxusb
   V$L_KCONFIG := CONFIG_DVB_USB_CXUSB
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-cxusb.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-cxusb)
-  $(call AddDepends/dvb-usb,+kmod-dvb-dib0070)
+  $(call AddDepends/dvb-usb,+kmod-dvb-dib0070 +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/dvb-usb-cxusb/description
@@ -958,7 +958,7 @@ define KernelPackage/em28xx-dvb
   V4L_KCONFIG := CONFIG_VIDEO_EM28XX CONFIG_VIDEO_EM28XX_DVB
   FILES := $(PKG_BUILD_DIR)/v4l/em28xx.ko $(PKG_BUILD_DIR)/v4l/em28xx-dvb.ko
   AUTOLOAD := $(call AutoProbe,em28xx-dvb)
-  DEPENDS := +kmod-dvb-core +kmod-tveeprom +kmod-usb-core +kmod-v4l2-core
+  DEPENDS := +kmod-dvb-core +kmod-tveeprom +kmod-usb-core
 endef
 
 define KernelPackage/em28xx-dvb/description
@@ -990,7 +990,7 @@ define KernelPackage/msi2500
   V4L_KCONFIG := CONFIG_USB_MSI2500
   FILES := $(PKG_BUILD_DIR)/v4l/msi2500.ko
   AUTOLOAD := $(call AutoProbe,msi2500)
-  DEPENDS := +kmod-usb-core +kmod-v4l2-core +kmod-videobuf2-v4l2 +kmod-videobuf2-vmalloc
+  DEPENDS := +kmod-usb-core +kmod-videobuf2-v4l2 +kmod-videobuf2-vmalloc
 endef
 
 $(eval $(call KernelPackage,msi2500))
@@ -1018,7 +1018,7 @@ define KernelPackage/tm6000-dvb
   V4L_KCONFIG := CONFIG_VIDEO_TM6000 CONFIG_VIDEO_TM6000_DVB
   FILES := $(PKG_BUILD_DIR)/v4l/tm6000.ko $(PKG_BUILD_DIR)/v4l/tm6000-dvb.ko
   AUTOLOAD := $(call AutoProbe,tm6000-dvb)
-  DEPENDS := +kmod-dvb-core +kmod-rc-core +kmod-usb-core +kmod-v4l2-core +kmod-videobuf
+  DEPENDS := +kmod-dvb-core +kmod-rc-core +kmod-usb-core +kmod-videobuf
 endef
 
 define KernelPackage/tm6000-dvb/description

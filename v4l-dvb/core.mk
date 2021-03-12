@@ -10,7 +10,7 @@ define KernelPackage/dvb-core
 	CONFIG_MEDIA_DIGITAL_TV_SUPPORT=y
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-core.ko
   AUTOLOAD := $(call AutoProbe,dvb-core)
-  DEPENDS += +kmod-media +kmod-videobuf2-vmalloc
+  DEPENDS += +kmod-mc +kmod-videobuf2-vmalloc
 endef
 
 define KernelPackage/dvb-core/description
@@ -28,7 +28,7 @@ define KernelPackage/rc-core
 	CONFIG_RC_CORE
   FILES := $(PKG_BUILD_DIR)/v4l/rc-core.ko
   AUTOLOAD := $(call AutoProbe,rc-core)
-  DEPENDS := +kmod-media +kmod-input-core
+  DEPENDS := +kmod-mc +kmod-input-core
 endef
 
 define KernelPackage/rc-core/description
@@ -44,28 +44,13 @@ endef
 $(eval $(call KernelPackage,rc-core))
 
 
-define KernelPackage/v4l2-core
-  SUBMENU := $(DVB_MENU)
-  TITLE := Misc helper functions for v4l2 device drivers
-  V4L_KCONFIG := \
-	CONFIG_MEDIA_SUPPORT \
-	CONFIG_VIDEO_V4L2=y
-  FILES := $(PKG_BUILD_DIR)/v4l/v4l2-common.ko
-  AUTOLOAD := $(call AutoProbe,v4l2-common videodev)
-  DEPENDS := +kmod-videodev
-  CONFLICTS := kmod-video-core
-endef
-
-$(eval $(call KernelPackage,v4l2-core))
-
-
 define KernelPackage/videodev
   SUBMENU := $(DVB_MENU)
   TITLE := Device registrar for Video4Linux drivers v2
   V4L_KCONFIG := CONFIG_VIDEO_DEV=y
   FILES := $(PKG_BUILD_DIR)/v4l/videodev.ko
   AUTOLOAD := $(call AutoProbe,videodev)
-  DEPENDS := +kmod-i2c-core +kmod-media
+  DEPENDS := +kmod-i2c-core +kmod-mc
   CONFLICTS := kmod-video-core
 endef
 

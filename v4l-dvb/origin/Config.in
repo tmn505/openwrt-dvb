@@ -1,5 +1,4 @@
 choice
-    depends on PACKAGE_kmod-media
     prompt "Used DVB (media) tree"
     default V4L_SRC_TBSDTV
 

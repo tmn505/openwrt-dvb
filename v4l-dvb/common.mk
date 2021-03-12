@@ -20,7 +20,7 @@ define KernelPackage/cx2341x
   V4L_KCONFIG := CONFIG_DVB_CX2341X
   FILES := $(PKG_BUILD_DIR)/v4l/cx2341x.ko
   AUTOLOAD := $(call AutoProbe,cx2341x)
-  DEPENDS := +kmod-v4l2-core
+  DEPENDS := +kmod-videodev
 endef
 
 define KernelPackage/cx2341x/description
@@ -68,7 +68,7 @@ define KernelPackage/saa7146-vv
   V4L_KCONFIG := CONFIG_VIDEO_SAA7146_VV
   FILES := $(PKG_BUILD_DIR)/v4l/saa7146_vv.ko
   AUTOLOAD := $(call AutoProbe,saa7146_vv)
-  DEPENDS := +kmod-saa7146 +kmod-v4l2-core +kmod-videobuf
+  DEPENDS := +kmod-saa7146 +kmod-videobuf +kmod-videodev
 endef
 
 $(eval $(call KernelPackage,saa7146-vv))
@@ -161,7 +161,9 @@ define KernelPackage/videobuf2-memops
   SUBMENU := $(DVB_MENU)
   TITLE := videobuf2 memops lib
   V4L_KCONFIG := CONFIG_VIDEOBUF2_MEMOPS
-  FILES := $(PKG_BUILD_DIR)/v4l/videobuf2-memops.ko
+  FILES := \
+	$(if CONFIG_V4L_SRC_LINUXTV,$(PKG_BUILD_DIR)/v4l/frame_vector.ko) \
+	$(PKG_BUILD_DIR)/v4l/videobuf2-memops.ko
   AUTOLOAD := $(call AutoProbe,videobuf2-memops)
   DEPENDS := +kmod-videobuf2-common
   CONFLICTS := kmod-video-videobuf2

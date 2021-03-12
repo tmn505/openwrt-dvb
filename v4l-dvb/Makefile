@@ -61,25 +61,26 @@ endef
 
 DVB_MENU := DVB Drivers
 
-define KernelPackage/media
+define KernelPackage/mc
   TITLE := V4L/DVB Drivers
   URL := http://www.linuxtv.org
   HIDDEN := y
+  DEFAULT := y
   V4L_KCONFIG := \
 	CONFIG_MEDIA_SUPPORT=m \
 	CONFIG_VIDEO_KERNEL_VERSION=y
-  FILES := $(PKG_BUILD_DIR)/v4l/media.ko
-  AUTOLOAD := $(call AutoProbe,media)
+  FILES := $(PKG_BUILD_DIR)/v4l/mc.ko
+  AUTOLOAD := $(call AutoProbe,mc)
   DEPENDS := @PCI_SUPPORT||USB_SUPPORT
 endef
-define KernelPackage/media/config
+define KernelPackage/mc/config
 	source "$(SOURCE)/origin/Config.in"
 endef
 
-define KernelPackage/media/description
+define KernelPackage/mc/description
  Live development version of V4L and DVB driver
 endef
 
-$(eval $(call KernelPackage,media))
+$(eval $(call KernelPackage,mc))
 
 include $(sort $(wildcard ./*.mk))

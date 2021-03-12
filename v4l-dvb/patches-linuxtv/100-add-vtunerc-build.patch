@@ -3,8 +3,8 @@
 @@ -0,0 +1,18 @@
 +--- a/drivers/media/Kconfig
 ++++ b/drivers/media/Kconfig
-+@@ -240,3 +240,5 @@ source "drivers/media/tuners/Kconfig"
-+ source "drivers/media/dvb-frontends/Kconfig"
++@@ -240,3 +240,5 @@ source "drivers/media/dvb-frontends/Kconfig"
++ endmenu
 +
 + endif # MEDIA_SUPPORT
 ++
@@ -15,8 +15,8 @@
 + # Finally, merge the drivers that require the core
 + #
 + 
-+-obj-y += common/ platform/ pci/ usb/ mmc/ firewire/ spi/
-++obj-y += common/ platform/ pci/ usb/ mmc/ firewire/ spi/ vtunerc/
++-obj-y += common/ platform/ pci/ usb/ mmc/ firewire/ spi/ test-drivers/
+++obj-y += common/ platform/ pci/ usb/ mmc/ firewire/ spi/ test-drivers/ vtunerc/
 + obj-$(CONFIG_VIDEO_DEV) += radio/
 + 
 --- a/backports/backports.txt

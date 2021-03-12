@@ -133,7 +133,7 @@ define KernelPackage/cx23885
 	$(PKG_BUILD_DIR)/v4l/altera-ci.ko \
 	$(PKG_BUILD_DIR)/v4l/altera-stapl.ko
   AUTOLOAD := $(call AutoProbe,cx23885 altera-ci altera-stapl)
-  $(call AddDepends/dvb-pci,+kmod-cx2341x +kmod-dvb-m88ds3103 +kmod-media-tuner-tda18271 +kmod-rc-core +kmod-sound-core +kmod-tveeprom +kmod-videobuf2-dma-sg  +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
+  $(call AddDepends/dvb-pci,+kmod-cx2341x +kmod-dvb-m88ds3103 +kmod-media-tuner-tda18271 +kmod-rc-core +kmod-sound-core +kmod-tveeprom +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/cx23885/description
@@ -172,7 +172,7 @@ define KernelPackage/cx88-dvb
 	$(PKG_BUILD_DIR)/v4l/cx88-dvb.ko \
 	$(PKG_BUILD_DIR)/v4l/cx88-vp3054-i2c.ko
   AUTOLOAD := $(call AutoProbe,cx88-dvb)
-  $(call AddDepends/dvb-pci,+kmod-dvb-tas2101 +kmod-i2c-algo-bit +kmod-rc-core +kmod-tveeprom +kmod-v4l2-core +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
+  $(call AddDepends/dvb-pci,+kmod-dvb-tas2101 +kmod-i2c-algo-bit +kmod-rc-core +kmod-tveeprom +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/cx88-dvb/description
@@ -213,7 +213,7 @@ define KernelPackage/dvb-ttpci
   V4L_KCONFIG := CONFIG_DVB_AV7110
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-ttpci.ko
   AUTOLOAD := $(call AutoProbe,dvb-ttpci)
-  $(call AddDepends/dvb-pci,+kmod-input-core +kmod-saa7146-vv +kmod-ttpci-eeprom)
+  $(call AddDepends/dvb-pci,+kmod-input-core +kmod-rc-core +kmod-saa7146-vv +kmod-ttpci-eeprom)
 endef
 
 define KernelPackage/dvb-ttpci/description
@@ -297,7 +297,7 @@ define KernelPackage/saa7134-dvb
   V4L_KCONFIG := CONFIG_VIDEO_SAA7134 CONFIG_VIDEO_SAA7134_DVB
   FILES := $(PKG_BUILD_DIR)/v4l/saa7134.ko $(PKG_BUILD_DIR)/v4l/saa7134-dvb.ko
   AUTOLOAD := $(call AutoProbe,saa7134-dvb)
-  $(call AddDepends/dvb-pci,+kmod-rc-core +kmod-tveeprom +kmod-v4l2-core +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
+  $(call AddDepends/dvb-pci,+kmod-rc-core +kmod-tveeprom +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/saa7134-dvb/description
@@ -312,7 +312,7 @@ define KernelPackage/saa7164
   V4L_KCONFIG := CONFIG_VIDEO_SAA7164
   FILES := $(PKG_BUILD_DIR)/v4l/saa7164.ko
   AUTOLOAD := $(call AutoProbe,saa7164)
-  $(call AddDepends/dvb-pci,+kmod-tveeprom +kmod-v4l2-core)
+  $(call AddDepends/dvb-pci,+kmod-tveeprom)
 endef
 
 define KernelPackage/saa7164/description
@@ -420,7 +420,7 @@ define KernelPackage/tbsecp3
   V4L_KCONFIG := CONFIG_DVB_TBSECP3
   FILES := $(PKG_BUILD_DIR)/v4l/tbsecp3.ko
   AUTOLOAD := $(call AutoProbe,tbsecp3)
-  $(call AddDepends/dvb-pci,+kmod-dvb-tas2101)
+  $(call AddDepends/dvb-pci,+kmod-dvb-tas2101 +kmod-dvb-gx1133)
   DEPENDS += @V4L_SRC_TBSDTV
 endef
 

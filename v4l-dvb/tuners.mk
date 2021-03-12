@@ -23,7 +23,7 @@ $(eval $(call KernelPackage,media-tuner-av201x))
 define KernelPackage/media-tuner-e4000
   TITLE := Elonics E4000
   $(call MediaTuner,e4000,CONFIG_MEDIA_TUNER_E4000)
-  DEPENDS += +kmod-regmap +kmod-v4l2-core
+  DEPENDS += +kmod-videodev
 endef
 $(eval $(call KernelPackage,media-tuner-e4000))
 
@@ -52,7 +52,7 @@ $(eval $(call KernelPackage,media-tuner-fc0013))
 define KernelPackage/media-tuner-fc2580
   TITLE := FCI FC2580
   $(call MediaTuner,fc2580,CONFIG_MEDIA_TUNER_FC2580)
-  DEPENDS += +kmod-regmap +kmod-v4l2-core
+  DEPENDS += +kmod-videodev
 endef
 $(eval $(call KernelPackage,media-tuner-fc2580))
 
@@ -60,7 +60,6 @@ $(eval $(call KernelPackage,media-tuner-fc2580))
 define KernelPackage/media-tuner-it913x
   TITLE := ITE Tech IT913x
   $(call MediaTuner,it913x,CONFIG_MEDIA_TUNER_IT913X)
-  DEPENDS += +kmod-regmap
 endef
 $(eval $(call KernelPackage,media-tuner-it913x))
 
@@ -68,7 +67,6 @@ $(eval $(call KernelPackage,media-tuner-it913x))
 define KernelPackage/media-tuner-m88rs6000t
   TITLE := Montage M88RS6000
   $(call MediaTuner,m88rs6000t,MEDIA_TUNER_M88RS6000T)
-  DEPENDS += +kmod-regmap
 endef
 $(eval $(call KernelPackage,media-tuner-m88rs6000t))
 
@@ -90,7 +88,7 @@ $(eval $(call KernelPackage,media-tuner-mc44s803))
 define KernelPackage/media-tuner-msi001
   TITLE := Mirics MSi001
   $(call MediaTuner,msi001,CONFIG_MEDIA_TUNER_MSI001)
-  DEPENDS += +kmod-v4l2-core
+  DEPENDS += +kmod-videodev
 endef
 $(eval $(call KernelPackage,media-tuner-msi001))
 
@@ -198,7 +196,7 @@ $(eval $(call KernelPackage,media-tuner-r848))
 define KernelPackage/media-tuner-si2157
   TITLE := Silicon Labs Si2157
   $(call MediaTuner,si2157,CONFIG_MEDIA_TUNER_SI2157)
-  DEPENDS += +kmod-media +kmod-regmap
+  DEPENDS += +kmod-mc
 endef
 $(eval $(call KernelPackage,media-tuner-si2157))
 
@@ -229,7 +227,6 @@ $(eval $(call KernelPackage,media-tuner-stv6120))
 define KernelPackage/media-tuner-tda18212
   TITLE := NXP TDA18212
   $(call MediaTuner,tda18212,CONFIG_MEDIA_TUNER_TDA18212)
-  DEPENDS += +kmod-regmap
 endef
 $(eval $(call KernelPackage,media-tuner-tda18212))
 
@@ -244,7 +241,6 @@ $(eval $(call KernelPackage,media-tuner-tda18218))
 define KernelPackage/media-tuner-tda18250
   TITLE := NXP TDA18250
   $(call MediaTuner,tda18250,CONFIG_MEDIA_TUNER_TDA18250)
-  DEPENDS += +kmod-regmap
 endef
 $(eval $(call KernelPackage,media-tuner-tda18250))
 
@@ -302,7 +298,6 @@ $(eval $(call KernelPackage,media-tuner-tea5767))
 define KernelPackage/media-tuner-tua9001
   TITLE := Infineon TUA 9001
   $(call MediaTuner,tua9001,CONFIG_MEDIA_TUNER_TUA9001)
-  DEPENDS += +kmod-regmap
 endef
 $(eval $(call KernelPackage,media-tuner-tua9001))
 
