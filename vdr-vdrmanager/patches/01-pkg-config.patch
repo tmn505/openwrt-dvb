@@ -1,5 +1,5 @@
---- a/Makefile
-+++ b/Makefile
+--- a/vdr-vdrmanager/Makefile
++++ b/vdr-vdrmanager/Makefile
 @@ -16,7 +16,7 @@ VERSION = $(shell grep 'static const char \*VERSION *=' $(PLUGIN).cpp | awk '{ p
  ### The directory environment:
  

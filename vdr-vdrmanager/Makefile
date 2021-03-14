@@ -7,18 +7,23 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-vdrmanager
-PKG_VERSION := 0.14
-PKG_RELEASE := 2
+PKG_SOURCE_DATE:=2019-10-10
+PKG_RELEASE := 1
 
-PKG_SOURCE := $(PKG_NAME)-$(PKG_VERSION).tgz
-PKG_SOURCE_URL := https://projects.vdr-developer.org/attachments/download/1971
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://projects.vdr-developer.org/git/vdr-manager.git
+PKG_MIRROR_HASH:=ccdbaed5a69b09ed5afbedbd3c5d8858aea42bad86609352702e6009e06467fd
+PKG_SOURCE_VERSION:=3a8b944ee18ae2db7e60bce1fb600d2b0ce6428c
 
 PKG_LICENSE := GPL-2.0
 PKG_LICENSE_FILE := COPYING
 
 PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
 
+#PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_SOURCE_DATE)-3a8b944e/vdr-vdrmanager
+
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/vdr-vdrmanager
   SECTION := multimedia
@@ -33,10 +38,21 @@ define Package/vdr-vdrmanager/description
  So you can browse the EPG, manage timers and wakeup your VDR from anywhere.
 endef
 
-define Package/vdr-vdrmanager/install
-	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-lib
+MAKE_PATH:=vdr-vdrmanager
 
+#define Build/Install
+#	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-lib
+#endef
+
+#define Build/Compile
+#	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install
+#endef
+
+define Package/vdr-vdrmanager/install
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_BUILD_DIR)/vdr-vdrmanager/libvdr-vdrmanager.so $(1)/usr/lib/
+# add .so.apiversion ?
 	echo [vdrmanager] > $(1)/etc/vdr/conf.d/80-vdrmanager.conf
 endef
 
