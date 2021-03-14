@@ -7,13 +7,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-streamdev
-PKG_RELEASE := 2
+PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
 #PKG_SOURCE_URL := https://projects.vdr-developer.org/git/vdr-plugin-streamdev.git
 #PKG_SOURCE_VERSION := e2a9b979d3fb92967c7a6a8221e674eb7e55c813
 PKG_SOURCE_URL := https://github.com/ciminus/vdr-plugin-streamdev.git
-PKG_SOURCE_VERSION := acb1473661ef88d1283e64aa41d6cf0794a8c4d3
+PKG_SOURCE_VERSION := 5cb384ccd636870811bb5e7e227890dbdfc04ad5
 PKG_VERSION := 0.6.1-$(shell printf '%.8s' $(PKG_SOURCE_VERSION))
 
 PKG_LICENSE := GPL-2.0
@@ -22,6 +22,7 @@ PKG_LICENSE_FILE := COPYING
 PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/vdr-streamdev-client
   SECTION := multimedia
