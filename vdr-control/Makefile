@@ -13,6 +13,7 @@ PKG_RELEASE := 1
 PKG_BUILD_DIR := $(BUILD_DIR)/control-$(PKG_VERSION)
 PKG_SOURCE := $(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL := http://www.u32.de/download
+PKG_HASH := 652e4f01d2bfbb7f070e8796a2dae1af21dc681d5f5375f0c41c023e9d058a77
 
 PKG_LICENSE := GPL-2.0
 PKG_LICENSE_FILE := COPYING
@@ -25,13 +26,18 @@ define Package/vdr-control
   SECTION := multimedia
   CATEGORY := Multimedia
   TITLE := VDR telnet control plugin
-  DEPENDS := vdr
+  DEPENDS := vdr @BROKEN
   URL := https://www.u32.de/vdr.html#control
 endef
+
+
 
 define Package/vdr-control/description
  Control VDR with telnet.
 endef
+
+# vdr-control for 1.6.0 - does it work with 2.4.6 ?
+#TARGET_CFLAGS +=-std=c++98
 
 MAKE_FLAGS += \
 	VDRDIR=$(STAGING_DIR)/usr/include/vdr \
