@@ -7,12 +7,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-dvbapi
-PKG_VERSION := 2.2.4
-PKG_RELEASE := 2
+PKG_VERSION := 2.2.5
+PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/manio/vdr-plugin-dvbapi.git
-PKG_SOURCE_VERSION := d7c75875430dfdee84b04a87ad15cca0410df40b
+PKG_SOURCE_VERSION := cd1f00caa271c02641a13c541afaa9b3c0d695c1
 
 PKG_LICENSE := GPL-2.0
 PKG_LICENSE_FILE := COPYING
@@ -20,6 +20,7 @@ PKG_LICENSE_FILE := COPYING
 PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/vdr-dvbapi
   SECTION := multimedia
