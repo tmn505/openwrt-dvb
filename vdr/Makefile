@@ -7,14 +7,14 @@
 #
 include $(TOPDIR)/rules.mk
 
-PKG_NAME := vdr
-PKG_VERSION := 2.2.0
-PKG_RELEASE := 3
+PKG_NAME:=vdr
+PKG_VERSION:=2.4.6
+PKG_RELEASE:=1
 
-PKG_SOURCE := vdr-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL := ftp://ftp.tvdr.de/vdr
+PKG_SOURCE:=vdr-$(PKG_VERSION).tar.bz2
+PKG_SOURCE_URL:=ftp://ftp.tvdr.de/vdr
+PKG_HASH:=c8993babf2a878a0fba84558de1e35f042c3c66f7c1ec569eea00a3af1014e4b
 #PKG_SOURCE_URL := ftp://ftp.tvdr.de/vdr/Developer
-PKG_HASH := 7c259e1ed1f39d93d23df1d5d0f85dd2a1fa9ec1dadff79e5833e2ff3ebf6c4e
 
 PKG_LICENSE := GPL-2.0
 PKG_LICENSE_FILE := COPYING
@@ -24,13 +24,14 @@ PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
 PKG_INSTALL := 1
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/vdr
   SECTION := multimedia
   CATEGORY := Multimedia
   TITLE := Video Disk Recorder
   URL := http://www.tvdr.de
-  DEPENDS := +fontconfig +libcap +libfreetype +libjpeg +librt +libstdcpp +dejavu-fonts-ttf-DejaVuSans
+  DEPENDS := +fontconfig +libcap +libfreetype +libjpeg +librt +libstdcpp +dejavu-fonts-ttf-DejaVuSans $(ICONV_DEPENDS) $(INTL_DEPENDS)
 endef
 
 define Package/vdr/description
@@ -66,6 +67,8 @@ define Build/Configure
 		$(PKG_BUILD_DIR)/PLUGINS/src/status \
 		$(PKG_BUILD_DIR)/PLUGINS/src/svdrpdemo)
 endef
+
+TARGET_CFLAGS += -std=gnu++98 -Wl,-liconv -Wl,-lintl
 
 MAKE_FLAGS += \
 	PREFIX="/usr" \
