@@ -21,6 +21,7 @@ PKG_LICENSE_FILE := COPYING
 PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/vdr-dummydevice
   SECTION := multimedia
