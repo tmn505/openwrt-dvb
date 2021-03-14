@@ -13,6 +13,7 @@ PKG_RELEASE := 1
 
 PKG_SOURCE := $(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL := https://www.linuxtv.org/hg/dvb-apps/archive/
+PKG_HASH := 6b3fc666d8f19046a05e96dbc548d24bd342f5333f8e68bf1f2b7ba2f7d30673
 PKG_SOURCE_VERSION := 3d43b280298c
 
 PKG_LICENSE := GPL-2.0 LGPL-2.1
