@@ -7,12 +7,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-vnsiserver
-PKG_RELEASE := 2
+PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/FernetMenta/vdr-plugin-vnsiserver.git
-PKG_SOURCE_VERSION := 1fd5aeee87e0cd27ba6b7860d86efc57c2863fcb
-PKG_VERSION := 1.5.2-$(shell printf '%.8s' $(PKG_SOURCE_VERSION))
+PKG_MIRROR_HASH := 52f975bc4e4b65aa95f6f43aeef0bd808bb44935ba0a0075bf4c5d6b4ae90a10
+PKG_SOURCE_VERSION := 49003f036609ee2a0b8d819979c063d8f8d348c8
+PKG_VERSION := 1.8.0
 
 PKG_LICENSE := GPL-2.0
 PKG_LICENSE_FILE := COPYING
@@ -20,6 +21,7 @@ PKG_LICENSE_FILE := COPYING
 PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/vdr-vnsiserver
   SECTION := multimedia
