@@ -28,6 +28,11 @@ MAKE_VARS += \
 	DIR=$(LINUX_DIR) \
 	SRCDIR=$(LINUX_DIR)
 
+MAKE_FLAGS += \
+	$(TARGET_CONFIGURE_OPTS) \
+	CROSS="$(TARGET_CROSS)" \
+	ARCH="$(LINUX_KARCH)" \
+
 define Build/Prepare
 	$(call Build/Prepare/Default)
 
@@ -47,7 +52,8 @@ define Build/Prepare
 endef
 
 define Build/Configure
-	$(call Build/Compile/Default,allyesconfig)
+	$(call Build/Compile/Default,allyesconfig) \
+	cat ./v4l_config >> $(PKG_BUILD_DIR)/v4l/.config;
 endef
 
 define Build/InstallDev
