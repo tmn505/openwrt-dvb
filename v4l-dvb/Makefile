@@ -31,7 +31,7 @@ MAKE_VARS += \
 MAKE_FLAGS += \
 	$(TARGET_CONFIGURE_OPTS) \
 	CROSS="$(TARGET_CROSS)" \
-	ARCH="$(LINUX_KARCH)" \
+	ARCH="$(LINUX_KARCH)"
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
