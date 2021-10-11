@@ -150,9 +150,7 @@ define KernelPackage/videobuf2-memops
   SUBMENU := $(DVB_MENU)
   TITLE := videobuf2 memops lib
   V4L_KCONFIG := CONFIG_VIDEOBUF2_MEMOPS
-  FILES := \
-	$(if CONFIG_V4L_SRC_LINUXTV,$(PKG_BUILD_DIR)/v4l/frame_vector.ko) \
-	$(PKG_BUILD_DIR)/v4l/videobuf2-memops.ko
+  FILES := $(PKG_BUILD_DIR)/v4l/videobuf2-memops.ko
   AUTOLOAD := $(call AutoProbe,videobuf2-memops)
   DEPENDS := +kmod-videobuf2-common
   CONFLICTS := kmod-video-videobuf2
