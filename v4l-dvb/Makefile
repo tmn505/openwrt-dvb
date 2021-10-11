@@ -28,11 +28,6 @@ MAKE_VARS += \
 	DIR=$(LINUX_DIR) \
 	SRCDIR=$(LINUX_DIR)
 
-MAKE_FLAGS += \
-	$(TARGET_CONFIGURE_OPTS) \
-	CROSS="$(TARGET_CROSS)" \
-	ARCH="$(LINUX_KARCH)" \
-
 define Build/Prepare
 	$(call Build/Prepare/Default)
 
