@@ -7,26 +7,25 @@
 #
 include $(TOPDIR)/rules.mk
 
-PKG_NAME := dvb-apps
-PKG_VERSION := 1505
-PKG_RELEASE := 1
+PKG_NAME:=dvb-apps
+PKG_VERSION:=3d43b280298c
+PKG_RELEASE:=1
 
-PKG_SOURCE := $(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL := https://www.linuxtv.org/hg/dvb-apps/archive/
-PKG_SOURCE_VERSION := 3d43b280298c
+PKG_SOURCE:=$(PKG_VERSION).tar.bz2
+PKG_SOURCE_URL:=https://linuxtv.org/hg/dvb-apps/archive/
+PKG_HASH:=70c1d293ea3ddbcb970e01c8a51487ee97a4dcf33a73c0236c7d57757c7f6fb0
 
-PKG_LICENSE := GPL-2.0 LGPL-2.1
-PKG_LICENSE_FILE := COPYING COPYING.LGPL
+PKG_MAINTAINER:=Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_LICENSE:=GPL-2.0 LGPL-2.1
+PKG_LICENSE_FILES:=COPYING COPYING.LGPL
 
-PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
-
-PKG_INSTALL := 1
+PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
 define Package/dvb-apps/Default
-  TITLE := LinuxTV DVB
-  URL := https://linuxtv.org
+  TITLE:=Linux DVB API applications and utilities
+  URL:=https://linuxtv.org
 endef
 
 define Package/dvb-apps/description/Default
