@@ -24,7 +24,8 @@ define KernelPackage/rc-core
   TITLE := Remote Controller support
   V4L_KCONFIG := \
 	CONFIG_MEDIA_RC_SUPPORT=y \
-	CONFIG_RC_CORE
+	CONFIG_RC_CORE \
+	CONFIG_LIRC
   FILES := $(PKG_BUILD_DIR)/v4l/rc-core.ko
   AUTOLOAD := $(call AutoProbe,rc-core)
   DEPENDS := +kmod-mc +kmod-input-core

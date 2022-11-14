@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2011 OpenWrt.org
-# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2022 Tomasz Maciej Nowak <tmn505@gmail.com>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -13,10 +13,14 @@ include ./origin/selected.mk
 PKG_RELEASE := 1
 
 PKG_LICENSE := GPL-2.0
-PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
 
 PKG_BUILD_PARALLEL := 1
 PKG_INSTALL := 1
+PKG_EXTMOD_SUBDIRS := v4l
+PKG_CONFIG_DEPENDS := \
+	CONFIG_V4L_SRC_TBSDTV \
+	CONFIG_V4L_SRC_LINUXTV
 
 SCAN_DEPS = *.mk
 
@@ -24,12 +28,15 @@ include $(INCLUDE_DIR)/package.mk
 
 MAKE_VARS += \
 	TOPDIR="" \
-	KDIR=$(LINUX_DIR) \
 	DIR=$(LINUX_DIR) \
+	KDIR=$(LINUX_DIR) \
 	SRCDIR=$(LINUX_DIR)
 
 MAKE_FLAGS += \
 	ARCH=$(LINUX_KARCH)
+
+Build/Patch := :
+Build/Install/Default := :
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
@@ -47,19 +54,22 @@ define Build/Prepare
 
 	$(MAKE) -C $(PKG_BUILD_DIR) untar
 	$(CP) ./files/* $(PKG_BUILD_DIR)/
+
+	$(call Build/Patch/Default)
 endef
 
 define Build/Configure
-	$(call Build/Compile/Default,allyesconfig)
+	$(call Build/Compile/Default,prepare)
+endef
+
+define Build/Compile
+	+$(KERNEL_MAKE) $(PKG_JOBS) M=$(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS) modules
 endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/v4l-dvb
 	$(CP) $(PKG_BUILD_DIR)/linux/include/* $(1)/usr/include/v4l-dvb/
-endef
-
-define Build/Install
-	touch $(PKG_BUILD_DIR)/.built
+	$(CP) $(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS)/Module.symvers $(1)/usr/include/v4l-dvb/
 endef
 
 DVB_MENU := DVB Drivers

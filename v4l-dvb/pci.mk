@@ -17,6 +17,7 @@ define KernelPackage/b2c2-flexcop-pci/description
 endef
 $(eval $(call KernelPackage,b2c2-flexcop-pci))
 
+
 define KernelPackage/budget
   TITLE := Budget SAA7146 PCI DVB cards
   V4L_KCONFIG := CONFIG_DVB_BUDGET
@@ -79,27 +80,6 @@ define KernelPackage/budget-core/description
  MPEG2 decoder.
 endef
 $(eval $(call KernelPackage,budget-core))
-
-
-define KernelPackage/budget-patch
-  TITLE := AV7110 cards with Budget Patch
-  V4L_KCONFIG := CONFIG_DVB_BUDGET_PATCH
-  FILES := $(PKG_BUILD_DIR)/v4l/budget-patch.ko
-  AUTOLOAD := $(call AutoProbe,budget-patch)
-  $(call AddDepends/dvb-pci,+kmod-budget-core +kmod-dvb-ttpci)
-endef
-
-define KernelPackage/budget-patch/description
- Support for Budget Patch (full TS) modification on
- SAA7146+AV7110 based cards (DVB-S cards). This
- driver doesn't use onboard MPEG2 decoder. The
- card is driven in Budget-only mode. Card is
- required to have loaded firmware to tune properly.
- Firmware can be loaded by insertion and removal of
- standard AV7110 driver prior to loading this
- driver.
-endef
-$(eval $(call KernelPackage,budget-patch))
 
 
 define KernelPackage/cx18
@@ -195,22 +175,6 @@ define KernelPackage/ddbridge/description
   - Max S4/8
 endef
 $(eval $(call KernelPackage,ddbridge))
-
-
-define KernelPackage/dvb-ttpci
-  TITLE := AV7110 cards
-  V4L_KCONFIG := CONFIG_DVB_AV7110
-  FILES := $(PKG_BUILD_DIR)/v4l/dvb-ttpci.ko
-  AUTOLOAD := $(call AutoProbe,dvb-ttpci)
-  $(call AddDepends/dvb-pci,+kmod-input-core +kmod-rc-core +kmod-saa7146-vv +kmod-ttpci-eeprom)
-endef
-
-define KernelPackage/dvb-ttpci/description
- Support for SAA7146 and AV7110 based DVB cards as produced
- by Fujitsu-Siemens, Technotrend, Hauppauge and others.
- This driver only supports the fullfeatured cards with onboard MPEG2 decoder.
-endef
-$(eval $(call KernelPackage,dvb-ttpci))
 
 
 define KernelPackage/mantis

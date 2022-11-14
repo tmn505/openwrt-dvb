@@ -1,4 +1,4 @@
-TUNER_MENU:=Media tuners
+TUNER_MENU := Media tuners
 
 define MediaTuner
   SUBMENU := $(TUNER_MENU)
@@ -23,7 +23,7 @@ $(eval $(call KernelPackage,media-tuner-av201x))
 define KernelPackage/media-tuner-e4000
   TITLE := Elonics E4000
   $(call MediaTuner,e4000,CONFIG_MEDIA_TUNER_E4000)
-  DEPENDS += +kmod-videodev
+  DEPENDS += +kmod-regmap-i2c +kmod-videodev
 endef
 $(eval $(call KernelPackage,media-tuner-e4000))
 
@@ -52,7 +52,7 @@ $(eval $(call KernelPackage,media-tuner-fc0013))
 define KernelPackage/media-tuner-fc2580
   TITLE := FCI FC2580
   $(call MediaTuner,fc2580,CONFIG_MEDIA_TUNER_FC2580)
-  DEPENDS += +kmod-videodev
+  DEPENDS += +kmod-regmap-i2c +kmod-videodev
 endef
 $(eval $(call KernelPackage,media-tuner-fc2580))
 
@@ -60,6 +60,7 @@ $(eval $(call KernelPackage,media-tuner-fc2580))
 define KernelPackage/media-tuner-it913x
   TITLE := ITE Tech IT913x
   $(call MediaTuner,it913x,CONFIG_MEDIA_TUNER_IT913X)
+  DEPENDS += +kmod-regmap-core
 endef
 $(eval $(call KernelPackage,media-tuner-it913x))
 
@@ -67,6 +68,7 @@ $(eval $(call KernelPackage,media-tuner-it913x))
 define KernelPackage/media-tuner-m88rs6000t
   TITLE := Montage M88RS6000
   $(call MediaTuner,m88rs6000t,MEDIA_TUNER_M88RS6000T)
+  DEPENDS += +kmod-regmap-i2c
 endef
 $(eval $(call KernelPackage,media-tuner-m88rs6000t))
 
@@ -227,6 +229,7 @@ $(eval $(call KernelPackage,media-tuner-stv6120))
 define KernelPackage/media-tuner-tda18212
   TITLE := NXP TDA18212
   $(call MediaTuner,tda18212,CONFIG_MEDIA_TUNER_TDA18212)
+  DEPENDS += +kmod-regmap-i2c
 endef
 $(eval $(call KernelPackage,media-tuner-tda18212))
 
@@ -241,6 +244,7 @@ $(eval $(call KernelPackage,media-tuner-tda18218))
 define KernelPackage/media-tuner-tda18250
   TITLE := NXP TDA18250
   $(call MediaTuner,tda18250,CONFIG_MEDIA_TUNER_TDA18250)
+  DEPENDS += +kmod-regmap-i2c
 endef
 $(eval $(call KernelPackage,media-tuner-tda18250))
 
@@ -298,13 +302,14 @@ $(eval $(call KernelPackage,media-tuner-tea5767))
 define KernelPackage/media-tuner-tua9001
   TITLE := Infineon TUA 9001
   $(call MediaTuner,tua9001,CONFIG_MEDIA_TUNER_TUA9001)
+  DEPENDS += +kmod-regmap-i2c
 endef
 $(eval $(call KernelPackage,media-tuner-tua9001))
 
 
 define KernelPackage/media-tuner-xc2028
   TITLE := XCeive xc2028/xc3028
-  $(call MediaTuner,tuner-xc2028,CONFIG_MEDIA_TUNER_XC2028)
+  $(call MediaTuner,xc2028,CONFIG_MEDIA_TUNER_XC2028)
 endef
 $(eval $(call KernelPackage,media-tuner-xc2028))
 

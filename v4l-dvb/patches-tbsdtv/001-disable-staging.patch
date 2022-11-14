@@ -1,0 +1,131 @@
+Forces inclusion of atomisp headers which breaks the build.
+
+--- a/linux/Makefile
++++ b/linux/Makefile
+@@ -8,7 +8,6 @@ MAINDIRS += drivers include sound
+ 
+ # Drivers source code
+ TARDIR += drivers/media/
+-TARDIR += drivers/staging/media/
+ TARDIR += drivers/misc/altera-stapl/
+ TARFILES += sound/pci/bt87x.c
+ 
+--- a/v4l/Kconfig.staging
++++ /dev/null
+@@ -1,41 +0,0 @@
+-menuconfig STAGING
+-	bool "Staging drivers"
+-	default n
+-	help
+-	  This option allows you to select a number of drivers that are
+-	  not of the "normal" Linux kernel quality level.  These drivers
+-	  are placed here in order to get a wider audience for use of
+-	  them.  Please note that these drivers are under heavy
+-	  development, may or may not work, and may contain userspace
+-	  interfaces that most likely will be changed in the near
+-	  future.
+-
+-	  Using any of these drivers will taint your kernel which might
+-	  affect support options from both the community, and various
+-	  commercial support orginizations.
+-
+-	  If you wish to work on these drivers, to help improve them, or
+-	  to report problems you have with them, please see the
+-	  driver_name.README file in the drivers/staging/ directory to
+-	  see what needs to be worked on, and who to contact.
+-
+-	  If in doubt, say N here.
+-
+-if STAGING
+-menu "Media devices in staging"
+-
+-config STAGING_BROKEN
+-	bool "Enable drivers that are known to not compile"
+-	default n
+-	help
+-	  Say N here, except if you will be fixing the drivers
+-	  compilation.
+-
+-source "../linux/drivers/staging/media/Kconfig"
+-# Currently, there are no broken staging drivers with Kernel 2.6.31
+-# if STAGING_BROKEN
+-# endif
+-
+-endmenu
+-
+-endif # STAGING
+--- a/v4l/Makefile
++++ b/v4l/Makefile
+@@ -264,7 +264,6 @@ links::
+ 	@find ../linux/drivers/media -name '*.[ch]' -type f -print0 | xargs -0n 255 ln -sf --target-directory=.
+ 	@find ../linux/sound -name '*.[ch]' -type f -print0 | xargs -0n 255 ln -sf --target-directory=.
+ 	@if [ -f ../linux/mm/frame_vector.c ]; then find ../linux/mm -name '*.[ch]' -type f -print0 | xargs -0n 255 ln -sf --target-directory=. ; fi
+-	@find ../linux/drivers/staging -name '*.[ch]' -type f -print0 | xargs -0n 255 ln -sf --target-directory=.
+ 	@find ../linux/drivers/misc -name '*.[ch]' -type f -print0 | xargs -0n 255 ln -sf --target-directory=.
+ 
+ config-compat.h:: $(obj)/.version .myconfig scripts/make_config_compat.pl
+@@ -376,11 +375,6 @@ allyesconfig allmodconfig:: $(obj)/.vers
+ 	./scripts/make_kconfig.pl $(OUTDIR) $(SRCDIR) 1
+ 	./scripts/fix_kconfig.pl
+ 
+-stagingconfig:: $(obj)/.version
+-	@$(MAKE) -C ../linux apply_patches
+-	./scripts/make_kconfig.pl $(OUTDIR) $(SRCDIR) 1 1
+-	./scripts/fix_kconfig.pl
+-
+ # rule to build kernel conf programs
+ KMAKEVARS := config-targets=1 mixed-targets=0 dot-config=0 SRCDIR=$(SRCDIR)
+ $(QCONF) $(GCONF) $(MCONF) $(CONF):
+--- a/v4l/scripts/make_kconfig.pl
++++ b/v4l/scripts/make_kconfig.pl
+@@ -16,7 +16,6 @@ my ($version, $level, $sublevel, $kernve
+ my $kernel = shift;
+ my $kernsrc = shift;
+ my $force_kconfig = shift;
+-my $enable_staging = shift;
+ 
+ my $debug=0;
+ 
+@@ -622,7 +621,6 @@ open_kconfig('../linux', '../linux/drive
+ open_kconfig('.', './Kconfig.sound');
+ open_kconfig('.', './Kconfig.mm');
+ open_kconfig('.', './Kconfig.misc');
+-open_kconfig('../linux', './Kconfig.staging');
+ close OUT;
+ 
+ # These options should default to off
+@@ -630,8 +628,7 @@ disable_config('DVB_AV7110_FIRMWARE');
+ disable_config('DVB_CINERGYT2_TUNING');
+ disable_config('VIDEO_HELPER_CHIPS_AUTO');
+ disable_config('VIDEO_FIXED_MINOR_RANGES');
+-disable_config('STAGING') if (!$enable_staging);
+-disable_config('STAGING_BROKEN');
++disable_config('STAGING');
+ $config{'COMPILE_TEST'} = 0;
+ $intopt { "DVB_MAX_ADAPTERS" } = 64;
+ disable_config('DVB_DEMUX_SECTION_LOSS_LOG');
+--- a/v4l/scripts/make_makefile.pl
++++ b/v4l/scripts/make_makefile.pl
+@@ -64,12 +64,12 @@ sub remove_includes($$)
+ 			$orig =~ s/.\(extra\-cflags-[ym]\)//;
+ 			next;
+ 		}
+-		if (m,^-I.*srctree.*(drivers/media|drivers/staging/media),) {
++		if (m,^-I.*srctree.*(drivers/media),) {
+ 			# Remove any -I flags from original Makefile line
+ 			$orig =~ s/$_[ \t]*//;
+ 			next;
+ 		}
+-		if (m,^-I(drivers/media|drivers/staging/media),) {
++		if (m,^-I(drivers/media),) {
+ 			# Remove any -I flags from original Makefile line
+ 			$orig =~ s/$_[ \t]*//;
+ 			next;
+@@ -221,7 +221,6 @@ getobsolete();
+ open OUT, '>Makefile.media' or die 'Unable to write Makefile.media';
+ open_makefile('../linux/drivers/media/Makefile');
+ 
+-find({wanted => \&parse_dir, no_chdir => 1}, '../linux/drivers/staging');
+ find({wanted => \&parse_dir, no_chdir => 1}, '../linux/drivers/misc');
+ 
+ # Creating Install rule

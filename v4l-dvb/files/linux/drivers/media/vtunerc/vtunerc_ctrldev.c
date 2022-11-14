@@ -59,11 +59,11 @@ static ssize_t vtunerc_ctrldev_write(struct file *filp, const char *buff,
 		// allocate a bigger buffer
 		ctx->kernel_buf = kmalloc(len, GFP_KERNEL);
 		if (!ctx->kernel_buf) {
-			printk(KERN_ERR "vtunerc%d: unable to allocate buffer of %Zu bytes\n", ctx->idx, len);
+			printk(KERN_ERR "vtunerc%d: unable to allocate buffer of %zu bytes\n", ctx->idx, len);
 			return -ENOMEM;
 		}
 		ctx->kernel_buf_size = len;
-		printk(KERN_INFO "vtunerc%d: allocated buffer of %Zu bytes\n", ctx->idx, len);
+		printk(KERN_INFO "vtunerc%d: allocated buffer of %zu bytes\n", ctx->idx, len);
 	}
 
 	if (down_interruptible(&ctx->tswrite_sem)) {
@@ -205,6 +205,7 @@ static long vtunerc_ctrldev_ioctl(struct file *file, unsigned int cmd,
 		}
 		/* follow into old code for compatibility */
 
+	fallthrough;
 	case VTUNER_SET_TYPE:
 		dprintk(ctx, "msg VTUNER_SET_TYPE\n");
 		if (strcasecmp((char *)arg, "DVB-S") == 0) {

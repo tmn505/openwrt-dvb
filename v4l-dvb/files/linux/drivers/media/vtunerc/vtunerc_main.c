@@ -20,7 +20,7 @@
 #include <linux/proc_fs.h>
 #include <linux/init.h>
 #include <linux/i2c.h>
-#include <asm/uaccess.h>
+#include <linux/uaccess.h>
 #include <linux/delay.h>
 #include <linux/seq_file.h>
 
@@ -396,7 +396,7 @@ static void __exit vtunerc_exit(void)
 		// free allocated buffer
 		if(ctx->kernel_buf != NULL) {
 			kfree(ctx->kernel_buf);
-			printk(KERN_INFO "vtunerc%d: deallocated buffer of %Zu bytes\n", idx, ctx->kernel_buf_size);
+			printk(KERN_INFO "vtunerc%d: deallocated buffer of %zu bytes\n", idx, ctx->kernel_buf_size);
 			ctx->kernel_buf = NULL;
 			ctx->kernel_buf_size = 0;
 

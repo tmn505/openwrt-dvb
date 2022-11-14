@@ -163,7 +163,7 @@ define KernelPackage/dvb-usb-af9015
   V4L_KCONFIG := CONFIG_DVB_USB_AF9015
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-usb-af9015.ko
   AUTOLOAD := $(call AutoProbe,dvb-usb-af9015)
-  $(call AddDepends/dvb-usb-v2,)
+  $(call AddDepends/dvb-usb-v2,+kmod-regmap-core)
 endef
 
 define KernelPackage/dvb-usb-af9015/description

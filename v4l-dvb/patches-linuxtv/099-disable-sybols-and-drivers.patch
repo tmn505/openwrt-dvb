@@ -1,6 +1,6 @@
 --- a/v4l/scripts/make_kconfig.pl
 +++ b/v4l/scripts/make_kconfig.pl
-@@ -628,6 +628,14 @@
+@@ -626,6 +626,20 @@ close OUT;
  # These options should default to off
  disable_config('DVB_AV7110_FIRMWARE');
  disable_config('DVB_CINERGYT2_TUNING');
@@ -11,7 +11,13 @@
 +disable_config('MEDIA_TEST_SUPPORT');
 +disable_config('V4L_PLATFORM_DRIVERS');
 +disable_config('CEC_CORE');
++# needs HDMI
++disable_config('VIDEO_ADV7511');
++disable_config('VIDEO_ADV7604');
++disable_config('VIDEO_ADV7842');
++disable_config('VIDEO_TC358743');
++disable_config('VIDEO_TDA1997X');
 +disable_config('VIDEO_TW9910');
  disable_config('VIDEO_HELPER_CHIPS_AUTO');
  disable_config('VIDEO_FIXED_MINOR_RANGES');
- disable_config('STAGING') if (!$enable_staging);
+ disable_config('STAGING');
