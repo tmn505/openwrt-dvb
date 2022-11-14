@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
+# Copyright (C) 2017-2022 Tomasz Maciej Nowak <tmn505@gmail.com>
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -9,12 +9,12 @@ include $(TOPDIR)/rules.mk
 PKG_NAME := dvb-firmware
 PKG_RELEASE := 1
 
-PKG_SOURCE_DATE := 2017-10-10
+PKG_SOURCE_DATE := 2021-07-19
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/LibreELEC/dvb-firmware.git
-PKG_SOURCE_VERSION := ac20a365c6df3af1a7c92a0195d443b8cf19cb9f
+PKG_SOURCE_VERSION := 0eaf5b3928561d06d254cf5489d1e622bc827e5d
 
-PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -68,6 +68,17 @@ define Package/drxd-firmware/install
 		$(1)/lib/firmware
 endef
 $(eval $(call BuildPackage,drxd-firmware))
+
+
+Package/it9135-firmware = $(call Package/firmware-default,ITE Tech IT9135)
+define Package/it9135-firmware/install
+	$(INSTALL_DIR) $(1)/lib/firmware
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/firmware/dvb-usb-it9135-01.fw \
+		$(PKG_BUILD_DIR)/firmware/dvb-usb-it9135-02.fw \
+		$(1)/lib/firmware
+endef
+$(eval $(call BuildPackage,it9135-firmware))
 
 
 Package/m88ds3103-firmware = $(call Package/firmware-default,Montage Technology M88DS3103 DVB-S/S2 demodulator)
