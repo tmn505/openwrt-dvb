@@ -15,5 +15,6 @@ define KernelPackage/vtunerc
   KCONFIG := CONFIG_DVB_VTUNERC
   FILES := $(PKG_BUILD_DIR)/v4l/vtunerc.ko
   DEPENDS := +kmod-dvb-core
+  DEFAULT := n
 endef
 $(eval $(call KernelPackage,vtunerc))
