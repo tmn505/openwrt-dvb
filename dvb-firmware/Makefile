@@ -1,8 +1,6 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #
 # Copyright (C) 2017-2022 Tomasz Maciej Nowak <tmn505@gmail.com>
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
 #
 include $(TOPDIR)/rules.mk
 
@@ -13,6 +11,7 @@ PKG_SOURCE_DATE := 2021-07-19
 PKG_SOURCE_PROTO := git
 PKG_SOURCE_URL := https://github.com/LibreELEC/dvb-firmware.git
 PKG_SOURCE_VERSION := 0eaf5b3928561d06d254cf5489d1e622bc827e5d
+PKG_MIRROR_HASH := c847ddf3ca0d8e81fbde7324c1c55d331077e2f708d79e3b4bfe914a4c90ac5a
 
 PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
 
