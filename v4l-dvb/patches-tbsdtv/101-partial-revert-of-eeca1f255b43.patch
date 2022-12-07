@@ -1,6 +1,6 @@
 --- a/linux/drivers/media/dvb-frontends/mn88436.c
 +++ b/linux/drivers/media/dvb-frontends/mn88436.c
-@@ -2064,7 +2064,8 @@ MXL_STATUS MxLWare603_API_CfgTunerChanTune(struct dvb_frontend *fe, MXL603_CHAN_
+@@ -2064,7 +2064,8 @@ MXL_STATUS MxLWare603_API_CfgTunerChanTu
  
  				/* Calculate RF Channel = DIV(64*RF(Hz), 1E6) */
  				frequency *= 64;

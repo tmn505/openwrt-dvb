@@ -1,16 +1,16 @@
 define KernelPackage/dvb-core
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := DVB core support
-  V4L_KCONFIG := \
+  KCONFIG := \
 	CONFIG_DVB_CORE \
 	CONFIG_DVB_DEMUX_SECTION_LOSS_LOG=n \
-	CONFIG_DVB_DYNAMIC_MINORS=n \
+	CONFIG_DVB_DYNAMIC_MINORS=y \
 	CONFIG_DVB_MAX_ADAPTERS=16 \
 	CONFIG_DVB_NET=y \
 	CONFIG_MEDIA_DIGITAL_TV_SUPPORT=y
   FILES := $(PKG_BUILD_DIR)/v4l/dvb-core.ko
   AUTOLOAD := $(call AutoProbe,dvb-core)
-  DEPENDS += +kmod-mc +kmod-videobuf2-vmalloc
+  DEPENDS += +kmod-videobuf2-vmalloc +kmod-mc
 endef
 
 define KernelPackage/dvb-core/description
@@ -20,15 +20,14 @@ $(eval $(call KernelPackage,dvb-core))
 
 
 define KernelPackage/rc-core
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := Remote Controller support
-  V4L_KCONFIG := \
+  KCONFIG := \
 	CONFIG_MEDIA_RC_SUPPORT=y \
-	CONFIG_RC_CORE \
-	CONFIG_LIRC
+	CONFIG_RC_CORE
   FILES := $(PKG_BUILD_DIR)/v4l/rc-core.ko
   AUTOLOAD := $(call AutoProbe,rc-core)
-  DEPENDS := +kmod-mc +kmod-input-core
+  DEPENDS := +kmod-input-core +kmod-mc
 endef
 
 define KernelPackage/rc-core/description
@@ -44,9 +43,9 @@ $(eval $(call KernelPackage,rc-core))
 
 
 define KernelPackage/videodev
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := Device registrar for Video4Linux drivers v2
-  V4L_KCONFIG := CONFIG_VIDEO_DEV=y
+  KCONFIG := CONFIG_VIDEO_DEV
   FILES := $(PKG_BUILD_DIR)/v4l/videodev.ko
   AUTOLOAD := $(call AutoProbe,videodev)
   DEPENDS := +kmod-i2c-core +kmod-mc

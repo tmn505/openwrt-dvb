@@ -1,5 +1,5 @@
 choice
-    prompt "Used DVB (media) tree"
+    prompt "Used V4L-DVB source tree"
     default V4L_SRC_TBSDTV
 
     config V4L_SRC_TBSDTV

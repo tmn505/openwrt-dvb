@@ -1,10 +1,13 @@
 define KernelPackage/b2c2-flexcop
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := B2C2 Flexcop receiver chip
-  V4L_KCONFIG := CONFIG_DVB_B2C2_FLEXCOP
+  KCONFIG := CONFIG_DVB_B2C2_FLEXCOP
   FILES := $(PKG_BUILD_DIR)/v4l/b2c2-flexcop.ko
   AUTOLOAD := $(call AutoProbe,b2c2-flexcop)
-  DEPENDS := +kmod-dvb-core +kmod-dvb-cx24113 +kmod-dvb-cx24123 +kmod-dvb-s5h1420
+  DEPENDS := +kmod-dvb-core +kmod-dvb-fe-bcm3510 +kmod-dvb-fe-cx24113 +kmod-dvb-fe-cx24120 \
+	+kmod-dvb-fe-cx24123 +kmod-dvb-fe-isl6421 +kmod-dvb-fe-itd1000 +kmod-dvb-fe-lgdt330x \
+	+kmod-dvb-fe-mt312 +kmod-dvb-fe-mt352 +kmod-dvb-fe-nxt200x +kmod-dvb-fe-s5h1420 \
+	+kmod-dvb-fe-stv0297 +kmod-dvb-fe-stv0299 +kmod-dvb-pll +kmod-media-tuner-simple
 endef
 
 define KernelPackage/b2c2-flexcop/description
@@ -14,9 +17,9 @@ $(eval $(call KernelPackage,b2c2-flexcop))
 
 
 define KernelPackage/cx2341x
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := cx23415/6/8 driver
-  V4L_KCONFIG := CONFIG_DVB_CX2341X
+  KCONFIG := CONFIG_VIDEO_CX2341X
   FILES := $(PKG_BUILD_DIR)/v4l/cx2341x.ko
   AUTOLOAD := $(call AutoProbe,cx2341x)
   DEPENDS := +kmod-videodev
@@ -29,9 +32,9 @@ $(eval $(call KernelPackage,cx2341x))
 
 
 define KernelPackage/cypress-firmware
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := Cypress firmware helper routines
-  V4L_KCONFIG := CONFIG_CYPRESS_FIRMWARE
+  KCONFIG := CONFIG_CYPRESS_FIRMWARE
   FILES := $(PKG_BUILD_DIR)/v4l/cypress_firmware.ko
   AUTOLOAD := $(call AutoProbe,cypress-firmware)
   DEPENDS := +kmod-usb-core
@@ -44,9 +47,9 @@ $(eval $(call KernelPackage,cypress-firmware))
 
 
 define KernelPackage/saa7146
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := NXP/Philips SAA7146
-  V4L_KCONFIG := CONFIG_VIDEO_SAA7146
+  KCONFIG := CONFIG_VIDEO_SAA7146
   FILES := $(PKG_BUILD_DIR)/v4l/saa7146.ko
   AUTOLOAD := $(call AutoProbe,saa7146)
   DEPENDS := @PCI_SUPPORT
@@ -59,9 +62,9 @@ $(eval $(call KernelPackage,saa7146))
 
 
 define KernelPackage/saa7146-vv
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := video4linux driver for SAA7146-based hardware
-  V4L_KCONFIG := CONFIG_VIDEO_SAA7146_VV
+  KCONFIG := CONFIG_VIDEO_SAA7146_VV
   FILES := $(PKG_BUILD_DIR)/v4l/saa7146_vv.ko
   AUTOLOAD := $(call AutoProbe,saa7146_vv)
   DEPENDS := +kmod-saa7146 +kmod-videobuf +kmod-videodev
@@ -70,9 +73,9 @@ $(eval $(call KernelPackage,saa7146-vv))
 
 
 define KernelPackage/smsmdtv
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := Siano Mobile Silicon Digital TV device
-  V4L_KCONFIG := CONFIG_SMS_SIANO_MDTV
+  KCONFIG := CONFIG_SMS_SIANO_MDTV
   FILES := $(PKG_BUILD_DIR)/v4l/smsmdtv.ko
   AUTOLOAD := $(call AutoProbe,smsmdtv)
   DEPENDS := +kmod-dvb-core +kmod-rc-core
@@ -81,9 +84,9 @@ $(eval $(call KernelPackage,smsmdtv))
 
 
 define KernelPackage/ttpci-eeprom
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := TechnoTrend eeprom helper
-  V4L_KCONFIG := CONFIG_TTPCI_EEPROM
+  KCONFIG := CONFIG_TTPCI_EEPROM
   FILES := $(PKG_BUILD_DIR)/v4l/ttpci-eeprom.ko
   AUTOLOAD := $(call AutoProbe,ttpci-eeprom)
   DEPENDS := +kmod-i2c-core
@@ -96,9 +99,9 @@ $(eval $(call KernelPackage,ttpci-eeprom))
 
 
 define KernelPackage/tveeprom
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := TV card eeprom decoder
-  V4L_KCONFIG := CONFIG_VIDEO_TVEEPROM
+  KCONFIG := CONFIG_VIDEO_TVEEPROM
   FILES := $(PKG_BUILD_DIR)/v4l/tveeprom.ko
   AUTOLOAD := $(call AutoProbe,tveeprom)
   DEPENDS := +kmod-i2c-core
@@ -111,9 +114,9 @@ $(eval $(call KernelPackage,tveeprom))
 
 
 define KernelPackage/videobuf2-common
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := videobuf2 common lib
-  V4L_KCONFIG := CONFIG_VIDEOBUF2_CORE
+  KCONFIG := CONFIG_VIDEOBUF2_CORE
   FILES := $(PKG_BUILD_DIR)/v4l/videobuf2-common.ko
   AUTOLOAD := $(call AutoProbe,videobuf2-common)
   DEPENDS := +kmod-dma-buf +kmod-videodev
@@ -123,9 +126,9 @@ $(eval $(call KernelPackage,videobuf2-common))
 
 
 define KernelPackage/videobuf2-dma-sg
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := videobuf2 dma-sg lib
-  V4L_KCONFIG := CONFIG_VIDEOBUF2_DMA_SG
+  KCONFIG := CONFIG_VIDEOBUF2_DMA_SG
   FILES := $(PKG_BUILD_DIR)/v4l/videobuf2-dma-sg.ko
   AUTOLOAD := $(call AutoProbe,videobuf2-dma-sg)
   DEPENDS := +kmod-videobuf2-memops
@@ -135,9 +138,9 @@ $(eval $(call KernelPackage,videobuf2-dma-sg))
 
 
 define KernelPackage/videobuf2-dvb
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := videobuf2 dvb lib
-  V4L_KCONFIG := CONFIG_VIDEOBUF2_DVB
+  KCONFIG := CONFIG_VIDEOBUF2_DVB
   FILES := $(PKG_BUILD_DIR)/v4l/videobuf2-dvb.ko
   AUTOLOAD := $(call AutoProbe,videobuf2-dvb)
   DEPENDS := +kmod-dvb-core
@@ -147,9 +150,9 @@ $(eval $(call KernelPackage,videobuf2-dvb))
 
 
 define KernelPackage/videobuf2-memops
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := videobuf2 memops lib
-  V4L_KCONFIG := CONFIG_VIDEOBUF2_MEMOPS
+  KCONFIG := CONFIG_VIDEOBUF2_MEMOPS
   FILES := $(PKG_BUILD_DIR)/v4l/videobuf2-memops.ko
   AUTOLOAD := $(call AutoProbe,videobuf2-memops)
   DEPENDS := +kmod-videobuf2-common
@@ -159,9 +162,9 @@ $(eval $(call KernelPackage,videobuf2-memops))
 
 
 define KernelPackage/videobuf2-v4l2
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := videobuf2 v4l2 lib
-  V4L_KCONFIG := CONFIG_VIDEOBUF2_V4L2
+  KCONFIG := CONFIG_VIDEOBUF2_V4L2
   FILES := $(PKG_BUILD_DIR)/v4l/videobuf2-v4l2.ko
   AUTOLOAD := $(call AutoProbe,videobuf2-v4l2)
   DEPENDS := +kmod-videobuf2-common
@@ -171,9 +174,9 @@ $(eval $(call KernelPackage,videobuf2-v4l2))
 
 
 define KernelPackage/videobuf2-vmalloc
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := videobuf2 vmalloc lib
-  V4L_KCONFIG := CONFIG_VIDEOBUF2_VMALLOC
+  KCONFIG := CONFIG_VIDEOBUF2_VMALLOC
   FILES := $(PKG_BUILD_DIR)/v4l/videobuf2-vmalloc.ko
   AUTOLOAD := $(call AutoProbe,videobuf2-vmalloc)
   DEPENDS := +kmod-videobuf2-memops
@@ -183,9 +186,9 @@ $(eval $(call KernelPackage,videobuf2-vmalloc))
 
 
 define KernelPackage/videobuf
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := videobuf lib
-  V4L_KCONFIG := \
+  KCONFIG := \
 	CONFIG_VIDEOBUF_DMA_SG \
 	CONFIG_VIDEOBUF_GEN \
 	CONFIG_VIDEOBUF_VMALLOC

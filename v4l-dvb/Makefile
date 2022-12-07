@@ -1,9 +1,7 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #
 # Copyright (C) 2011 OpenWrt.org
 # Copyright (C) 2017-2022 Tomasz Maciej Nowak <tmn505@gmail.com>
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
 #
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
@@ -18,22 +16,17 @@ PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
 PKG_BUILD_PARALLEL := 1
 PKG_INSTALL := 1
 PKG_EXTMOD_SUBDIRS := v4l
-PKG_CONFIG_DEPENDS := \
-	CONFIG_V4L_SRC_TBSDTV \
-	CONFIG_V4L_SRC_LINUXTV
 
 SCAN_DEPS = *.mk
 
 include $(INCLUDE_DIR)/package.mk
 
+PKG_BUILD_DEPENDS := linuxtv/host
+
 MAKE_VARS += \
-	TOPDIR="" \
 	DIR=$(LINUX_DIR) \
 	KDIR=$(LINUX_DIR) \
 	SRCDIR=$(LINUX_DIR)
-
-MAKE_FLAGS += \
-	ARCH=$(LINUX_KARCH)
 
 Build/Patch := :
 Build/Install/Default := :
@@ -59,41 +52,57 @@ define Build/Prepare
 endef
 
 define Build/Configure
+	$(SCRIPT_DIR)/package-metadata.pl \
+		kconfig \
+		$(TMP_DIR)/info/.packageinfo-v4l-dvb \
+		$(TOPDIR)/.config \
+		> $(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS)/.config
+
 	$(call Build/Compile/Default,prepare)
 endef
 
 define Build/Compile
-	+$(KERNEL_MAKE) $(PKG_JOBS) M=$(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS) modules
+	+$(KERNEL_MAKE) \
+		$(PKG_JOBS) \
+		M=$(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS) \
+		modules
 endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/v4l-dvb
-	$(CP) $(PKG_BUILD_DIR)/linux/include/* $(1)/usr/include/v4l-dvb/
+	$(CP) $(PKG_BUILD_DIR)/linux/include/. $(1)/usr/include/v4l-dvb/.
+	$(CP) $(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS)/.config $(1)/usr/include/v4l-dvb/
 	$(CP) $(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS)/Module.symvers $(1)/usr/include/v4l-dvb/
 endef
 
-DVB_MENU := DVB Drivers
+define KernelPackage/depends
+	mv -f $(LINUX_DIR)/config.orig $(LINUX_DIR)/config
+endef
+
+LINUXTV_MENU := V4L-DVB Drivers
 
 define KernelPackage/mc
-  TITLE := V4L/DVB Drivers
-  URL := http://www.linuxtv.org
-  HIDDEN := y
-  DEFAULT := y
-  V4L_KCONFIG := \
+  TITLE := Media Controller API
+  URL := https://linuxtv.org
+  KCONFIG := \
 	CONFIG_MEDIA_SUPPORT=m \
-	CONFIG_VIDEO_KERNEL_VERSION=y
+	CONFIG_MEDIA_CONTROLLER=y \
+	CONFIG_MEDIA_CONTROLLER_DVB=m \
+	CONFIG_MEDIA_CONTROLLER_REQUEST_API=n
   FILES := $(PKG_BUILD_DIR)/v4l/mc.ko
-  AUTOLOAD := $(call AutoProbe,mc)
+  DEFAULT := y
+  HIDDEN := y
   DEPENDS := @PCI_SUPPORT||USB_SUPPORT
 endef
+
 define KernelPackage/mc/config
 	source "$(SOURCE)/origin/Config.in"
 endef
 
 define KernelPackage/mc/description
- Live development version of V4L and DVB driver
+ Enable the media controller API used to query media devices internal
+ topology and configure it dynamically.
 endef
-
 $(eval $(call KernelPackage,mc))
 
-include $(sort $(wildcard ./*.mk))
+include $(sort $(wildcard *.mk))

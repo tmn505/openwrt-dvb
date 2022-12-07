@@ -1,4 +1,4 @@
-Forces inclusion of atomisp headers which breaks the build.
+There's nothing interesting.
 
 --- a/linux/Makefile
 +++ b/linux/Makefile

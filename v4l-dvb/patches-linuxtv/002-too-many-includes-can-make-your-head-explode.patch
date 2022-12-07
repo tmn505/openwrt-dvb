@@ -1,0 +1,10 @@
+--- a/v4l/Makefile
++++ b/v4l/Makefile
+@@ -115,6 +115,7 @@ $(obj)/.myconfig: $(obj)/.config $(obj)/
+ # when necessary.
+ Makefile.media:
+ 	scripts/make_makefile.pl
++	sed -e '/ccflags.*srctree/d' -i $@
+ 
+ #################################################
+ # CFLAGS configuration

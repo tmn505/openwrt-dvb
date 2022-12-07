@@ -1,15 +1,15 @@
-define AddDepends/dvb-pci
-  SUBMENU := $(DVB_MENU)
-  DEPENDS := @PCI_SUPPORT +kmod-dvb-core +kmod-i2c-core $1
+define DvbPci
+  SUBMENU := $(LINUXTV_MENU)
+  DEPENDS := @PCI_SUPPORT +kmod-dvb-core +kmod-i2c-core $(1)
 endef
 
 
 define KernelPackage/b2c2-flexcop-pci
   TITLE := Technisat/B2C2 Air/Sky/Cable2PC PCI
-  V4L_KCONFIG := CONFIG_DVB_B2C2_FLEXCOP_PCI
+  KCONFIG := CONFIG_DVB_B2C2_FLEXCOP_PCI
   FILES := $(PKG_BUILD_DIR)/v4l/b2c2-flexcop-pci.ko
   AUTOLOAD := $(call AutoProbe,b2c2-flexcop-pci)
-  $(call AddDepends/dvb-pci,+kmod-b2c2-flexcop)
+  $(call DvbPci,+kmod-b2c2-flexcop)
 endef
 
 define KernelPackage/b2c2-flexcop-pci/description
@@ -20,10 +20,13 @@ $(eval $(call KernelPackage,b2c2-flexcop-pci))
 
 define KernelPackage/budget
   TITLE := Budget SAA7146 PCI DVB cards
-  V4L_KCONFIG := CONFIG_DVB_BUDGET
+  KCONFIG := CONFIG_DVB_BUDGET
   FILES := $(PKG_BUILD_DIR)/v4l/budget.ko
   AUTOLOAD := $(call AutoProbe,budget)
-  $(call AddDepends/dvb-pci,+kmod-budget-core)
+  $(call DvbPci,+kmod-budget-core +kmod-dvb-fe-isl6423 +kmod-dvb-fe-l64781 +kmod-dvb-fe-lnbp21 \
+	+kmod-dvb-fe-s5h1420 +kmod-dvb-fe-stv0299 +kmod-dvb-fe-stv090x +kmod-dvb-fe-stv6110x \
+	+kmod-dvb-fe-tda1004x +kmod-dvb-fe-tda10086 +kmod-dvb-fe-tda8083 +kmod-dvb-fe-tda826x \
+	+kmod-dvb-fe-ves1820 +kmod-dvb-fe-ves1x93)
 endef
 
 define KernelPackage/budget/description
@@ -36,10 +39,12 @@ $(eval $(call KernelPackage,budget))
 
 define KernelPackage/budget-av
   TITLE := Budget cards with analog video inputs
-  V4L_KCONFIG := CONFIG_DVB_BUDGET_AV
+  KCONFIG := CONFIG_DVB_BUDGET_AV
   FILES := $(PKG_BUILD_DIR)/v4l/budget-av.ko
   AUTOLOAD := $(call AutoProbe,budget-av)
-  $(call AddDepends/dvb-pci,+kmod-budget-core +kmod-saa7146-vv)
+  $(call DvbPci,+kmod-budget-core +kmod-saa7146-vv +kmod-dvb-fe-stb0899 +kmod-dvb-fe-stv0299 \
+	+kmod-dvb-fe-tda10021 +kmod-dvb-fe-tda10023 +kmod-dvb-fe-tda1004x +kmod-dvb-fe-tda8261 \
+	+kmod-dvb-fe-tua6100 +kmod-dvb-pll)
 endef
 
 define KernelPackage/budget-av/description
@@ -52,10 +57,12 @@ $(eval $(call KernelPackage,budget-av))
 
 define KernelPackage/budget-ci
   TITLE := Budget SAA7146 PCI DVB cards with CI slot
-  V4L_KCONFIG := CONFIG_DVB_BUDGET_CI
+  KCONFIG := CONFIG_DVB_BUDGET_CI
   FILES := $(PKG_BUILD_DIR)/v4l/budget-ci.ko
   AUTOLOAD := $(call AutoProbe,budget-ci)
-  $(call AddDepends/dvb-pci,+kmod-budget-core +kmod-rc-core)
+  $(call DvbPci,+kmod-budget-core +kmod-dvb-fe-lnbp21 +kmod-dvb-fe-stb0899 +kmod-dvb-fe-stb6000 \
+	+kmod-dvb-fe-stb6100 +kmod-dvb-fe-stv0288 +kmod-dvb-fe-stv0297 +kmod-dvb-fe-stv0299 \
+	+kmod-dvb-fe-tda10023 +kmod-dvb-fe-tda1004x +kmod-media-tuner-tda827x +kmod-rc-core)
 endef
 
 define KernelPackage/budget-ci/description
@@ -68,10 +75,10 @@ $(eval $(call KernelPackage,budget-ci))
 
 define KernelPackage/budget-core
   TITLE := SAA7146 DVB cards (aka Budget, Nova-PCI)
-  V4L_KCONFIG := CONFIG_DVB_BUDGET_CORE
+  KCONFIG := CONFIG_DVB_BUDGET_CORE
   FILES := $(PKG_BUILD_DIR)/v4l/budget-core.ko
   AUTOLOAD := $(call AutoProbe,budget-core)
-  $(call AddDepends/dvb-pci,+kmod-saa7146 +kmod-ttpci-eeprom)
+  $(call DvbPci,+kmod-saa7146 +kmod-ttpci-eeprom)
 endef
 
 define KernelPackage/budget-core/description
@@ -84,10 +91,12 @@ $(eval $(call KernelPackage,budget-core))
 
 define KernelPackage/cx18
   TITLE := Conexant cx23418 MPEG encoder support
-  V4L_KCONFIG := CONFIG_VIDEO_CX18
+  KCONFIG := CONFIG_VIDEO_CX18
   FILES := $(PKG_BUILD_DIR)/v4l/cx18.ko
   AUTOLOAD := $(call AutoProbe,cx18)
-  $(call AddDepends/dvb-pci,+kmod-cx2341x +kmod-i2c-algo-bit +kmod-tveeprom +kmod-videobuf)
+  $(call DvbPci,+kmod-cx2341x +kmod-dvb-fe-mt352 +kmod-dvb-fe-s5h1409 +kmod-dvb-fe-s5h1411 \
+	+kmod-dvb-fe-zl10353 +kmod-i2c-algo-bit +kmod-media-tuner-mxl5005s \
+	+kmod-media-tuner-tda18271 +kmod-media-tuner-xc2028 +kmod-tveeprom +kmod-videobuf)
 endef
 
 define KernelPackage/cx18/description
@@ -100,13 +109,20 @@ $(eval $(call KernelPackage,cx18))
 
 define KernelPackage/cx23885
   TITLE := Conexant cx23885 (2388x successor) support
-  V4L_KCONFIG := CONFIG_VIDEO_CX23885 CONFIG_MEDIA_ALTERA_CI
-  FILES := \
-	$(PKG_BUILD_DIR)/v4l/cx23885.ko \
-	$(PKG_BUILD_DIR)/v4l/altera-ci.ko \
-	$(PKG_BUILD_DIR)/v4l/altera-stapl.ko
-  AUTOLOAD := $(call AutoProbe,cx23885 altera-ci altera-stapl)
-  $(call AddDepends/dvb-pci,+kmod-cx2341x +kmod-dvb-m88ds3103 +kmod-media-tuner-tda18271 +kmod-rc-core +kmod-sound-core +kmod-tveeprom +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
+  KCONFIG := CONFIG_VIDEO_CX23885 CONFIG_MEDIA_ALTERA_CI=n
+  FILES := $(PKG_BUILD_DIR)/v4l/cx23885.ko
+  AUTOLOAD := $(call AutoProbe,cx23885)
+  $(call DvbPci,+kmod-cx2341x +kmod-dvb-fe-atbm8830 +kmod-dvb-fe-cx24116 +kmod-dvb-fe-cx24117 \
+	+kmod-dvb-fe-dib0070 +kmod-dvb-fe-dib7000p +kmod-dvb-fe-drxk +kmod-dvb-fe-ds3000 \
+	+kmod-dvb-fe-lgdt3305 +kmod-dvb-fe-lgdt3306a +kmod-dvb-fe-lgdt330x +kmod-dvb-fe-lgs8gxx \
+	+kmod-dvb-fe-lnbp21 +kmod-dvb-fe-m88ds3103 +kmod-dvb-fe-mb86a20s +kmod-dvb-fe-s5h1409 \
+	+kmod-dvb-fe-s5h1411 +kmod-dvb-fe-stb6100 +kmod-dvb-fe-stv0367 +kmod-dvb-fe-stv0900 \
+	+kmod-dvb-fe-stv090x +kmod-dvb-fe-stv6110 +kmod-dvb-fe-tda10048 +kmod-dvb-fe-ts2020 \
+	+kmod-dvb-fe-zl10353 +kmod-media-tuner-max2165 +kmod-media-tuner-mt2063 \
+	+kmod-media-tuner-mt2131 +kmod-media-tuner-tda18271 +kmod-media-tuner-tda8290 \
+	+kmod-media-tuner-simple +kmod-media-tuner-xc2028 +kmod-media-tuner-xc4000 \
+	+kmod-media-tuner-xc5000 +kmod-rc-core +kmod-sound-core +kmod-tveeprom \
+	+kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/cx23885/description
@@ -117,10 +133,10 @@ $(eval $(call KernelPackage,cx23885))
 
 define KernelPackage/cx25821
   TITLE := Conexant cx25821 support
-  V4L_KCONFIG := CONFIG_VIDEO_CX25821
+  KCONFIG := CONFIG_VIDEO_CX25821
   FILES := $(PKG_BUILD_DIR)/v4l/cx25821.ko
   AUTOLOAD := $(call AutoProbe,cx25821)
-  $(call AddDepends/dvb-pci,+kmod-videobuf2-dma-sg +kmod-videobuf2-v4l2)
+  $(call DvbPci,+kmod-videobuf2-dma-sg +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/cx25821/description
@@ -131,11 +147,14 @@ $(eval $(call KernelPackage,cx25821))
 
 define KernelPackage/cx88-dvb
   TITLE := Conexant 2388x (bt878 successor) support
-  V4L_KCONFIG := \
+  KCONFIG := \
 	CONFIG_VIDEO_CX88 \
 	CONFIG_VIDEO_CX88_DVB \
 	CONFIG_VIDEO_CX88_ENABLE_VP3054 \
-	CONFIG_VIDEO_CX88_VP3054
+	CONFIG_VIDEO_CX88_VP3054 \
+	CONFIG_VIDEO_CX88_MPEG \
+	CONFIG_VIDEO_CX88_ALSA=n \
+	CONFIG_VIDEO_CX88_BLACKBIRD=n
   FILES := \
 	$(PKG_BUILD_DIR)/v4l/cx88xx.ko \
 	$(PKG_BUILD_DIR)/v4l/cx8800.ko \
@@ -143,7 +162,15 @@ define KernelPackage/cx88-dvb
 	$(PKG_BUILD_DIR)/v4l/cx88-dvb.ko \
 	$(PKG_BUILD_DIR)/v4l/cx88-vp3054-i2c.ko
   AUTOLOAD := $(call AutoProbe,cx88-dvb)
-  $(call AddDepends/dvb-pci,+kmod-dvb-tas2101 +kmod-i2c-algo-bit +kmod-rc-core +kmod-tveeprom +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
+  $(call DvbPci, +kmod-dvb-fe-cx22702 +kmod-dvb-fe-cx24116 +kmod-dvb-fe-cx24123 +kmod-dvb-fe-ds3000 \
+	+kmod-dvb-fe-isl6421 +kmod-dvb-fe-lgdt330x +kmod-dvb-fe-mb86a16 +kmod-dvb-fe-mt352 \
+	+kmod-dvb-fe-nxt200x +kmod-dvb-fe-or51132 +kmod-dvb-fe-s5h1409 +kmod-dvb-fe-s5h1411 \
+	+kmod-dvb-fe-stb6000 +kmod-dvb-fe-stb6100 +kmod-dvb-fe-stv0288 +kmod-dvb-fe-stv0299 \
+	+kmod-dvb-fe-stv090x +kmod-dvb-fe-tas2101 +kmod-dvb-fe-ts2020 +kmod-dvb-fe-zl10353 \
+	+kmod-dvb-pll +kmod-i2c-algo-bit +kmod-media-tuner-tda9887 +kmod-media-tuner-simple \
+	+kmod-media-tuner-xc2028 +kmod-media-tuner-xc4000 +kmod-media-tuner-xc5000 +kmod-rc-core \
+	+kmod-tveeprom +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2 \
+	+kmod-media-tuner-av201x)
 endef
 
 define KernelPackage/cx88-dvb/description
@@ -154,10 +181,14 @@ $(eval $(call KernelPackage,cx88-dvb))
 
 define KernelPackage/ddbridge
   TITLE := Digital Devices bridge support
-  V4L_KCONFIG := CONFIG_DVB_DDBRIDGE CONFIG_DVB_DDBRIDGE_MSIENABLE
-  FILES := $(PKG_BUILD_DIR)/v4l/ddbridge.ko
+  KCONFIG := CONFIG_DVB_DDBRIDGE CONFIG_DVB_DDBRIDGE_MSIENABLE
+  FILES := \
+	$(PKG_BUILD_DIR)/v4l/ddbridge.ko \
+	$(PKG_BUILD_DIR)/v4l/ddbridge-dummy-fe.ko
   AUTOLOAD := $(call AutoProbe,ddbridge)
-  $(call AddDepends/dvb-pci)
+  $(call DvbPci,+kmod-dvb-fe-cxd2841er +kmod-dvb-fe-drxk +kmod-dvb-fe-lnbh25 +kmod-dvb-fe-lnbp21 \
+	+kmod-dvb-fe-mxl5xx +kmod-dvb-fe-stv0367 +kmod-dvb-fe-stv090x +kmod-dvb-fe-stv0910 \
+	+kmod-dvb-fe-stv6110x +kmod-dvb-fe-stv6111 +kmod-dvb-fe-tda18271c2dd)
 endef
 
 define KernelPackage/ddbridge/description
@@ -179,13 +210,15 @@ $(eval $(call KernelPackage,ddbridge))
 
 define KernelPackage/mantis
   TITLE := Mantis/Hopper PCI bridge based devices
-  V4L_KCONFIG := CONFIG_MANTIS_CORE CONFIG_DVB_MANTIS CONFIG_DVB_HOPPER
+  KCONFIG := CONFIG_MANTIS_CORE CONFIG_DVB_MANTIS CONFIG_DVB_HOPPER
   FILES := \
 	$(PKG_BUILD_DIR)/v4l/mantis_core.ko \
 	$(PKG_BUILD_DIR)/v4l/mantis.ko \
 	$(PKG_BUILD_DIR)/v4l/hopper.ko
   AUTOLOAD := $(call AutoProbe,mantis hopper)
-  $(call AddDepends/dvb-pci,+kmod-rc-core)
+  $(call DvbPci,+kmod-dvb-fe-lnbp21 +kmod-dvb-fe-mb86a16 +kmod-dvb-fe-stb0899 +kmod-dvb-fe-stb6100 \
+	+kmod-dvb-fe-stv0299 +kmod-dvb-fe-tda10021 +kmod-dvb-fe-tda10023 +kmod-dvb-fe-tda665x \
+	+kmod-dvb-fe-zl10353 +kmod-rc-core)
 endef
 
 define KernelPackage/mantis/description
@@ -196,10 +229,11 @@ $(eval $(call KernelPackage,mantis))
 
 define KernelPackage/netup-unidvb
   TITLE := NetUP Universal DVB card support
-  V4L_KCONFIG := CONFIG_DVB_NETUP_UNIDVB
+  KCONFIG := CONFIG_DVB_NETUP_UNIDVB
   FILES := $(PKG_BUILD_DIR)/v4l/netup-unidvb.ko
   AUTOLOAD := $(call AutoProbe,netup-unidvb)
-  $(call AddDepends/dvb-pci,+kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
+  $(call DvbPci,+kmod-dvb-fe-ascot2e +kmod-dvb-fe-cxd2841er +kmod-dvb-fe-helene +kmod-dvb-fe-horus3a \
+	+kmod-dvb-fe-lnbh25 +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/netup-unidvb/description
@@ -213,10 +247,13 @@ $(eval $(call KernelPackage,netup-unidvb))
 
 define KernelPackage/ngene
   TITLE := Micronas nGene bridge
-  V4L_KCONFIG := CONFIG_DVB_NGENE
+  KCONFIG := CONFIG_DVB_NGENE
   FILES := $(PKG_BUILD_DIR)/v4l/ngene.ko
   AUTOLOAD := $(call AutoProbe,ngene)
-  $(call AddDepends/dvb-pci)
+  $(call DvbPci,+kmod-dvb-fe-cxd2841er +kmod-dvb-fe-drxd +kmod-dvb-fe-drxk +kmod-dvb-fe-lgdt330x \
+	+kmod-dvb-fe-lnbh25 +kmod-dvb-fe-lnbp21 +kmod-dvb-fe-stv0367 +kmod-dvb-fe-stv090x \
+	+kmod-dvb-fe-stv0910 +kmod-dvb-fe-stv6110x +kmod-dvb-fe-stv6111 +kmod-dvb-fe-tda18271c2dd \
+	+kmod-dvb-pll +kmod-media-tuner-mt2131)
 endef
 
 define KernelPackage/ngene/description
@@ -227,10 +264,10 @@ $(eval $(call KernelPackage,ngene))
 
 define KernelPackage/pluto2
   TITLE := Pluto2 cards
-  V4L_KCONFIG := CONFIG_DVB_PLUTO2
+  KCONFIG := CONFIG_DVB_PLUTO2
   FILES := $(PKG_BUILD_DIR)/v4l/pluto2.ko
   AUTOLOAD := $(call AutoProbe,pluto2)
-  $(call AddDepends/dvb-pci,+kmod-dvb-tda1004x +kmod-i2c-algo-bit)
+  $(call DvbPci,+kmod-dvb-fe-tda1004x +kmod-i2c-algo-bit)
 endef
 
 define KernelPackage/pluto2/description
@@ -242,10 +279,17 @@ $(eval $(call KernelPackage,pluto2))
 
 define KernelPackage/saa7134-dvb
   TITLE := DVB/ATSC Support for Philips SAA7134 based TV cards
-  V4L_KCONFIG := CONFIG_VIDEO_SAA7134 CONFIG_VIDEO_SAA7134_DVB
+  KCONFIG := CONFIG_VIDEO_SAA7134 CONFIG_VIDEO_SAA7134_DVB
   FILES := $(PKG_BUILD_DIR)/v4l/saa7134.ko $(PKG_BUILD_DIR)/v4l/saa7134-dvb.ko
   AUTOLOAD := $(call AutoProbe,saa7134-dvb)
-  $(call AddDepends/dvb-pci,+kmod-rc-core +kmod-tveeprom +kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
+  $(call DvbPci,+kmod-dvb-fe-isl6405 +kmod-dvb-fe-isl6421 +kmod-dvb-fe-lgdt3305 +kmod-dvb-fe-lgs8gxx \
+	+kmod-dvb-fe-lnbp21 +kmod-dvb-fe-mb86a20s +kmod-dvb-fe-mt312 +kmod-dvb-fe-mt352 \
+	+kmod-dvb-fe-nxt200x +kmod-media-tuner-qt1010 +kmod-dvb-fe-s5h1411 +kmod-dvb-fe-tda10048 \
+	+kmod-dvb-fe-tda1004x +kmod-dvb-fe-tda10086 +kmod-dvb-fe-tda826x +kmod-dvb-fe-zl10036 \
+	+kmod-dvb-fe-zl10039 +kmod-dvb-fe-zl10353 +kmod-dvb-pll +kmod-media-tuner-tda18271 \
+	+kmod-media-tuner-tda827x +kmod-media-tuner-tda8290 +kmod-media-tuner-simple \
+	+kmod-media-tuner-xc2028 +kmod-media-tuner-xc5000 +kmod-rc-core +kmod-tveeprom \
+	+kmod-videobuf2-dma-sg +kmod-videobuf2-dvb +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/saa7134-dvb/description
@@ -256,10 +300,11 @@ $(eval $(call KernelPackage,saa7134-dvb))
 
 define KernelPackage/saa7164
   TITLE := NXP SAA7164 support
-  V4L_KCONFIG := CONFIG_VIDEO_SAA7164
+  KCONFIG := CONFIG_VIDEO_SAA7164
   FILES := $(PKG_BUILD_DIR)/v4l/saa7164.ko
   AUTOLOAD := $(call AutoProbe,saa7164)
-  $(call AddDepends/dvb-pci,+kmod-tveeprom)
+  $(call DvbPci,+kmod-dvb-fe-lgdt3306a +kmod-dvb-fe-s5h1411 +kmod-dvb-fe-tda10048 \
+	+kmod-media-tuner-tda18271 +kmod-tveeprom)
 endef
 
 define KernelPackage/saa7164/description
@@ -270,11 +315,10 @@ $(eval $(call KernelPackage,saa7164))
 
 define KernelPackage/saa716x-core
   TITLE := SAA7160/1/2 PCI Express bridge based devices
-  V4L_KCONFIG := CONFIG_SAA716X_SUPPORT CONFIG_SAA716X_CORE
+  KCONFIG := CONFIG_SAA716X_SUPPORT CONFIG_SAA716X_CORE
   FILES := $(PKG_BUILD_DIR)/v4l/saa716x_core.ko
   AUTOLOAD := $(call AutoProbe,saa716x_core)
-  $(call AddDepends/dvb-pci)
-  DEPENDS += @V4L_SRC_TBSDTV
+  $(call DvbPci,@V4L_SRC_TBSDTV)
 endef
 
 define KernelPackage/saa716x-core/description
@@ -284,12 +328,12 @@ $(eval $(call KernelPackage,saa716x-core))
 
 
 define KernelPackage/saa716x-hybrid
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := SAA7160/1/2 based Hybrid PCIe cards (DVB + Analog)
-  V4L_KCONFIG := CONFIG_DVB_SAA716X_HYBRID
+  KCONFIG := CONFIG_DVB_SAA716X_HYBRID
   FILES := $(PKG_BUILD_DIR)/v4l/saa716x_hybrid.ko
   AUTOLOAD := $(call AutoProbe,saa716x_hybrid)
-  DEPENDS := +kmod-saa716x-core @V4L_SRC_TBSDTV
+  DEPENDS := @V4L_SRC_TBSDTV +kmod-dvb-fe-tda1004x +kmod-media-tuner-tda827x +kmod-saa716x-core
 endef
 
 define KernelPackage/saa716x-hybrid/description
@@ -305,12 +349,15 @@ $(eval $(call KernelPackage,saa716x-hybrid))
 
 
 define KernelPackage/saa716x-tbs-dvb
-  SUBMENU := $(DVB_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := SAA7160/1/2 based Budget PCIe cards (DVB only)
-  V4L_KCONFIG := CONFIG_DVB_SAA716X
+  KCONFIG := CONFIG_DVB_SAA716X_TBS
   FILES := $(PKG_BUILD_DIR)/v4l/saa716x_tbs-dvb.ko
   AUTOLOAD := $(call AutoProbe,saa716x_tbs-dvb)
-  DEPENDS := +kmod-dvb-cx24117 +kmod-dvb-tas2101 +kmod-i2c-algo-bit +kmod-saa716x-core @V4L_SRC_TBSDTV
+  DEPENDS := @V4L_SRC_TBSDTV +kmod-dvb-fe-cx24117 +kmod-dvb-fe-tas2101 +kmod-dvb-fe-cxd2820r \
+	+kmod-dvb-fe-isl6422 +kmod-dvb-fe-mb86a16 +kmod-dvb-fe-stb6100 +kmod-dvb-fe-stv090x \
+	+kmod-dvb-fe-stv091x +kmod-dvb-fe-stv6110x +kmod-i2c-algo-bit +kmod-media-tuner-av201x \
+	+kmod-media-tuner-stv6120 +kmod-saa716x-core
 endef
 
 define KernelPackage/saa716x-tbs-dvb/description
@@ -326,10 +373,10 @@ $(eval $(call KernelPackage,saa716x-tbs-dvb))
 
 define KernelPackage/smipcie
   TITLE := SMI PCIe DVBSky cards
-  V4L_KCONFIG := CONFIG_DVB_SMIPCIE
+  KCONFIG := CONFIG_DVB_SMIPCIE
   FILES := $(PKG_BUILD_DIR)/v4l/smipcie.ko
   AUTOLOAD := $(call AutoProbe,smipcie)
-  $(call AddDepends/dvb-pci,+kmod-i2c-algo-bit +kmod-rc-core)
+  $(call DvbPci,+kmod-dvb-fe-m88ds3103 +kmod-i2c-algo-bit +kmod-rc-core)
 endef
 
 define KernelPackage/smipcie/description
@@ -342,12 +389,11 @@ $(eval $(call KernelPackage,smipcie))
 
 
 define KernelPackage/tbs-pcie-dvb
-  TITLE := TBS PCIe DVB cards
-  V4L_KCONFIG := CONFIG_TBS_PCIE_DVB
+  TITLE := TBS PCIe capture cards
+  KCONFIG := CONFIG_TBS_PCIE_DVB
   FILES := $(PKG_BUILD_DIR)/v4l/tbs_pcie-dvb.ko
   AUTOLOAD := $(call AutoProbe,tbs_pcie-dvb)
-  $(call AddDepends/dvb-pci,+kmod-sound-core +kmod-videobuf2-dma-sg +kmod-videobuf2-v4l2)
-  DEPENDS += @V4L_SRC_TBSDTV
+  $(call DvbPci,@V4L_SRC_TBSDTV +kmod-sound-core +kmod-videobuf2-dma-sg +kmod-videobuf2-v4l2)
 endef
 
 define KernelPackage/tbs-pcie-dvb/description
@@ -358,11 +404,12 @@ $(eval $(call KernelPackage,tbs-pcie-dvb))
 
 define KernelPackage/tbsecp3
   TITLE := TBS ECP3 FPGA based cards
-  V4L_KCONFIG := CONFIG_DVB_TBSECP3
+  KCONFIG := CONFIG_DVB_TBSECP3
   FILES := $(PKG_BUILD_DIR)/v4l/tbsecp3.ko
   AUTOLOAD := $(call AutoProbe,tbsecp3)
-  $(call AddDepends/dvb-pci,+kmod-dvb-tas2101 +kmod-dvb-gx1133)
-  DEPENDS += @V4L_SRC_TBSDTV
+  $(call DvbPci,@V4L_SRC_TBSDTV +kmod-dvb-fe-gx1133 +kmod-dvb-fe-mn88436 +kmod-dvb-fe-mxl58x \
+	+kmod-dvb-fe-stv091x +kmod-dvb-fe-tas2101 +kmod-dvb-fe-tas2971 +kmod-media-tuner-av201x \
+	+kmod-media-tuner-stv6120)
 endef
 
 define KernelPackage/tbsecp3/description

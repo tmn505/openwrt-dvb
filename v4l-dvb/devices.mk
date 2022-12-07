@@ -3,7 +3,7 @@ define Package/generic-as102
   CATEGORY := DVB devices
   SUBMENU := Terrestrial (DVB-T/T2)
   TITLE := Abilis 102 based
-  DEPENDS := +as102-firmware +kmod-dvb-as102 +kmod-dvb-as102-fe
+  DEPENDS := +as102-firmware +kmod-dvb-as102
 endef
 
 define Package/generic-as102/description
@@ -22,7 +22,8 @@ define Package/generic-dib0700
   CATEGORY := DVB devices
   SUBMENU := Terrestrial (DVB-T/T2)
   TITLE := Dibcom 0700 based
-  DEPENDS := +dib0700-firmware +kmod-dvb-dib0070 +kmod-dvb-dib0090 +kmod-dvb-dib3000mc +kmod-dvb-dib7000m +kmod-dvb-dib7000p +kmod-dvb-usb-dib0700
+  DEPENDS := +dib0700-firmware +kmod-dvb-fe-dib0070 +kmod-dvb-fe-dib0090 +kmod-dvb-fe-dib3000mc \
+	+kmod-dvb-fe-dib7000m +kmod-dvb-fe-dib7000p +kmod-dvb-usb-dib0700
 endef
 
 define Package/generic-dib0700/description
@@ -41,7 +42,7 @@ define Package/generic-it9135
   CATEGORY := DVB devices
   SUBMENU := Terrestrial (DVB-T/T2)
   TITLE := ITE 9135 based
-  DEPENDS := +it9135-firmware +kmod-dvb-af9033 +kmod-dvb-usb-af9035 +kmod-media-tuner-it913x
+  DEPENDS := +it9135-firmware +kmod-dvb-fe-af9033 +kmod-dvb-usb-af9035 +kmod-media-tuner-it913x
 endef
 
 define Package/generic-it9135/description
@@ -61,7 +62,8 @@ define Package/tt-ct-4650-ci
   CATEGORY := DVB devices
   SUBMENU := Multistandard
   TITLE := TechnoTrend Connect CT2-4650 CI
-  DEPENDS := +si2158-firmware +si2168-firmware +kmod-media-tuner-si2157 +kmod-dvb-si2168 +kmod-dvb-sp2 +kmod-dvb-ts2020 +kmod-dvb-usb-dvbsky
+  DEPENDS := +si2158-firmware +si2168-firmware +kmod-media-tuner-si2157 +kmod-dvb-fe-si2168 \
+	+kmod-dvb-fe-sp2 +kmod-dvb-fe-ts2020 +kmod-dvb-usb-dvbsky
 endef
 
 define Package/tt-ct-4650-ci/description

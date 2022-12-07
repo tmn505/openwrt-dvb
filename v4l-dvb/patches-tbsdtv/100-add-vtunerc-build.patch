@@ -1,6 +1,6 @@
 --- a/linux/drivers/media/Kconfig
 +++ b/linux/drivers/media/Kconfig
-@@ -261,3 +261,5 @@ source "drivers/media/dvb-frontends/Kcon
+@@ -266,3 +266,5 @@ source "drivers/media/dvb-frontends/Kcon
  endmenu
  
  endif # MEDIA_SUPPORT

@@ -1,29 +1,22 @@
-TUNER_MENU := Media tuners
-
 define MediaTuner
-  SUBMENU := $(TUNER_MENU)
-  V4L_KCONFIG := \
-	CONFIG_MEDIA_SUPPORT=m \
-	CONFIG_MEDIA_DIGITAL_TV_SUPPORT=m \
-	$2
-  DEPENDS := +kmod-i2c-core
-  FILES := $(PKG_BUILD_DIR)/v4l/$1.ko
-  AUTOLOAD := $(call AutoProbe,$1)
+  SUBMENU := $(LINUXTV_MENU)
+  KCONFIG := $(2)
+  DEPENDS := +kmod-i2c-core $(3)
+  FILES := $(PKG_BUILD_DIR)/v4l/$(1).ko
+  AUTOLOAD := $(call AutoProbe,$(1))
 endef
 
 
 define KernelPackage/media-tuner-av201x
   TITLE := Airoha Technology AV201x
-  $(call MediaTuner,av201x,CONFIG_MEDIA_TUNER_AV201X)
-  DEPENDS += @V4L_SRC_TBSDTV
+  $(call MediaTuner,av201x,CONFIG_MEDIA_TUNER_AV201X,@V4L_SRC_TBSDTV)
 endef
 $(eval $(call KernelPackage,media-tuner-av201x))
 
 
 define KernelPackage/media-tuner-e4000
   TITLE := Elonics E4000
-  $(call MediaTuner,e4000,CONFIG_MEDIA_TUNER_E4000)
-  DEPENDS += +kmod-regmap-i2c +kmod-videodev
+  $(call MediaTuner,e4000,CONFIG_MEDIA_TUNER_E4000,+kmod-regmap-i2c +kmod-videodev)
 endef
 $(eval $(call KernelPackage,media-tuner-e4000))
 
@@ -51,24 +44,21 @@ $(eval $(call KernelPackage,media-tuner-fc0013))
 
 define KernelPackage/media-tuner-fc2580
   TITLE := FCI FC2580
-  $(call MediaTuner,fc2580,CONFIG_MEDIA_TUNER_FC2580)
-  DEPENDS += +kmod-regmap-i2c +kmod-videodev
+  $(call MediaTuner,fc2580,CONFIG_MEDIA_TUNER_FC2580,+kmod-regmap-i2c +kmod-videodev)
 endef
 $(eval $(call KernelPackage,media-tuner-fc2580))
 
 
 define KernelPackage/media-tuner-it913x
   TITLE := ITE Tech IT913x
-  $(call MediaTuner,it913x,CONFIG_MEDIA_TUNER_IT913X)
-  DEPENDS += +kmod-regmap-core
+  $(call MediaTuner,it913x,CONFIG_MEDIA_TUNER_IT913X,+kmod-regmap-core)
 endef
 $(eval $(call KernelPackage,media-tuner-it913x))
 
 
 define KernelPackage/media-tuner-m88rs6000t
   TITLE := Montage M88RS6000
-  $(call MediaTuner,m88rs6000t,MEDIA_TUNER_M88RS6000T)
-  DEPENDS += +kmod-regmap-i2c
+  $(call MediaTuner,m88rs6000t,CONFIG_MEDIA_TUNER_M88RS6000T,+kmod-regmap-i2c)
 endef
 $(eval $(call KernelPackage,media-tuner-m88rs6000t))
 
@@ -89,8 +79,7 @@ $(eval $(call KernelPackage,media-tuner-mc44s803))
 
 define KernelPackage/media-tuner-msi001
   TITLE := Mirics MSi001
-  $(call MediaTuner,msi001,CONFIG_MEDIA_TUNER_MSI001)
-  DEPENDS += +kmod-videodev
+  $(call MediaTuner,msi001,CONFIG_MEDIA_TUNER_MSI001,+kmod-videodev)
 endef
 $(eval $(call KernelPackage,media-tuner-msi001))
 
@@ -139,8 +128,7 @@ $(eval $(call KernelPackage,media-tuner-mxl301rf))
 
 define KernelPackage/media-tuner-mxl603
   TITLE := MaxLinear MxL603
-  $(call MediaTuner,mxl603,CONFIG_MEDIA_TUNER_MXL603)
-  DEPENDS += @V4L_SRC_TBSDTV
+  $(call MediaTuner,mxl603,CONFIG_MEDIA_TUNER_MXL603,@V4L_SRC_TBSDTV)
 endef
 $(eval $(call KernelPackage,media-tuner-mxl603))
 
@@ -189,24 +177,22 @@ $(eval $(call KernelPackage,media-tuner-r820t))
 
 define KernelPackage/media-tuner-r848
   TITLE := Rafael Micro R848
-  $(call MediaTuner,r848,CONFIG_MEDIA_TUNER_R848)
-  DEPENDS += @V4L_SRC_TBSDTV
+  $(call MediaTuner,r848,CONFIG_MEDIA_TUNER_R848,@V4L_SRC_TBSDTV)
 endef
 $(eval $(call KernelPackage,media-tuner-r848))
 
 
 define KernelPackage/media-tuner-si2157
   TITLE := Silicon Labs Si2157
-  $(call MediaTuner,si2157,CONFIG_MEDIA_TUNER_SI2157)
-  DEPENDS += +kmod-mc
+  $(call MediaTuner,si2157,CONFIG_MEDIA_TUNER_SI2157,+kmod-mc)
 endef
 $(eval $(call KernelPackage,media-tuner-si2157))
 
 
 define KernelPackage/media-tuner-simple
-  SUBMENU := $(TUNER_MENU)
+  SUBMENU := $(LINUXTV_MENU)
   TITLE := Simple tuner support
-  V4L_KCONFIG :=  \
+  KCONFIG :=  \
 	CONFIG_MEDIA_SUPPORT=m \
 	CONFIG_MEDIA_TUNER_SIMPLE
   DEPENDS := +kmod-i2c-core
@@ -220,16 +206,14 @@ $(eval $(call KernelPackage,media-tuner-simple))
 
 define KernelPackage/media-tuner-stv6120
   TITLE := STMicroelectronics STV6120
-  $(call MediaTuner,stv6120,CONFIG_MEDIA_TUNER_STV6120)
-  DEPENDS += @V4L_SRC_TBSDTV
+  $(call MediaTuner,stv6120,CONFIG_MEDIA_TUNER_STV6120,@V4L_SRC_TBSDTV)
 endef
 $(eval $(call KernelPackage,media-tuner-stv6120))
 
 
 define KernelPackage/media-tuner-tda18212
   TITLE := NXP TDA18212
-  $(call MediaTuner,tda18212,CONFIG_MEDIA_TUNER_TDA18212)
-  DEPENDS += +kmod-regmap-i2c
+  $(call MediaTuner,tda18212,CONFIG_MEDIA_TUNER_TDA18212,+kmod-regmap-i2c)
 endef
 $(eval $(call KernelPackage,media-tuner-tda18212))
 
@@ -243,8 +227,7 @@ $(eval $(call KernelPackage,media-tuner-tda18218))
 
 define KernelPackage/media-tuner-tda18250
   TITLE := NXP TDA18250
-  $(call MediaTuner,tda18250,CONFIG_MEDIA_TUNER_TDA18250)
-  DEPENDS += +kmod-regmap-i2c
+  $(call MediaTuner,tda18250,CONFIG_MEDIA_TUNER_TDA18250,+kmod-regmap-i2c)
 endef
 $(eval $(call KernelPackage,media-tuner-tda18250))
 
@@ -258,8 +241,7 @@ $(eval $(call KernelPackage,media-tuner-tda18271))
 
 define KernelPackage/media-tuner-tda18273
   TITLE := NXP TDA18273
-  $(call MediaTuner,tda18273,CONFIG_MEDIA_TUNER_TDA18273)
-  DEPENDS += @V4L_SRC_TBSDTV
+  $(call MediaTuner,tda18273,CONFIG_MEDIA_TUNER_TDA18273,@V4L_SRC_TBSDTV)
 endef
 $(eval $(call KernelPackage,media-tuner-tda18273))
 
@@ -273,7 +255,7 @@ $(eval $(call KernelPackage,media-tuner-tda827x))
 
 define KernelPackage/media-tuner-tda8290
   TITLE := Philips TDA 8290/8295 + 8275(a)/18271
-  $(call MediaTuner,tda8290,CONFIG_MEDIA_TUNER_TDA8290)
+  $(call MediaTuner,tda8290,CONFIG_MEDIA_TUNER_TDA8290,+kmod-media-tuner-tda18271 +kmod-media-tuner-tda827x)
 endef
 $(eval $(call KernelPackage,media-tuner-tda8290))
 
@@ -301,8 +283,7 @@ $(eval $(call KernelPackage,media-tuner-tea5767))
 
 define KernelPackage/media-tuner-tua9001
   TITLE := Infineon TUA 9001
-  $(call MediaTuner,tua9001,CONFIG_MEDIA_TUNER_TUA9001)
-  DEPENDS += +kmod-regmap-i2c
+  $(call MediaTuner,tua9001,CONFIG_MEDIA_TUNER_TUA9001,+kmod-regmap-i2c)
 endef
 $(eval $(call KernelPackage,media-tuner-tua9001))
 
