@@ -30,6 +30,7 @@ MAKE_VARS += \
 
 Build/Patch := :
 Build/Install/Default := :
+KernelPackage/depends := :
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
@@ -46,7 +47,7 @@ define Build/Prepare
 	fi;)
 
 	$(MAKE) -C $(PKG_BUILD_DIR) untar
-	$(CP) ./files/* $(PKG_BUILD_DIR)/
+	$(CP) ./files/. $(PKG_BUILD_DIR)/.
 
 	$(call Build/Patch/Default)
 endef
@@ -66,6 +67,8 @@ define Build/Compile
 		$(PKG_JOBS) \
 		M=$(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS) \
 		modules
+
+	mv -f $(LINUX_DIR)/.config.orig $(LINUX_DIR)/.config
 endef
 
 define Build/InstallDev
@@ -75,9 +78,6 @@ define Build/InstallDev
 	$(CP) $(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS)/Module.symvers $(1)/usr/include/v4l-dvb/
 endef
 
-define KernelPackage/depends
-	mv -f $(LINUX_DIR)/config.orig $(LINUX_DIR)/config
-endef
 
 LINUXTV_MENU := V4L-DVB Drivers
 
