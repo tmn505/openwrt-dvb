@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := dvb-firmware
-PKG_RELEASE := 1
+PKG_RELEASE := 2
 
 PKG_SOURCE_DATE := 2021-07-19
 PKG_SOURCE_PROTO := git
@@ -23,8 +23,7 @@ define Package/firmware-default
   TITLE := $(1)
 endef
 
-define Build/Compile
-endef
+Build/Compile := :
 
 
 Package/as102-firmware = $(call Package/firmware-default,Abilis AS102)
@@ -78,6 +77,16 @@ define Package/it9135-firmware/install
 		$(1)/lib/firmware
 endef
 $(eval $(call BuildPackage,it9135-firmware))
+
+
+Package/it9303-firmware = $(call Package/firmware-default,ITE Tech IT9303)
+define Package/it9303-firmware/install
+	$(INSTALL_DIR) $(1)/lib/firmware
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/firmware/dvb-usb-it9303-01.fw \
+		$(1)/lib/firmware
+endef
+$(eval $(call BuildPackage,it9303-firmware))
 
 
 Package/m88ds3103-firmware = $(call Package/firmware-default,Montage Technology M88DS3103 DVB-S/S2 demodulator)
