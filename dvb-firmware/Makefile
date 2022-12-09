@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := dvb-firmware
-PKG_RELEASE := 3
+PKG_RELEASE := 4
 
 PKG_SOURCE_DATE := 2021-07-19
 PKG_SOURCE_PROTO := git
@@ -146,6 +146,16 @@ define Package/si2168-firmware/install
 		$(1)/lib/firmware
 endef
 $(eval $(call BuildPackage,si2168-firmware))
+
+
+Package/tda10071-firmware = $(call Package/firmware-default,NXP TDA10071)
+define Package/tda10071-firmware/install
+	$(INSTALL_DIR) $(1)/lib/firmware
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/firmware/dvb-fe-tda10071.fw \
+		$(1)/lib/firmware
+endef
+$(eval $(call BuildPackage,tda10071-firmware))
 
 
 #$(eval $(call BuildPackage,dvb-firmware))
