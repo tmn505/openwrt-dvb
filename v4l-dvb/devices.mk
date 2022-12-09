@@ -56,6 +56,26 @@ endef
 $(eval $(call BuildPackage,generic-it9135))
 
 
+define Package/hauppauge-wintv-dualhd
+  SECTION := dvb-devices
+  CATEGORY := DVB devices
+  SUBMENU := Multistandard
+  TITLE := Hauppauge WinTV dualHD
+  DEPENDS := +si2157-firmware +si2168-firmware +kmod-media-tuner-si2157 +kmod-dvb-fe-si2168 \
+	+kmod-em28xx-dvb
+endef
+
+define Package/hauppauge-wintv-dualhd/description
+ Supported:
+ Hauppauge WinTV dualHD.
+endef
+
+define Package/hauppauge-wintv-dualhd/install
+	$(INSTALL_DIR) $(1)/etc
+endef
+$(eval $(call BuildPackage,hauppauge-wintv-dualhd))
+
+
 define Package/terratec-cinergy-tc2-stick
   SECTION := dvb-devices
   CATEGORY := DVB devices
