@@ -57,7 +57,7 @@ endef
 $(eval $(call BuildPackage,generic-it9135))
 
 
-define Package/tt-ct-4650-ci
+define Package/tt-ct2-4650-ci
   SECTION := dvb-devices
   CATEGORY := DVB devices
   SUBMENU := Multistandard
@@ -66,13 +66,13 @@ define Package/tt-ct-4650-ci
 	+kmod-dvb-fe-sp2 +kmod-dvb-fe-ts2020 +kmod-dvb-usb-dvbsky
 endef
 
-define Package/tt-ct-4650-ci/description
+define Package/tt-ct2-4650-ci/description
  Supported:
  TechnoTrend Connect CT2-4650 CI v1,
  TechnoTrend Connect CT2-4650 CI v1.1.
 endef
 
-define Package/tt-ct-4650-ci/install
+define Package/tt-ct2-4650-ci/install
 	$(INSTALL_DIR) $(1)/etc
 endef
-$(eval $(call BuildPackage,tt-ct-4650-ci))
+$(eval $(call BuildPackage,tt-ct2-4650-ci))
