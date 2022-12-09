@@ -95,6 +95,28 @@ endef
 $(eval $(call BuildPackage,pctv-460e))
 
 
+define Package/terratec-cinergy-s2-hd
+  SECTION := dvb-devices
+  CATEGORY := DVB devices
+  SUBMENU := Satellite (DVB-S/S2)
+  TITLE := TerraTec CINERGY S2 Stick/USB HD
+  DEPENDS := +ds3000-firmware +kmod-dvb-usb-dw2102
+endef
+
+define Package/terratec-cinergy-s2-hd/description
+ Supported:
+ TerraTec CINERGY S2 Stick HD rev3,
+ TerraTec CINERGY S2 USB HD rev1,
+ TerraTec CINERGY S2 USB HD rev2,
+ TerraTec CINERGY S2 USB HD rev4.
+endef
+
+define Package/terratec-cinergy-s2-hd/install
+	$(INSTALL_DIR) $(1)/etc
+endef
+$(eval $(call BuildPackage,terratec-cinergy-s2-hd))
+
+
 define Package/terratec-cinergy-tc2-stick
   SECTION := dvb-devices
   CATEGORY := DVB devices
