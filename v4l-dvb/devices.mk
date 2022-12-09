@@ -56,6 +56,27 @@ endef
 $(eval $(call BuildPackage,generic-it9135))
 
 
+define Package/generic-rtl2838u
+  SECTION := dvb-devices
+  CATEGORY := DVB devices
+  SUBMENU := Terrestrial (DVB-T/T2)
+  TITLE := RealTek RTL2838U based
+  DEPENDS := +kmod-dvb-fe-rtl2832 +kmod-dvb-usb-rtl28xxu
+endef
+
+define Package/generic-rtl2838u/description
+ Supported:
+ NOT ONLY TV LV5TDLX DVB-T USB,
+ RealTek RTL2838UHIDIR,
+ Trekstor DVB-T Stick Terres 2.0.
+endef
+
+define Package/generic-rtl2838u/install
+	$(INSTALL_DIR) $(1)/etc
+endef
+$(eval $(call BuildPackage,generic-rtl2838u))
+
+
 define Package/hauppauge-wintv-dualhd
   SECTION := dvb-devices
   CATEGORY := DVB devices
