@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := dvb-firmware
-PKG_RELEASE := 2
+PKG_RELEASE := 3
 
 PKG_SOURCE_DATE := 2021-07-19
 PKG_SOURCE_PROTO := git
@@ -111,6 +111,16 @@ define Package/ngene-firmware/install
 		$(1)/lib/firmware
 endef
 $(eval $(call BuildPackage,ngene-firmware))
+
+
+Package/si2157-firmware = $(call Package/firmware-default,Silicon Labs Si2157)
+define Package/si2157-firmware/install
+	$(INSTALL_DIR) $(1)/lib/firmware
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/firmware/dvb-tuner-si2157-a30-01.fw \
+		$(1)/lib/firmware
+endef
+$(eval $(call BuildPackage,si2157-firmware))
 
 
 Package/si2158-firmware = $(call Package/firmware-default,Silicon Labs Si2158)
