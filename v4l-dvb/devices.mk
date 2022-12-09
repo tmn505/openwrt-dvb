@@ -22,8 +22,7 @@ define Package/generic-dib0700
   CATEGORY := DVB devices
   SUBMENU := Terrestrial (DVB-T/T2)
   TITLE := Dibcom 0700 based
-  DEPENDS := +dib0700-firmware +kmod-dvb-fe-dib0070 +kmod-dvb-fe-dib0090 +kmod-dvb-fe-dib3000mc \
-	+kmod-dvb-fe-dib7000m +kmod-dvb-fe-dib7000p +kmod-dvb-usb-dib0700
+  DEPENDS := +dib0700-firmware +kmod-dvb-usb-dib0700
 endef
 
 define Package/generic-dib0700/description
