@@ -76,6 +76,25 @@ endef
 $(eval $(call BuildPackage,hauppauge-wintv-dualhd))
 
 
+define Package/pctv-460e
+  SECTION := dvb-devices
+  CATEGORY := DVB devices
+  SUBMENU := Satellite (DVB-S/S2)
+  TITLE := PCTV Systems DVB-S2 Stick 460e
+  DEPENDS := +tda10071-firmware +kmod-dvb-fe-a8293 +kmod-dvb-fe-tda10071 +kmod-em28xx-dvb
+endef
+
+define Package/pctv-460e/description
+ Supported:
+ PCTV Systems DVB-S2 Stick 460e.
+endef
+
+define Package/pctv-460e/install
+	$(INSTALL_DIR) $(1)/etc
+endef
+$(eval $(call BuildPackage,pctv-460e))
+
+
 define Package/terratec-cinergy-tc2-stick
   SECTION := dvb-devices
   CATEGORY := DVB devices
