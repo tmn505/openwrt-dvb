@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := dvb-firmware
-PKG_RELEASE := 4
+PKG_RELEASE := 5
 
 PKG_SOURCE_DATE := 2021-07-19
 PKG_SOURCE_PROTO := git
@@ -66,6 +66,16 @@ define Package/drxd-firmware/install
 		$(1)/lib/firmware
 endef
 $(eval $(call BuildPackage,drxd-firmware))
+
+
+Package/ds3000-firmware = $(call Package/firmware-default,Montage Technology M88DS3000)
+define Package/ds3000-firmware/install
+	$(INSTALL_DIR) $(1)/lib/firmware
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/firmware/dvb-fe-ds3000.fw \
+		$(1)/lib/firmware
+endef
+$(eval $(call BuildPackage,ds3000-firmware))
 
 
 Package/it9135-firmware = $(call Package/firmware-default,ITE Tech IT9135)
