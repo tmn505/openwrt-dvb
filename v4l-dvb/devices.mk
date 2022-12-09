@@ -56,6 +56,26 @@ endef
 $(eval $(call BuildPackage,generic-it9135))
 
 
+define Package/terratec-cinergy-tc2-stick
+  SECTION := dvb-devices
+  CATEGORY := DVB devices
+  SUBMENU := Multistandard
+  TITLE := TerraTec CINERGY TC2 Stick
+  DEPENDS := +it9303-firmware +si2168-firmware +kmod-dvb-fe-si2168 +kmod-dvb-usb-af9035 \
+	+kmod-media-tuner-si2157
+endef
+
+define Package/terratec-cinergy-tc2-stick/description
+ Supported:
+ TerraTec CINERGY TC2 Stick.
+endef
+
+define Package/terratec-cinergy-tc2-stick/install
+	$(INSTALL_DIR) $(1)/etc
+endef
+$(eval $(call BuildPackage,terratec-cinergy-tc2-stick))
+
+
 define Package/tt-ct2-4650-ci
   SECTION := dvb-devices
   CATEGORY := DVB devices
