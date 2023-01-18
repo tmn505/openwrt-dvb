@@ -1,0 +1,50 @@
+--- a/server/connectionVTP.c
++++ b/server/connectionVTP.c
+@@ -260,7 +260,7 @@ bool cLSTEHandler::Next(bool &Last)
+ #ifdef __FreeBSD__
+ 			return m_Client->Respond(-215, "E %u %d %d %X", m_Event->EventID(),
+ #else
+-			return m_Client->Respond(-215, "E %u %ld %d %X", m_Event->EventID(),
++			return m_Client->Respond(-215, "E %u %lld %d %X", m_Event->EventID(),
+ #endif
+ 			                         m_Event->StartTime(), m_Event->Duration(), 
+ 			                         m_Event->TableID());
+@@ -303,7 +303,7 @@ bool cLSTEHandler::Next(bool &Last)
+ #ifdef __FreeBSD__
+ 			return m_Client->Respond(-215, "V %d", m_Event->Vps());
+ #else
+-			return m_Client->Respond(-215, "V %ld", m_Event->Vps());
++			return m_Client->Respond(-215, "V %lld", m_Event->Vps());
+ #endif
+ 		else
+ 			return Next(Last);
+@@ -735,7 +735,7 @@ bool cLSTRHandler::Next(bool &Last)
+ 		case Event:
+ 			m_State = Title;
+ 			if (m_Event != NULL) {
+-				return m_Client->Respond(-215, "E %u %ld %d %X %X", (unsigned int) m_Event->EventID(), 
++				return m_Client->Respond(-215, "E %u %lld %d %X %X", (unsigned int) m_Event->EventID(),
+ 						m_Event->StartTime(), m_Event->Duration(), 
+ 						m_Event->TableID(), m_Event->Version());
+ 			} 
+@@ -781,7 +781,7 @@ bool cLSTRHandler::Next(bool &Last)
+ 			m_State = EndRecording;
+ 			if (m_Event != NULL) {
+ 				if (m_Event->Vps()) {
+-					return m_Client->Respond(-215, "V %ld", m_Event->Vps());
++					return m_Client->Respond(-215, "V %lld", m_Event->Vps());
+ 				}
+ 			}
+ 			return Next(Last);
+@@ -1718,9 +1718,9 @@ bool cConnectionVTP::CmdNEXT(const char *Option)
+ 		if (!*Option)
+ 			Reply(250, "%d %s", Number, *TimeToString(Start));
+ 		else if (strcasecmp(Option, "ABS") == 0)
+-			Reply(250, "%d %ld", Number, Start);
++			Reply(250, "%d %lld", Number, Start);
+ 		else if (strcasecmp(Option, "REL") == 0)
+-			Reply(250, "%d %ld", Number, Start - time(NULL));
++			Reply(250, "%d %lld", Number, Start - time(NULL));
+ 		else
+ 			Reply(501, "Unknown option: \"%s\"", Option);
+ 	}

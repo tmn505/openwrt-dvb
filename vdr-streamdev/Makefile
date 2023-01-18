@@ -1,25 +1,24 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #
-# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
+# Copyright (C) 2017-2022 Tomasz Maciej Nowak <tmn505@gmail.com>
 #
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-streamdev
-PKG_RELEASE := 2
+PKG_VERSION := 0.6.3
+PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
-#PKG_SOURCE_URL := https://projects.vdr-developer.org/git/vdr-plugin-streamdev.git
-#PKG_SOURCE_VERSION := e2a9b979d3fb92967c7a6a8221e674eb7e55c813
-PKG_SOURCE_URL := https://github.com/ciminus/vdr-plugin-streamdev.git
-PKG_SOURCE_VERSION := acb1473661ef88d1283e64aa41d6cf0794a8c4d3
-PKG_VERSION := 0.6.1-$(shell printf '%.8s' $(PKG_SOURCE_VERSION))
+PKG_SOURCE_URL := https://github.com/vdr-projects/vdr-plugin-streamdev.git
+PKG_SOURCE_VERSION := da74779591827ad7e10493b0eade65a11c525171
+PKG_MIRROR_HASH := 02e5bc30af0630696cf7a94650908c0151b75754d927747cc8af49ab5622cc5f
 
 PKG_LICENSE := GPL-2.0
-PKG_LICENSE_FILE := COPYING
+PKG_LICENSE_FILES := COPYING
 
-PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
+
+PKG_BUILD_PARALLEL := 1
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -27,8 +26,8 @@ define Package/vdr-streamdev-client
   SECTION := multimedia
   CATEGORY := Multimedia
   TITLE := VDR streamdev client plugin
+  URL := https://github.com/vdr-projects/vdr-plugin-streamdev
   DEPENDS := vdr
-  URL := https://projects.vdr-developer.org/projects/plg-streamdev
 endef
 
 define Package/vdr-streamdev-client/description
@@ -39,8 +38,8 @@ define Package/vdr-streamdev-server
   SECTION := multimedia
   CATEGORY := Multimedia
   TITLE := VDR streamdev server plugin
+  URL := https://github.com/vdr-projects/vdr-plugin-streamdev
   DEPENDS := vdr
-  URL := https://projects.vdr-developer.org/projects/plg-streamdev
 endef
 
 define Package/vdr-streamdev-server/description
@@ -50,25 +49,33 @@ define Package/vdr-streamdev-server/description
   Multicast streaming if you have many clients watching the same channels or as a feed for multicast-only settop boxes.
 endef
 
+define Build/Configure
+	$(SED) '/^PKGCFG =/c PKGCFG = $$$$(shell pkg-config --variable=$$$$(1) $$$$(STAGING_DIR)/usr/lib/pkgconfig/vdr.pc)' \
+		-e '/^LIBDIR \:=/d' \
+		-e '/^LOCDIR \:=/d' \
+		$(PKG_BUILD_DIR)/Makefile
+
+	$(SED) 's,install\: install-lib install-i18n,install\: install-lib,' \
+		$(PKG_BUILD_DIR)/client/Makefile
+	$(SED) 's,install\: install-lib install-i18n,install\: install-lib,' \
+		$(PKG_BUILD_DIR)/server/Makefile
+endef
+
 define Package/vdr-streamdev-client/install
 	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-client
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [streamdev-client] > $(1)/etc/vdr/conf.d/30-streamdev-client.conf
-
-	rm -fR $(1)/usr/share
 endef
 
 define Package/vdr-streamdev-server/install
 	$(MAKE) -C $(PKG_BUILD_DIR) DESTDIR=$(1) install-server
 
 	$(INSTALL_DIR) $(1)/etc/vdr/plugins/streamdev-server
-	$(CP) $(PKG_BUILD_DIR)/streamdev-server/* $(1)/etc/vdr/plugins/streamdev-server/
+	$(CP) $(PKG_BUILD_DIR)/streamdev-server/. $(1)/etc/vdr/plugins/streamdev-server/.
 
 	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
 	echo [streamdev-server] > $(1)/etc/vdr/conf.d/70-streamdev-server.conf
-
-	rm -fR $(1)/usr/share
 endef
 
 $(eval $(call BuildPackage,vdr-streamdev-client))
