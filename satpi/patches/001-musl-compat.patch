@@ -1,0 +1,35 @@
+--- a/src/Utils.cpp
++++ b/src/Utils.cpp
+@@ -27,9 +27,12 @@
+ #include <unistd.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
++#ifdef __GLIBC__
+ #include <execinfo.h>
++#endif
+ 
+ void Utils::createBackTrace(const char *file) {
++#ifdef __GLIBC__
+ 	// DO NOT alloc memory on heap!!
+ 	void *array[25];
+ 	const size_t size = backtrace(array, 25);
+@@ -44,6 +47,7 @@ void Utils::createBackTrace(const char *file) {
+ 	} else {
+ 		backtrace_symbols_fd(array, size, STDOUT_FILENO);
+ 	}
++#endif
+ }
+ 
+ void Utils::annotateBackTrace(const char *app, const char *file) {
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -37,7 +37,9 @@
+ #include <signal.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
++#ifdef __GLIBC__
+ #include <execinfo.h>
++#endif
+ 
+ #define LOCK_FILE   "SatPI.lock"
+ 

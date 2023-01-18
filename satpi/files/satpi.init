@@ -42,6 +42,7 @@ start_instance() {
 	append_arg "$cfg" http_path "--http-path"
 	append_arg "$cfg" http_port "--http-port"
 	append_arg "$cfg" rstp_port "--rstp-port"
+	append_arg "$cfg" iface_name "--iface-name"
 
 	append_bool "$cfg" no_ssdp "--no-ssdp"
 
