@@ -1,24 +1,25 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #
-# Copyright (C) 2016-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
+# Copyright (C) 2016-2023 Tomasz Maciej Nowak <tmn505@gmail.com>
 #
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := oscam
-PKG_REV := 11532
+PKG_REV := 11718
 PKG_VERSION := 1.20-$(PKG_REV)
 PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := svn
 PKG_SOURCE_VERSION := $(PKG_REV)
-PKG_SOURCE_URL := http://www.streamboard.tv/svn/oscam/trunk
+PKG_SOURCE_URL := https://svn.streamboard.tv/oscam/trunk
+PKG_MIRROR_HASH := e1294027676ca4116489867efec32c1c5b2133b066cd383c89f2b1707a510d6f
 
 PKG_LICENSE := GPL-3.0
 PKG_LICENSE_FILE := COPYING
 
-PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
+
+PKG_BUILD_PARALLEL := 1
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -30,7 +31,7 @@ define Package/oscam
   SECTION := net
   CATEGORY := Network
   TITLE := Open Source Conditional Access Modul
-  URL := http://www.streamboard.tv/oscam
+  URL := https://www.streamboard.tv/oscam
   DEPENDS := +OSCAM_USE_LIBCRYPTO:libopenssl +OSCAM_USE_LIBUSB:libusb-1.0 +OSCAM_USE_PCSC:pcscd
 endef
 
@@ -38,7 +39,7 @@ define Package/list-smargo
   SECTION := net
   CATEGORY := Network
   TITLE := List Smargo readers
-  URL := http://www.streamboard.tv/oscam
+  URL := https://www.streamboard.tv/oscam
   DEPENDS := oscam @OSCAM_CARDREADER_SMARGO
 endef
 
@@ -58,6 +59,7 @@ CONFIGURE_ARGS = \
 	$(if $(CONFIG_OSCAM_MODULE_MONITOR),--enable,--disable) MODULE_MONITOR \
 	$(if $(CONFIG_OSCAM_WITH_LB),--enable,--disable) WITH_LB \
 	$(if $(CONFIG_OSCAM_CS_CACHEEX),--enable,--disable) CS_CACHEEX \
+	$(if $(CONFIG_OSCAM_CS_CACHEEX_AIO),--enable,--disable) CS_CACHEEX_AIO \
 	$(if $(CONFIG_OSCAM_CW_CYCLE_CHECK),--enable,--disable) CW_CYCLE_CHECK \
 	$(if $(CONFIG_OSCAM_LCDSUPPORT),--enable,--disable) LCDSUPPORT \
 	$(if $(CONFIG_OSCAM_LEDSUPPORT),--enable,--disable) LEDSUPPORT \
@@ -95,10 +97,7 @@ CONFIGURE_ARGS = \
 	$(if $(CONFIG_OSCAM_CARDREADER_SMARGO),--enable,--disable) CARDREADER_SMARGO \
 	$(if $(CONFIG_OSCAM_CARDREADER_STINGER),--enable,--disable) CARDREADER_STINGER \
 	$(if $(CONFIG_OSCAM_CARDREADER_DRECAS),--enable,--disable) CARDREADER_DRECAS \
-	--disable CARDREADER_INTERNAL_AZBOX \
-	--disable CARDREADER_INTERNAL_COOLAPI \
-	--disable CARDREADER_INTERNAL_COOLAPI2 \
-	--disable CARDREADER_INTERNAL_SCI \
+	--disable CARDREADER_INTERNAL \
 	--disable CARDREADER_DB2COM \
 	--disable CARDREADER_STAPI \
 	--disable CARDREADER_STAPI5

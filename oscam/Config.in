@@ -198,6 +198,11 @@ config OSCAM_CS_CACHEEX
 	bool "Cache exchange"
 	default y
 
+config OSCAM_CS_CACHEEX_AIO
+	bool "Cache exchange AIO CW cache"
+	depends on OSCAM_CS_CACHEEX
+	default n
+
 config OSCAM_CW_CYCLE_CHECK
 	bool "CW Cycle Check"
 	default y
