@@ -1,23 +1,24 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #
-# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
+# Copyright (C) 2017-2022 Tomasz Maciej Nowak <tmn505@gmail.com>
 #
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr-vnsiserver
-PKG_RELEASE := 2
+PKG_VERSION := 1.8.1
+PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := git
-PKG_SOURCE_URL := https://github.com/FernetMenta/vdr-plugin-vnsiserver.git
-PKG_SOURCE_VERSION := 1fd5aeee87e0cd27ba6b7860d86efc57c2863fcb
-PKG_VERSION := 1.5.2-$(shell printf '%.8s' $(PKG_SOURCE_VERSION))
+PKG_SOURCE_URL := https://github.com/vdr-projects/vdr-plugin-vnsiserver.git
+PKG_SOURCE_VERSION := 9694587c5149242c8ec03aa938d389789803904f
+PKG_MIRROR_HASH := 6a6148321d30705f142983f1310d2e3a0c8ae569cd130380e4fb5900f71c21ef
 
 PKG_LICENSE := GPL-2.0
-PKG_LICENSE_FILE := COPYING
+PKG_LICENSE_FILES := COPYING
 
-PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
+
+PKG_BUILD_PARALLEL := 1
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -25,13 +26,17 @@ define Package/vdr-vnsiserver
   SECTION := multimedia
   CATEGORY := Multimedia
   TITLE := VDR plugin to handle KODI clients
+  URL := https://github.com/vdr-projects/vdr-plugin-vnsiserver
   DEPENDS := vdr
-  URL := https://github.com/FernetMenta/vdr-plugin-vnsiserver
 endef
 
 define Package/vdr-vnsiserver/description
  The vdr-plugin-vnsiserver is able to handle serveral KODI clients connecting
  via the VNSI addon.
+endef
+
+define Build/Configure
+	$(SED) '/^PKGCFG =/c PKGCFG = $$$$(shell pkg-config --variable=$$$$(1) $$$$(STAGING_DIR)/usr/lib/pkgconfig/vdr.pc)' $(PKG_BUILD_DIR)/Makefile
 endef
 
 define Package/vdr-vnsiserver/install

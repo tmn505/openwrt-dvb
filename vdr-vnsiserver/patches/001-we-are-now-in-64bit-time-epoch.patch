@@ -1,0 +1,60 @@
+--- a/recplayer.c
++++ b/recplayer.c
+@@ -86,7 +86,7 @@ void cRecPlayer::scan()
+     m_segments.push_back(segment);
+ 
+     m_totalLength += s.st_size;
+-    INFOLOG("File %i found, size: %lu, totalLength now %lu", i, s.st_size, m_totalLength);
++    INFOLOG("File %i found, size: %llu, totalLength now %llu", i, s.st_size, m_totalLength);
+   }
+ 
+   m_totalFrames = m_indexFile.Last();
+@@ -233,7 +233,7 @@ int cRecPlayer::getBlock(unsigned char* buffer, uint64_t position, int amount)
+   // seek to position
+   if(lseek(m_file, filePosition, SEEK_SET) == -1)
+   {
+-    ERRORLOG("unable to seek to position: %lu", filePosition);
++    ERRORLOG("unable to seek to position: %llu", filePosition);
+     return 0;
+   }
+ 
+--- a/videobuffer.c
++++ b/videobuffer.c
+@@ -225,7 +225,7 @@ cVideoBufferRAM::~cVideoBufferRAM()
+ bool cVideoBufferRAM::Init()
+ {
+   m_BufferSize = (off_t)TimeshiftBufferSize*100*1000*1000;
+-  INFOLOG("allocated timeshift buffer with size: %ld", m_BufferSize);
++  INFOLOG("allocated timeshift buffer with size: %lld", m_BufferSize);
+   m_Buffer = (uint8_t*)malloc(m_BufferSize + m_Margin);
+   m_BufferPtr = m_Buffer + m_Margin;
+   if (!m_Buffer)
+--- a/vnsiclient.c
++++ b/vnsiclient.c
+@@ -1088,7 +1088,7 @@ bool cVNSIClient::processRecStream_GetIFrame(cRequestPacket &req) /* OPCODE 45 *
+   resp.finalise();
+   m_socket.write(resp.getPtr(), resp.getLen());
+ 
+-  DEBUGLOG("Wrote GNIF reply to client %lu %u %u", rfilePosition, rframeNumber, rframeLength);
++  DEBUGLOG("Wrote GNIF reply to client %llu %u %u", rfilePosition, rframeNumber, rframeLength);
+   return true;
+ }
+ 
+@@ -2179,7 +2179,7 @@ bool cVNSIClient::processRECORDINGS_GetList(cRequestPacket &req) /* OPCODE 102 *
+         recordingStart = recording->Start();
+       }
+     }
+-    DEBUGLOG("GRI: RC: recordingStart=%lu recordingDuration=%i", recordingStart, recordingDuration);
++    DEBUGLOG("GRI: RC: recordingStart=%llu recordingDuration=%i", recordingStart, recordingDuration);
+ 
+     // recording_time
+     resp.add_U32(recordingStart);
+@@ -2959,7 +2959,7 @@ bool cVNSIClient::processRECORDINGS_DELETED_GetList(cRequestPacket &req) /* OPCO
+         recordingStart = recording->Start();
+       }
+     }
+-    DEBUGLOG("GRI: RC: recordingStart=%lu recordingDuration=%i", recordingStart, recordingDuration);
++    DEBUGLOG("GRI: RC: recordingStart=%llu recordingDuration=%i", recordingStart, recordingDuration);
+ 
+     // recording_time
+     resp.add_U32(recordingStart);
