@@ -1,21 +1,20 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #
 # Copyright (C) 2006-2011 OpenWrt.org
-# Copyright (C) 2017 Tomasz Maciej Nowak <tomek_n@o2.pl>
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
+# Copyright (C) 2017 Tomasz Maciej Nowak <tmn505@gmail.com>
 #
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dvb-apps
-PKG_VERSION:=3d43b280298c
+PKG_VERSION:=1505
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=https://linuxtv.org/hg/dvb-apps/archive/
-PKG_HASH:=70c1d293ea3ddbcb970e01c8a51487ee97a4dcf33a73c0236c7d57757c7f6fb0
+PKG_SOURCE_PROTO:=hg
+PKG_SOURCE_URL:=https://linuxtv.org/hg/dvb-apps
+PKG_SOURCE_VERSION:=3d43b280298c
+PKG_MIRROR_HASH:=36753a9a0e85a9ca051d337a4ef4e95d9b3fbcb4e567c161ef80600b93534ad8
 
-PKG_MAINTAINER:=Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER:=Tomasz Maciej Nowak <tmn505@gmail.com>
 PKG_LICENSE:=GPL-2.0 LGPL-2.1
 PKG_LICENSE_FILES:=COPYING COPYING.LGPL
 
@@ -33,7 +32,7 @@ define Package/dvb-apps/description/Default
 endef
 
 define Build/InstallDev
-	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
+	$(CP) $(PKG_INSTALL_DIR)/. $(1)/.
 endef
 
 
