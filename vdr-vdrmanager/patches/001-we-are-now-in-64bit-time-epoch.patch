@@ -1,0 +1,69 @@
+--- a/vdr-vdrmanager/helpers.cpp
++++ b/vdr-vdrmanager/helpers.cpp
+@@ -714,11 +714,11 @@ string cHelpers::ToText(const cRecording * recording) {
+ 	result = buf;
+ 	result += ":";
+ 
+-	snprintf(buf, sizeof(buf) - 1, "%lu", startTime);
++	snprintf(buf, sizeof(buf) - 1, "%llu", startTime);
+ 	result += buf;
+ 	result += ":";
+ 
+-	snprintf(buf, sizeof(buf) - 1, "%lu", endTime);
++	snprintf(buf, sizeof(buf) - 1, "%llu", endTime);
+ 	result += buf;
+ 	result += ":";
+ 
+@@ -781,7 +781,7 @@ string cHelpers::ToText(const cRecording * recording) {
+ 		cTimer *timer = rc->Timer();
+ 		if (timer) {
+ 			char buf[100];
+-			snprintf(buf, sizeof(buf) - 1, "%lu", timer->StopTime());
++			snprintf(buf, sizeof(buf) - 1, "%llu", timer->StopTime());
+ 			result += buf;
+ 		}
+ 	}
+@@ -832,10 +832,10 @@ string cHelpers::ToText(const cTimer * timer, set<string> conflicts) {
+ 	result += ":";
+ 	result += MapSpecialChars(channelName);
+ 	result += ":";
+-	snprintf(buf, sizeof(buf) - 1, "%lu", timer->StartTime());
++	snprintf(buf, sizeof(buf) - 1, "%llu", timer->StartTime());
+ 	result += buf;
+ 	result += ":";
+-	snprintf(buf, sizeof(buf) - 1, "%lu", timer->StopTime());
++	snprintf(buf, sizeof(buf) - 1, "%llu", timer->StopTime());
+ 	result += buf;
+ 	result += ":";
+ 	snprintf(buf, sizeof(buf) - 1, "%d", timer->Priority());
+@@ -904,7 +904,7 @@ string cHelpers::ToText(const cTimer * timer, set<string> conflicts) {
+ 
+ 	result += ":";
+ 	if (event && event->Vps()) {
+-		snprintf(buf, sizeof(buf) - 1, "%lu", event->Vps());
++		snprintf(buf, sizeof(buf) - 1, "%llu", event->Vps());
+ 		result += buf;
+ 	}
+ 
+@@ -942,10 +942,10 @@ string cHelpers::ToText(const cEvent * event) {
+ 	result += ":";
+ 	result += MapSpecialChars(channel->Name());
+ 	result += ":";
+-	snprintf(buf, sizeof(buf) - 1, "%lu", event->StartTime());
++	snprintf(buf, sizeof(buf) - 1, "%llu", event->StartTime());
+ 	result += buf;
+ 	result += ":";
+-	snprintf(buf, sizeof(buf) - 1, "%lu",
++	snprintf(buf, sizeof(buf) - 1, "%llu",
+ 			event->StartTime() + event->Duration());
+ 	result += buf;
+ 	result += ":";
+@@ -973,7 +973,7 @@ string cHelpers::ToText(const cEvent * event) {
+ 
+ 	result += ":";
+ 	if (event->Vps()) {
+-		snprintf(buf, sizeof(buf) - 1, "%lu", event->Vps());
++		snprintf(buf, sizeof(buf) - 1, "%llu", event->Vps());
+ 		result += buf;
+ 	}
+ 
