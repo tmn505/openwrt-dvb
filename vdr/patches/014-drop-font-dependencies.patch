@@ -1,0 +1,105 @@
+--- a/Makefile
++++ b/Makefile
+@@ -22,8 +22,8 @@ CXXFLAGS += $(CPPFLAGS)
+ CDEFINES  = -D_GNU_SOURCE
+ CDEFINES += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+ 
+-LIBS      = -ljpeg -lpthread -ldl -lcap -lrt -lncursesw $(shell $(PKG_CONFIG) --libs freetype2 fontconfig)
+-INCLUDES ?= $(shell $(PKG_CONFIG) --cflags freetype2 fontconfig)
++LIBS      = -ljpeg -lpthread -ldl -lcap -lrt -lncursesw
++INCLUDES ?=
+ 
+ # Directories:
+ 
+--- a/font.c
++++ b/font.c
+@@ -11,12 +11,14 @@
+ 
+ #include "font.h"
+ #include <ctype.h>
++#ifdef TTF
+ #include <fontconfig/fontconfig.h>
+ #ifdef BIDI
+ #include <fribidi.h>
+ #endif
+ #include <ft2build.h>
+ #include FT_FREETYPE_H
++#endif // TTF
+ #include "config.h"
+ #include "osd.h"
+ #include "tools.h"
+@@ -25,6 +27,7 @@ const char *DefaultFontOsd = "Sans Serif
+ const char *DefaultFontSml = "Sans Serif";
+ const char *DefaultFontFix = "Courier:Bold";
+ 
++#ifdef TTF
+ // --- cFreetypeFont ---------------------------------------------------------
+ 
+ #define KERNING_UNKNOWN  (-10000)
+@@ -380,6 +383,7 @@ void cFreetypeFont::DrawText(cPixmap *Pi
+            }
+      }
+ }
++#endif // TTF
+ 
+ // --- cDummyFont ------------------------------------------------------------
+ 
+@@ -428,6 +432,7 @@ const cFont *cFont::GetFont(eDvbFont Fon
+ 
+ cFont *cFont::CreateFont(const char *Name, int CharHeight, int CharWidth)
+ {
++#ifdef TTF
+   cString fn = GetFontFileName(Name);
+   cFont *f = *fn ? new cFreetypeFont(fn, CharHeight, CharWidth) : NULL;
+   if (!f || !f->Height()) {
+@@ -435,8 +440,12 @@ cFont *cFont::CreateFont(const char *Nam
+      f = new cDummyFont(CharHeight, CharWidth);
+      }
+   return f;
++#else
++  return new cDummyFont(CharHeight, CharWidth);
++#endif // TTF
+ }
+ 
++#ifdef TTF
+ bool cFont::GetAvailableFontNames(cStringList *FontNames, bool Monospaced)
+ {
+   if (!FontNames->Size()) {
+@@ -542,6 +551,7 @@ cString cFont::Bidi(const char *Ltr)
+   return cString(Ltr);
+ }
+ #endif
++#endif // TTF
+ 
+ // --- cTextWrapper ----------------------------------------------------------
+ 
+--- a/menu.c
++++ b/menu.c
+@@ -3486,9 +3486,11 @@ cMenuSetupOSD::cMenuSetupOSD(void)
+   skinDescriptions = new const char*[numSkins];
+   themes.Load(Skins.Current()->Name());
+   themeIndex = originalThemeIndex = Skins.Current()->Theme() ? themes.GetThemeIndex(Skins.Current()->Theme()->Description()) : 0;
++#ifdef TTF
+   cFont::GetAvailableFontNames(&fontOsdNames);
+   cFont::GetAvailableFontNames(&fontSmlNames);
+   cFont::GetAvailableFontNames(&fontFixNames, true);
++#endif // TTF
+   fontOsdNames.Insert(strdup(DefaultFontOsd));
+   fontSmlNames.Insert(strdup(DefaultFontSml));
+   fontFixNames.Insert(strdup(DefaultFontFix));
+--- a/vdr.c
++++ b/vdr.c
+@@ -778,11 +778,13 @@ int main(int argc, char *argv[])
+   CamResponsesLoad(AddDirectory(ConfigDirectory, "camresponses.conf"), true);
+   DoneRecordingsPattern.Load(AddDirectory(CacheDirectory, "donerecs.data"));
+ 
++#ifdef TTF
+   if (!*cFont::GetFontFileName(Setup.FontOsd)) {
+      const char *msg = "no fonts available - OSD will not show any text!";
+      fprintf(stderr, "vdr: %s\n", msg);
+      esyslog("ERROR: %s", msg);
+      }
++#endif // TTF
+ 
+   // Recordings:
+ 

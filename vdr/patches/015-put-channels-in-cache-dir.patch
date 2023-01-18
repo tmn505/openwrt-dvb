@@ -1,0 +1,11 @@
+--- a/vdr.c
++++ b/vdr.c
+@@ -767,7 +767,7 @@ int main(int argc, char *argv[])
+   Sources.Load(AddDirectory(ConfigDirectory, "sources.conf"), true, true);
+   Diseqcs.Load(AddDirectory(ConfigDirectory, "diseqc.conf"), true, Setup.DiSEqC);
+   Scrs.Load(AddDirectory(ConfigDirectory, "scr.conf"), true);
+-  cChannels::Load(AddDirectory(ConfigDirectory, "channels.conf"), false, true);
++  cChannels::Load(AddDirectory(CacheDirectory, "channels.conf"), false, true);
+   cTimers::Load(AddDirectory(ConfigDirectory, "timers.conf"));
+   Commands.Load(AddDirectory(ConfigDirectory, "commands.conf"));
+   RecordingCommands.Load(AddDirectory(ConfigDirectory, "reccmds.conf"));

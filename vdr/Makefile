@@ -1,42 +1,41 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #
 # Copyright (C) 2011 OpenWrt.org
-# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
+# Copyright (C) 2017-2022 Tomasz Maciej Nowak <tmn505@gmail.com>
 #
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := vdr
-PKG_VERSION := 2.2.0
-PKG_RELEASE := 3
+PKG_VERSION := 2.6.3
+PKG_RELEASE := 1
 
-PKG_SOURCE := vdr-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL := ftp://ftp.tvdr.de/vdr
-#PKG_SOURCE_URL := ftp://ftp.tvdr.de/vdr/Developer
-PKG_HASH := 7c259e1ed1f39d93d23df1d5d0f85dd2a1fa9ec1dadff79e5833e2ff3ebf6c4e
+PKG_SOURCE_PROTO := git
+PKG_SOURCE_URL := http://git.tvdr.de/vdr.git
+PKG_SOURCE_VERSION := 8b14723e9ef4f408cfb357f6c27235cf491efd12
+PKG_MIRROR_HASH := 0ed77eaf8799c36bab794f721af415d70b0e7bd3631978fcae2a3798bbfea5a5
 
 PKG_LICENSE := GPL-2.0
-PKG_LICENSE_FILE := COPYING
+PKG_LICENSE_FILES := COPYING
 
-PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
 
+PKG_BUILD_PARALLEL := 1
 PKG_INSTALL := 1
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/vdr
   SECTION := multimedia
   CATEGORY := Multimedia
   TITLE := Video Disk Recorder
   URL := http://www.tvdr.de
-  DEPENDS := @BROKEN +fontconfig +libcap +libfreetype +libjpeg +librt +libstdcpp +dejavu-fonts-ttf-DejaVuSans
+  DEPENDS := @BROKEN +libcap +libjpeg +libncurses +libstdcpp $(ICONV_DEPENDS) $(INTL_DEPENDS)
 endef
 
 define Package/vdr/description
  Video Disk Recorder (VDR) is a digital sat-receiver program using Linux and DVB technologies.
  It allows one to record MPEG2 streams, as well as output the stream to TV.
- It is also possible to watch DVDs (hardware accelerated) with some comfort and use an IR remote control.
 endef
 
 define Package/vdr-epgtableid0
@@ -47,31 +46,32 @@ define Package/vdr-epgtableid0
   DEPENDS := vdr
 endef
 
-define Package/vdr-skincurses
-  SECTION := multimedia
-  CATEGORY := Multimedia
-  TITLE := VDR curses(text) skin
-  URL := http://www.tvdr.de
-  DEPENDS := vdr +libncurses +libncursesw
-endef
-
 define Build/Configure
-	(rm -fR $(PKG_BUILD_DIR)/PLUGINS/src/dvbhddevice \
-		$(PKG_BUILD_DIR)/PLUGINS/src/dvbsddevice \
+	rm -fR \
 		$(PKG_BUILD_DIR)/PLUGINS/src/hello \
 		$(PKG_BUILD_DIR)/PLUGINS/src/osddemo \
 		$(PKG_BUILD_DIR)/PLUGINS/src/pictures \
-		$(PKG_BUILD_DIR)/PLUGINS/src/rcu \
 		$(PKG_BUILD_DIR)/PLUGINS/src/servicedemo \
+		$(PKG_BUILD_DIR)/PLUGINS/src/skincurses \
 		$(PKG_BUILD_DIR)/PLUGINS/src/status \
-		$(PKG_BUILD_DIR)/PLUGINS/src/svdrpdemo)
+		$(PKG_BUILD_DIR)/PLUGINS/src/svdrpdemo \
+		$(PKG_BUILD_DIR)/po
 endef
+
+TARGET_CXXFLAGS += -DDEBUG_DISABLE_BACKTRACE
+TARGET_LDFLAGS += $(if $(ICONV_FULL),-liconv)
+TARGET_LDFLAGS += $(if $(INTL_FULL),-lintl)
 
 MAKE_FLAGS += \
 	PREFIX="/usr" \
 	VIDEODIR="/mnt/video" \
 	CONFDIR="/etc/vdr" \
-	CACHEDIR="/mnt/video"
+	CACHEDIR="/tmp/vdr" \
+	$(if $(V),VERBOSE=1)
+
+define Build/Install
+	$(call Build/Install/Default,install-pc install-bin install-includes)
+endef
 
 define Build/InstallDev
 	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
@@ -83,9 +83,8 @@ endef
 
 define Package/vdr/install
 	$(MAKE) -C $(PKG_BUILD_DIR) $(MAKE_FLAGS) DESTDIR=$(1) \
-		install-dirs \
-		install-bin \
-		install-conf
+		install-conf \
+		install-bin
 
 	echo [vdr] > $(1)/etc/vdr/conf.d/00-vdr.conf
 
@@ -96,6 +95,8 @@ define Package/vdr/install
 
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_CONF) ./files/vdr.config $(1)/etc/config/vdr
+
+	$(INSTALL_DIR) $(1)/usr/share/locale
 endef
 
 define Package/vdr-epgtableid0/install
@@ -105,13 +106,5 @@ define Package/vdr-epgtableid0/install
 	echo [epgtableid0] > $(1)/etc/vdr/conf.d/01-epgtableid0.conf
 endef
 
-define Package/vdr-skincurses/install
-	$(MAKE) -C $(PKG_BUILD_DIR)/PLUGINS/src/skincurses $(MAKE_FLAGS) DESTDIR=$(1) install-lib
-
-	$(INSTALL_DIR) $(1)/etc/vdr/conf.d
-	echo [skincurses] > $(1)/etc/vdr/conf.d/02-skincurses.conf
-endef
-
 $(eval $(call BuildPackage,vdr))
 $(eval $(call BuildPackage,vdr-epgtableid0))
-$(eval $(call BuildPackage,vdr-skincurses))

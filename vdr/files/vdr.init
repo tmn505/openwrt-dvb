@@ -3,6 +3,9 @@
 USE_PROCD=1
 START=92
 
+CACHE_DIR=/tmp/vdr
+CONFIG_DIR=/etc/vdr
+
 start_instance() {
 	local cfg="$1"
 	local aux
@@ -26,6 +29,13 @@ service_triggers() {
 }
 
 start_service() {
+	mkdir -p "$CACHE_DIR"
+	cp -f "$CONFIG_DIR/channels.conf" "$CACHE_DIR/channels.conf"
+
 	config_load vdr
 	config_foreach start_instance vdr
+}
+
+service_stopped() {
+	cp -f "$CACHE_DIR/channels.conf" "$CONFIG_DIR/channels.conf"
 }

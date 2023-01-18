@@ -1,3 +1,17 @@
+From 947332306d692bbf9ffaadc1d704168d2c3b5f49 Mon Sep 17 00:00:00 2001
+From: glenvt18 <glenvt18@gmail.com>
+Date: Wed, 23 Aug 2017 02:29:23 +0300
+Subject: [PATCH] Improve portability across libc implementations
+
+---
+ i18n.h   |  2 +-
+ osd.c    |  2 +-
+ thread.c |  5 ++++-
+ tools.c  |  6 +++++-
+ tools.h  | 19 ++++++++++++++++++-
+ vdr.c    |  9 ++++++---
+ 6 files changed, 35 insertions(+), 8 deletions(-)
+
 --- a/i18n.h
 +++ b/i18n.h
 @@ -46,7 +46,7 @@ const cStringList *I18nLanguages(void);
@@ -22,8 +36,8 @@
  
 --- a/thread.c
 +++ b/thread.c
-@@ -143,7 +143,9 @@ cRwLock::cRwLock(bool PreferWriter)
- {
+@@ -160,7 +160,9 @@ cRwLock::cRwLock(bool PreferWriter)
+   writeLockThreadId = 0;
    pthread_rwlockattr_t attr;
    pthread_rwlockattr_init(&attr);
 +#ifdef __GLIBC__
@@ -32,7 +46,7 @@
    pthread_rwlock_init(&rwlock, &attr);
  }
  
-@@ -179,7 +181,8 @@ cMutex::cMutex(void)
+@@ -210,7 +212,8 @@ cMutex::cMutex(void)
    locked = 0;
    pthread_mutexattr_t attr;
    pthread_mutexattr_init(&attr);
@@ -44,7 +58,7 @@
  
 --- a/tools.c
 +++ b/tools.c
-@@ -618,7 +618,7 @@ char *ReadLink(const char *FileName)
+@@ -672,7 +672,7 @@ char *ReadLink(const char *FileName)
  {
    if (!FileName)
       return NULL;
@@ -53,11 +67,27 @@
    if (!TargetName) {
       if (errno == ENOENT) // file doesn't exist
          TargetName = strdup(FileName);
+@@ -1562,11 +1562,15 @@ cReadDir::~cReadDir()
+ struct dirent *cReadDir::Next(void)
+ {
+   if (directory) {
++#if defined(__GLIBC__) && defined(__GLIBC_PREREQ)
+ #if !__GLIBC_PREREQ(2, 24) // readdir_r() is deprecated as of GLIBC 2.24
+      while (readdir_r(directory, &u.d, &result) == 0 && result) {
+ #else
+      while ((result = readdir(directory)) != NULL) {
+ #endif
++#else
++     while (readdir_r(directory, &u.d, &result) == 0 && result) {
++#endif
+            if (strcmp(result->d_name, ".") && strcmp(result->d_name, ".."))
+               return result;
+            }
 --- a/tools.h
 +++ b/tools.h
-@@ -27,6 +27,16 @@
- #include <sys/stat.h>
+@@ -28,6 +28,16 @@
  #include <sys/types.h>
+ #include "thread.h"
  
 +#ifndef ACCESSPERMS
 +# define ACCESSPERMS (S_IRWXU|S_IRWXG|S_IRWXO) /* 0777 */
@@ -72,7 +102,27 @@
  typedef unsigned char uchar;
  
  extern int SysLogLevel;
-@@ -605,7 +615,7 @@ public:
+@@ -444,12 +454,19 @@ class cReadDir {
+ private:
+   DIR *directory;
+   struct dirent *result;
++#if defined(__GLIBC__) && defined(__GLIBC_PREREQ)
+ #if !__GLIBC_PREREQ(2, 24) // readdir_r() is deprecated as of GLIBC 2.24
+   union { // according to "The GNU C Library Reference Manual"
+     struct dirent d;
+     char b[offsetof(struct dirent, d_name) + NAME_MAX + 1];
+     } u;
+ #endif
++#else
++  union { // according to "The GNU C Library Reference Manual"
++    struct dirent d;
++    char b[offsetof(struct dirent, d_name) + NAME_MAX + 1];
++    } u;
++#endif
+ public:
+   cReadDir(const char *Directory);
+   ~cReadDir();
+@@ -818,7 +835,7 @@ public:
          data[i] = T(0);
      size = 0;
    }
@@ -83,7 +133,7 @@
    }
 --- a/vdr.c
 +++ b/vdr.c
-@@ -657,9 +657,12 @@ int main(int argc, char *argv[])
+@@ -662,9 +662,12 @@ int main(int argc, char *argv[])
       }
    else if (Terminal) {
       // Claim new controlling terminal
@@ -99,3 +149,18 @@
       HasStdin = true;
       tcgetattr(STDIN_FILENO, &savedTm);
       }
+@@ -1580,12 +1583,14 @@ int main(int argc, char *argv[])
+               cSchedules::Cleanup();
+               // Plugins housekeeping:
+               PluginManager.Housekeeping();
++#ifdef __GLIBC__
+               // Memory cleanup:
+               static time_t LastMemoryCleanup = 0;
+               if ((Now - LastMemoryCleanup) > MEMCLEANUPDELTA) {
+                  malloc_trim(0);
+                  LastMemoryCleanup = Now;
+                  }
++#endif
+               }
+            }
+ 

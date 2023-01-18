@@ -1,0 +1,121 @@
+From 2f7f9cf4756d7325b9559d2873ea4523c410699b Mon Sep 17 00:00:00 2001
+From: glenvt18 <glenvt18@gmail.com>
+Date: Wed, 23 Aug 2017 03:36:35 +0300
+Subject: [PATCH] Make backtrace optional
+
+Some libc implementations don't support backtrace. Use
+-DDEBUG_DISABLE_BACKTRACE in such cases.
+---
+ thread.c | 16 ++++++++++++++--
+ thread.h |  5 +++++
+ 2 files changed, 19 insertions(+), 2 deletions(-)
+
+--- a/thread.c
++++ b/thread.c
+@@ -11,7 +11,11 @@
+ #include <cxxabi.h>
+ #include <dlfcn.h>
+ #include <errno.h>
++
++#ifndef DEBUG_DISABLE_BACKTRACE
+ #include <execinfo.h>
++#endif
++
+ #include <linux/unistd.h>
+ #include <malloc.h>
+ #include <stdarg.h>
+@@ -24,7 +28,11 @@
+ #include <unistd.h>
+ #include "tools.h"
+ 
++#ifdef DEBUG_DISABLE_BACKTRACE
++#define ABORT { dsyslog("ABORT!"); abort(); }
++#else
+ #define ABORT { dsyslog("ABORT!"); cBackTrace::BackTrace(); abort(); }
++#endif
+ 
+ //#define DEBUG_LOCKING  // uncomment this line to activate debug output for locking
+ #define DEBUG_LOCKSEQ  // uncomment this line to activate debug output for invalid locking sequence
+@@ -437,6 +445,7 @@ bool cThreadLock::Lock(cThread *Thread)
+   return false;
+ }
+ 
++#ifndef DEBUG_DISABLE_BACKTRACE
+ // --- cBackTrace ------------------------------------------------------------
+ 
+ #define BT_BUF_SIZE 100
+@@ -555,6 +564,7 @@ cString cBackTrace::GetCaller(int Level,
+      }
+   return Caller;
+ }
++#endif
+ 
+ // --- cStateLockLog ---------------------------------------------------------
+ 
+@@ -622,7 +632,7 @@ void cStateLockLog::Dump(const char *Nam
+              q += sprintf(q, "  %c", c);
+              }
+          q += sprintf(q, "  %c", Lock ? 'L' : 'U');
+-#ifdef DEBUG_LOCKCALL
++#if defined(DEBUG_LOCKCALL) && !defined(DEBUG_DISABLE_BACKTRACE)
+          if (*logCaller[logIndex]) {
+             *q++ = ' ';
+             strn0cpy(q, *cBackTrace::Demangle(logCaller[logIndex]), sizeof(msg) - (q - msg));
+@@ -634,8 +644,10 @@ void cStateLockLog::Dump(const char *Nam
+          logIndex = 0;
+       }
+   dsyslog("%5d invalid lock sequence: %s", ThreadId, Name);
++#ifndef DEBUG_DISABLE_BACKTRACE
+   dsyslog("full backtrace:");
+   cBackTrace::BackTrace(NULL, 2);
++#endif
+   dsyslog("--- end invalid lock sequence report");
+   dsyslog("--- THERE WILL BE NO FURTHER REPORTS UNTIL VDR IS RESTARTED!");
+   fprintf(stderr, "invalid lock sequence at %s\n", *DayDateTime(time(NULL)));
+@@ -691,7 +703,7 @@ void cStateLockLog::Check(const char *Na
+         logFlags[logIndex] = flags[Index] | (Write ? SLL_WRITE_FLAG : 0) | (Lock ? SLL_LOCK_FLAG : 0);
+         if (flags[Index] == 0)
+            threadIds[Index] = 0;
+-#ifdef DEBUG_LOCKCALL
++#if defined(DEBUG_LOCKCALL) && !defined(DEBUG_DISABLE_BACKTRACE)
+         strn0cpy(logCaller[logIndex], cBackTrace::GetCaller(Lock ? 3 : 5, true), SLL_LENGTH);
+ #endif
+         if (++logIndex >= SLL_SIZE)
+@@ -760,7 +772,9 @@ bool cStateLock::Lock(cStateKey &StateKe
+      static bool DoubleWriteLockReported = false;
+      if (!DoubleWriteLockReported) {
+         dsyslog("WARNING: attempt to acquire write lock while already holding a write lock in the same thread - this may crash! (backtrace follows)");
++#ifndef DEBUG_DISABLE_BACKTRACE
+         cBackTrace::BackTrace();
++#endif
+         DoubleWriteLockReported = true;
+         }
+      }
+--- a/thread.h
++++ b/thread.h
+@@ -14,6 +14,9 @@
+ #include <stdio.h>
+ #include <sys/types.h>
+ 
++// uncomment this if your libc doesn't provide backtrace capabilities
++//#define DEBUG_DISABLE_BACKTRACE
++
+ typedef pid_t tThreadId;
+ 
+ class cCondWait {
+@@ -301,6 +304,7 @@ public:
+   int Close(void);
+   };
+ 
++#ifndef DEBUG_DISABLE_BACKTRACE
+ // cBackTrace can be used for debugging.
+ 
+ class cStringList;
+@@ -336,6 +340,7 @@ public:
+ // descriptors in the child process.
+ // With Detached=true, calls command in background and in a separate session,
+ // with stdin connected to /dev/null.
++#endif
+ 
+ int SystemExec(const char *Command, bool Detached = false);
+ 
