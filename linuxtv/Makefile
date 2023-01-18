@@ -22,6 +22,8 @@ define Package/linuxtv
   BUILDONLY := 1
 endef
 
+$(HOST_STAMP_INSTALLED): $(HOST_STAMP_BUILT) FORCE
+
 define Host/Compile
 	$(if $(SDK),,$(error Only usage inside of OpenWrt SDK is supported. Sorry))
 endef
@@ -35,6 +37,7 @@ define Host/Install
 		$(TMP_DIR)/info/.packageinfo-v4l-dvb \
 		$(TOPDIR)/.config \
 		>> $(LINUX_DIR)/.config
+	rm -f $(HOST_STAMP_INSTALLED)
 endef
 
 define Host/Clean
