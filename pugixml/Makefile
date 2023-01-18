@@ -1,24 +1,23 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #
-# Copyright (C) 2017-2018 Tomasz Maciej Nowak <tomek_n@o2.pl>
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
+# Copyright (C) 2017-2022 Tomasz Maciej Nowak <tmn505@gmail.com>
 #
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := pugixml
-PKG_VERSION := 1.9
+PKG_VERSION := 1.13
 PKG_RELEASE := 1
 
 PKG_SOURCE := $(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL := http://github.com/zeux/pugixml/releases/download/v$(PKG_VERSION)/
-PKG_HASH := d156d35b83f680e40fd6412c4455fdd03544339779134617b9b28d19e11fdba6
+PKG_HASH := 40c0b3914ec131485640fa57e55bf1136446026b41db91c1bef678186a12abbe
 
 PKG_LICENSE := MIT
-PKG_LICENSE_FILE := readme.txt
+PKG_LICENSE_FILES := readme.txt
 
-PKG_MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER := Tomasz Maciej Nowak <tmn505@gmail.com>
 
+PKG_BUILD_PARALLEL := 1
 PKG_INSTALL := 1
 
 include $(INCLUDE_DIR)/package.mk
@@ -29,7 +28,7 @@ define Package/pugixml
   CATEGORY := Libraries
   TITLE := XML parser for C++
   URL := https://pugixml.org
-  DEPENDS := @BROKEN +libcurl +libstdcpp
+  DEPENDS := +libstdcpp
 endef
 
 define Package/pugixml/description
@@ -43,12 +42,12 @@ endef
 CMAKE_OPTIONS += -DBUILD_SHARED_LIBS:BOOL=TRUE
 
 define Build/InstallDev
-	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
+	$(CP) $(PKG_INSTALL_DIR)/. $(1)/.
 endef
 
 define Package/pugixml/install
 	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libpugixml.so* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libpugixml.so* $(1)/usr/lib/.
 endef
 
 $(eval $(call BuildPackage,pugixml))
