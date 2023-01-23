@@ -47,7 +47,6 @@ define Build/Prepare
 	fi;)
 
 	$(MAKE) -C $(PKG_BUILD_DIR) untar
-	$(CP) ./files/. $(PKG_BUILD_DIR)/.
 
 	$(call Build/Patch/Default)
 endef
