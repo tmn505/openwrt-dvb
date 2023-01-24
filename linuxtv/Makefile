@@ -34,7 +34,7 @@ define Host/Install
 	cp $(LINUX_DIR)/.config $(LINUX_DIR)/.config.orig
 	$(SCRIPT_DIR)/package-metadata.pl \
 		kconfig \
-		$(TMP_DIR)/info/.packageinfo-v4l-dvb \
+		$(TMP_DIR)/info/.packageinfo*v4l-dvb \
 		$(TOPDIR)/.config \
 		>> $(LINUX_DIR)/.config
 	rm -f $(HOST_STAMP_INSTALLED)
