@@ -54,7 +54,7 @@ endef
 define Build/Configure
 	$(SCRIPT_DIR)/package-metadata.pl \
 		kconfig \
-		$(TMP_DIR)/info/.packageinfo-v4l-dvb \
+		$(TMP_DIR)/info/.packageinfo*v4l-dvb \
 		$(TOPDIR)/.config \
 		> $(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS)/.config
 
