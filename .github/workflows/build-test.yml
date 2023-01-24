@@ -1,0 +1,37 @@
+name: OpenWrt DVB
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  main:
+    name: Build
+    runs-on: ubuntu-latest
+    env:
+      LANG: en_US.UTF-8
+      TARGET: x86/64
+
+    steps:
+      - name: Prepare
+        run: |
+          sudo locale-gen en_US.UTF-8
+          sudo update-locale LANG=en_US.UTF-8
+          SDK_TARBALL=$(curl -s https://downloads.openwrt.org/snapshots/targets/${TARGET}/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')
+          curl -O https://downloads.openwrt.org/snapshots/targets/${TARGET}/${SDK_TARBALL}
+          tar -x -J -f ${SDK_TARBALL}
+          cd ${SDK_TARBALL%.tar.xz}/package
+          git clone --depth 1 "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
+          echo "SDK=${SDK_TARBALL%.tar.xz}" >> $GITHUB_ENV
+
+      - name: Build artifacts
+        run: |
+          ls -l ${SDK}/package
+          pwd
+          cd ${SDK}
+          printf "CONFIG_BUILD_LOG=y\nCONFIG_SIGNED_PACKAGES=n\n" >> .config
+          make defconfig
+          make -j$(nproc) V=s
