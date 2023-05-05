@@ -8,7 +8,8 @@ PKG_MIRROR_HASH := 0bb38b20fccc4a6f68ea0a5390d84d98f391beb38de1145d57810c5b8a03f
 
 V4L_SOURCE_URL := https://github.com/tbsdtv/linux_media.git
 V4L_SOURCE_VERSION := 16c763979217cd58c35ffd5ad776d73f1e5a950e
+V4L_SOURCE_DATE := 2023-01-15
 V4L_REPO_NAME := linux-media-tbsdtv
-V4L_SOURCE_FILE := $(V4L_REPO_NAME)-$(PKG_SOURCE_DATE)-$(shell printf '%.8s' $(V4L_SOURCE_VERSION)).tar.bz2
+V4L_SOURCE_FILE := $(V4L_REPO_NAME)-$(V4L_SOURCE_DATE)-$(shell printf '%.8s' $(V4L_SOURCE_VERSION)).tar.bz2
 
 PATCH_DIR := patches-tbsdtv

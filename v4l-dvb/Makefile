@@ -35,6 +35,14 @@ KernelPackage/depends := :
 define Build/Prepare
 	$(call Build/Prepare/Default)
 
+	$(SED) '/^DATE .*/a TAR_TS := `git -C $$$$(DIR) log --format="@%ct" -n 1`' \
+		-e 's,$$$$(TARDIR),$$$$(sort $$$$(TARDIR)),g' \
+		-e 's,$$$$(TARFILES),$$$$(sort $$$$(TARFILES)),g' \
+		-e 's,)`", | LC_ALL=C sort)`",g' \
+		-e 's,tar cf ,tar --numeric-owner --owner=0 --group=0 --mode=a-s --sort=name --mtime="$$$$(TAR_TS)" -c -f ,g' \
+		-e 's,tar rvf ,tar --numeric-owner --owner=0 --group=0 --mode=a-s --sort=name --mtime="$$$$(TAR_TS)" -r -v -f ,g' \
+		$(PKG_BUILD_DIR)/linux/Makefile
+
 	(if [ -s $(DL_DIR)/$(V4L_SOURCE_FILE) ]; \
 		then $(CP) $(DL_DIR)/$(V4L_SOURCE_FILE) $(PKG_BUILD_DIR)/linux/linux-media.tar.bz2; \
 	else if [ -d $(DL_DIR)/$(V4L_REPO_NAME) ]; \
