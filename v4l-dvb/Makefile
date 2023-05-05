@@ -43,15 +43,18 @@ define Build/Prepare
 		-e 's,tar rvf ,tar --numeric-owner --owner=0 --group=0 --mode=a-s --sort=name --mtime="$$$$(TAR_TS)" -r -v -f ,g' \
 		$(PKG_BUILD_DIR)/linux/Makefile
 
-	(if [ -s $(DL_DIR)/$(V4L_SOURCE_FILE) ]; \
+	(if [ "`mkhash -N sha256 $(DL_DIR)/$(V4L_SOURCE_FILE)`" = "$(V4L_HASH)" ]; \
 		then $(CP) $(DL_DIR)/$(V4L_SOURCE_FILE) $(PKG_BUILD_DIR)/linux/linux-media.tar.bz2; \
-	else if [ -d $(DL_DIR)/$(V4L_REPO_NAME) ]; \
+	else if [ -d $(DL_DIR)/$(V4L_REPO_NAME)/.git ]; \
 			then git -C $(DL_DIR)/$(V4L_REPO_NAME) fetch --progress; \
 			else git clone --progress --single-branch $(V4L_SOURCE_URL) $(DL_DIR)/$(V4L_REPO_NAME); \
 		fi; \
 		git -C $(DL_DIR)/$(V4L_REPO_NAME) checkout --progress $(V4L_SOURCE_VERSION); \
 		cd $(PKG_BUILD_DIR)/linux; make tar DIR=$(DL_DIR)/$(V4L_REPO_NAME); \
-		$(CP) linux-media.tar.bz2 $(DL_DIR)/$(V4L_SOURCE_FILE); \
+		if [ "`mkhash -N sha256 linux-media.tar.bz2`" = "$(V4L_HASH)" ]; \
+			then $(CP) linux-media.tar.bz2 $(DL_DIR)/$(V4L_SOURCE_FILE); \
+			else echo 'Error: linux-media.tar.bz2 check sum does not match V4L_HASH.'; false; \
+		fi; \
 	fi;)
 
 	$(MAKE) -C $(PKG_BUILD_DIR) untar
