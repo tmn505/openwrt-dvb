@@ -38,10 +38,10 @@ define Build/Prepare
 	(if [ -s $(DL_DIR)/$(V4L_SOURCE_FILE) ]; \
 		then $(CP) $(DL_DIR)/$(V4L_SOURCE_FILE) $(PKG_BUILD_DIR)/linux/linux-media.tar.bz2; \
 	else if [ -d $(DL_DIR)/$(V4L_REPO_NAME) ]; \
-			then (cd $(DL_DIR)/$(V4L_REPO_NAME); git checkout HEAD; git pull); \
-		else git clone --single-branch $(V4L_SOURCE_URL) $(DL_DIR)/$(V4L_REPO_NAME); \
+			then git -C $(DL_DIR)/$(V4L_REPO_NAME) fetch --progress; \
+			else git clone --progress --single-branch $(V4L_SOURCE_URL) $(DL_DIR)/$(V4L_REPO_NAME); \
 		fi; \
-		cd $(DL_DIR)/$(V4L_REPO_NAME); git checkout $(V4L_SOURCE_VERSION); \
+		git -C $(DL_DIR)/$(V4L_REPO_NAME) checkout --progress $(V4L_SOURCE_VERSION); \
 		cd $(PKG_BUILD_DIR)/linux; make tar DIR=$(DL_DIR)/$(V4L_REPO_NAME); \
 		$(CP) linux-media.tar.bz2 $(DL_DIR)/$(V4L_SOURCE_FILE); \
 	fi;)
