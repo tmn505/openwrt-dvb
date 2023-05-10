@@ -1,4 +1,4 @@
-name: OpenWrt DVB
+name: OpenWrt DVB feed buildbot
 
 on:
   push:
@@ -8,42 +8,74 @@ on:
   workflow_dispatch:
 
 jobs:
-  main:
-    name: Build
+  prepare:
+    name: Prepare source
     runs-on: ubuntu-latest
-    env:
-      TARGET: x86/64
 
     steps:
-      - name: Prepare
+      - name: Download source
         run: |
-          SDK_TAR="$(curl -s https://downloads.openwrt.org/snapshots/targets/${TARGET}/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')"
-          git clone --depth 1 ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git ${SDK_TAR%.tar.xz}/package
-          git clone --depth 1 --branch gh-pages ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git repo || true
-          curl -O https://downloads.openwrt.org/snapshots/targets/${TARGET}/${SDK_TAR}
-          tar -x -J -f ${SDK_TAR}
+          SDK_TAR="$(curl -s https://downloads.openwrt.org/snapshots/targets/tegra/generic/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')"
           echo "SDK=${SDK_TAR%.tar.xz}" >> ${GITHUB_ENV}
-
-      - name: test cached
-        run: |
-          ls -l ${SDK}
-          ls -l -R ${SDK}/dl
-
-      - name: Build artifacts
-        run: |
-          cd ${SDK}
-          printf "CONFIG_BUILD_LOG=y\nCONFIG_SIGNED_PACKAGES=n\n" >> .config
+          git clone --depth 1 ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git ${SDK_TAR%.tar.xz}/package
+          curl -O https://downloads.openwrt.org/snapshots/targets/tegra/generic/${SDK_TAR}
+          tar -x -J -f ${SDK_TAR}
+          mkdir -p dl feeds
+          cd ${SDK_TAR%.tar.xz}
+          rm -R dl
+          ln -s -f ../dl dl
+          ln -s -f ../feeds feeds
           make defconfig
-          make -j$(nproc) V=s
-          echo "LOG_ARCHIVE_NAME=${TARGET/\//-}-${GITHUB_WORKFLOW_SHA}" >> ${GITHUB_ENV}
+          make -j$(nproc) V=s download
+          make -j$(nproc) V=s package/v4l-dvb/{prepare,clean}
           rm -R dl/*/
+          scripts/feeds update -a
 
       - name: Cache source
         uses: actions/cache@v3
         with:
           key: downloads
-          restore-keys: downloads
-          path: ${{env.SDK}}/dl
+          path: |
+            dl
+            feeds
+
+  main:
+    name: Build targets
+    needs: prepare
+    runs-on: ubuntu-latest
+    env:
+      TARGET: x86/64
+
+    steps:
+      - name: Prepare project
+        run: |
+          SDK_TAR="$(curl -s https://downloads.openwrt.org/snapshots/targets/${TARGET}/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')"
+          echo "SDK=${SDK_TAR%.tar.xz}" >> ${GITHUB_ENV}
+          git clone --depth 1 ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git ${SDK_TAR%.tar.xz}/package
+          git clone --depth 1 --branch gh-pages ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git repo || true
+          curl -O https://downloads.openwrt.org/snapshots/targets/${TARGET}/${SDK_TAR}
+          tar -x -J -f ${SDK_TAR}
+
+      - name: Restore cached source
+        uses: actions/cache@v3
+        with:
+          key: downloads
+          path: |
+            dl
+            feeds
+
+      - name: Build packages
+        run: |
+          ls -al
+          mkdir -p dl feeds
+          cd ${SDK}
+          rm -R dl
+          ln -s -f ../dl dl
+          ln -s -f ../feeds feeds
+          printf "CONFIG_BUILD_LOG=y\nCONFIG_SIGNED_PACKAGES=n\n" >> .config
+          make defconfig
+          make -j$(nproc) V=s
+          echo "LOG_ARCHIVE_NAME=${TARGET/\//-}-${GITHUB_WORKFLOW_SHA}" >> ${GITHUB_ENV}
 
       - name: Store logs
         uses: actions/upload-artifact@v3
