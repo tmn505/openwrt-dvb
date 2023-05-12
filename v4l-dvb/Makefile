@@ -75,6 +75,7 @@ endef
 define Build/Compile
 	+$(KERNEL_MAKE) \
 		$(PKG_JOBS) \
+		CONFIG_WERROR=n \
 		M=$(PKG_BUILD_DIR)/$(PKG_EXTMOD_SUBDIRS) \
 		modules
 
