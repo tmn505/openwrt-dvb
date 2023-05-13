@@ -13,83 +13,109 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download source
-        run: |
-          SDK_TAR="$(curl -s https://downloads.openwrt.org/snapshots/targets/tegra/generic/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')"
-          echo "SDK=${SDK_TAR%.tar.xz}" >> ${GITHUB_ENV}
-          git clone --depth 1 ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git ${SDK_TAR%.tar.xz}/package
-          curl -O https://downloads.openwrt.org/snapshots/targets/tegra/generic/${SDK_TAR}
-          tar -x -J -f ${SDK_TAR}
-          mkdir -p dl feeds
-          cd ${SDK_TAR%.tar.xz}
-          rm -R dl
-          ln -s -f ../dl dl
-          ln -s -f ../feeds feeds
-          make defconfig
-          make -j$(nproc) V=s download
-          make -j$(nproc) V=s package/v4l-dvb/{prepare,clean}
-          rm -R dl/*/
-          scripts/feeds update -a
-
-      - name: Cache source
-        uses: actions/cache@v3
+      - name: Cache sources
+        uses: actions/cache/restore@v3
         with:
           key: downloads
           path: |
-            dl
-            feeds
+            sdk/dl
+            sdk/feeds
 
-  main:
+      - name: Download sources
+        run: |
+          SDK_TAR="$(curl -s https://downloads.openwrt.org/snapshots/targets/tegra/generic/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')"
+          git clone --depth 1 ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git sdk/package
+          curl -O https://downloads.openwrt.org/snapshots/targets/tegra/generic/${SDK_TAR}
+          tar -x -J --strip-components=1 -f ${SDK_TAR} -C "$(pwd)/sdk"
+          mkdir -p sdk/dl sdk/feeds
+          cd sdk
+          make defconfig
+          make -j$(nproc) V=s download
+          make -j$(nproc) V=s package/v4l-dvb/{prepare,clean}
+          rm -f -R dl/*/
+          scripts/feeds update -a
+
+  build:
     name: Build targets
     needs: prepare
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - apm821xx-nand
+          - armvirt-32
+          - ath79-generic
+          - mpc85xx-p1010
+          - ramips-mt7621
+          - mvebu-cortexa53
+          - mvebu-cortexa9
+          - x86-64
+          - x86-geode
+
     env:
-      TARGET: x86/64
+      TARGET: ${{ matrix.target }}
 
     steps:
       - name: Prepare project
         run: |
-          SDK_TAR="$(curl -s https://downloads.openwrt.org/snapshots/targets/${TARGET}/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')"
-          echo "SDK=${SDK_TAR%.tar.xz}" >> ${GITHUB_ENV}
-          git clone --depth 1 ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git ${SDK_TAR%.tar.xz}/package
-          git clone --depth 1 --branch gh-pages ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git repo || true
-          curl -O https://downloads.openwrt.org/snapshots/targets/${TARGET}/${SDK_TAR}
-          tar -x -J -f ${SDK_TAR}
+          SDK_TAR="$(curl -s https://downloads.openwrt.org/snapshots/targets/${TARGET/-/\/}/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')"
+          git clone --depth 1 ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git sdk/package
+          curl -O https://downloads.openwrt.org/snapshots/targets/${TARGET/-/\/}/${SDK_TAR}
+          tar -x -J --strip-components=1 -f ${SDK_TAR} -C "$(pwd)/sdk"
 
-      - name: Restore cached source
+      - name: Cache sources
         uses: actions/cache@v3
         with:
           key: downloads
           path: |
-            dl
-            feeds
+            sdk/dl
+            sdk/feeds
 
       - name: Build packages
         run: |
-          ls -al
-          mkdir -p dl feeds
-          cd ${SDK}
-          rm -R dl
-          ln -s -f ../dl dl
-          ln -s -f ../feeds feeds
+          mkdir -p sdk/bin sdk/dl sdk/feeds
+          cd sdk
           printf "CONFIG_BUILD_LOG=y\nCONFIG_SIGNED_PACKAGES=n\n" >> .config
           make defconfig
           make -j$(nproc) V=s
-          echo "LOG_ARCHIVE_NAME=${TARGET/\//-}-${GITHUB_WORKFLOW_SHA}" >> ${GITHUB_ENV}
 
       - name: Store logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: ${{env.LOG_ARCHIVE_NAME}}-logs
-          path: ${{env.SDK}}/logs/
+          name: ${{ matrix.target }}-${{ github.sha }}-logs
+          path: sdk/logs/
+          retention-days: 60
+
+      - name: Store packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.target }}-pkgs
+          path: sdk/bin/
+          retention-days: 1
+
+  deploy:
+    name: Upload packages
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
+
+    steps:
+      - name: Restore packages
+        uses: actions/download-artifact@v3
+        with:
+          path: bin
 
       - name: Publish packages
-        if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
         run: |
+          git clone --depth 1 --branch gh-pages ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git repo || true
+          rm -R -f repo/snapshots
           mkdir -p repo/snapshots
-          cp -R -f ${SDK}/bin/. repo/snapshots/.
+          cp -R -f bin/*-pkgs/. repo/snapshots/.
           cd repo
           git update-ref -d HEAD
           git config --local user.name "github-actions[bot]"
