@@ -1,0 +1,644 @@
+Package: as102-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 62723
+Filename: as102-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 63355
+SHA256sum: 0344d9e25a1ba344febf08bafbe0f8fdc745451294618a5ddce1d516be7e7e64
+Description:  Abilis AS102
+
+Package: cx24120-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 29498
+Filename: cx24120-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 30295
+SHA256sum: 1068227b9e8b4a96b6c7f52aa8acbddda511f9768e1f15ef0439fa6455b6b5fd
+Description:  Conexant CX24120 DVB-S/S2 frontend
+
+Package: dib0700-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 21895
+Filename: dib0700-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 22655
+SHA256sum: f4a57a847ffe192997cc2939fbf198676a1b874f56015d4db86ac9b266a73c88
+Description:  DiBcom 0700 USB bridge
+
+Package: drxd-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 9839
+Filename: drxd-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 10599
+SHA256sum: 48e3584aebd33146e6413dbe6442971da5c836e076a5021314f02b44d65cf2ff
+Description:  Micronas DRXD demodulator
+
+Package: ds3000-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 3944
+Filename: ds3000-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 4679
+SHA256sum: 4982aba61f7b509ed2cac578dbdb49a85f289e6021a5cedfbaab451e43c6dc7d
+Description:  Montage Technology M88DS3000
+
+Package: dvb-app-atsc_epg
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 48464
+Filename: dvb-app-atsc_epg_1505-1_mipsel_24kc.ipk
+Size: 49105
+SHA256sum: 3f19c82fdd8f2014727841bd4fde57c7cc7b66a380df41bfb2d1fa7e004fbe06
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB atsc_epg application.
+
+Package: dvb-app-av7110_loadkeys
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 8046
+Filename: dvb-app-av7110_loadkeys_1505-1_mipsel_24kc.ipk
+Size: 8696
+SHA256sum: 91e6ae5986cc69fd9655628fb19b929947f2c0a3a464a399c443c7bbfe05371a
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB av7110_loadkeys application.
+
+Package: dvb-app-azap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 26510
+Filename: dvb-app-azap_1505-1_mipsel_24kc.ipk
+Size: 27165
+SHA256sum: 542121e5db1c5c8b6ded0dfa449de68bcdefc149df5e7739ae53881ba60553ed
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB azap application.
+
+Package: dvb-app-czap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 42700
+Filename: dvb-app-czap_1505-1_mipsel_24kc.ipk
+Size: 43224
+SHA256sum: 5ae23d98de60663698bb5684a489f59836ff8a97e254d7faf67cc338b0683e34
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB czap application.
+
+Package: dvb-app-dib3000-watch
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 31306
+Filename: dvb-app-dib3000-watch_1505-1_mipsel_24kc.ipk
+Size: 32064
+SHA256sum: b636040b7c6ea3f5d9d51d885f561d92668eb96aa842d3efadb589fef58134f4
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dib3000-watch application.
+
+Package: dvb-app-dst_test
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 20903
+Filename: dvb-app-dst_test_1505-1_mipsel_24kc.ipk
+Size: 21561
+SHA256sum: f399c997f8346ff90d14b7f92f1a9d54b1ed9d56d724c40d989819756e66d377
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dst_test application.
+
+Package: dvb-app-dvbdate
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 40280
+Filename: dvb-app-dvbdate_1505-1_mipsel_24kc.ipk
+Size: 40796
+SHA256sum: 4db93354f93d7efe4eb28be9fcc7da5c63313a2716540f0da047f0db7b5fce6a
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbdate application.
+
+Package: dvb-app-dvbnet
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 22600
+Filename: dvb-app-dvbnet_1505-1_mipsel_24kc.ipk
+Size: 23278
+SHA256sum: 2bae90c27ced84bd3a191390fff3cd05d8324f184b568271b7a247ae262bfbc6
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbnet application.
+
+Package: dvb-app-dvbscan
+Version: 1505-1
+Depends: libc, libdvbcfg, libucsi, libdvbsec, libdvbapi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 49877
+Filename: dvb-app-dvbscan_1505-1_mipsel_24kc.ipk
+Size: 50622
+SHA256sum: bde5f2400560929e0e54c53958692d4703da57325eb1141b3dc9badbcf72bd59
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbscan application.
+
+Package: dvb-app-dvbtraffic
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 23043
+Filename: dvb-app-dvbtraffic_1505-1_mipsel_24kc.ipk
+Size: 23722
+SHA256sum: fa92025c2141fbe8153aeeb513ce8b51285dc730b270017759b32cd02a410961
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbtraffic application.
+
+Package: dvb-app-femon
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 31593
+Filename: dvb-app-femon_1505-1_mipsel_24kc.ipk
+Size: 32334
+SHA256sum: 7b082dae106e62a4e832a8a41beec43eb0b7391ab90c095f0ac8e96144bb3a96
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB femon application.
+
+Package: dvb-app-gnutv
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libucsi, libdvbsec, libdvbapi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 94878
+Filename: dvb-app-gnutv_1505-1_mipsel_24kc.ipk
+Size: 95689
+SHA256sum: 4d341664574f59d92b89fb25580c4f89586bebdbd6a4e4ff98535d4c7bfbedd0
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gnutv application.
+
+Package: dvb-app-gotox
+Version: 1505-1
+Depends: libc, libdvbapi, libdvbsec
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 45239
+Filename: dvb-app-gotox_1505-1_mipsel_24kc.ipk
+Size: 46050
+SHA256sum: ad245078e97d4de6eb4f197884caac9a39aab664970ba5f2620acf73c1400077
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gotox application.
+
+Package: dvb-app-scan
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 75623
+Filename: dvb-app-scan_1505-1_mipsel_24kc.ipk
+Size: 76200
+SHA256sum: 17ee61eaf09b81298465a1772557302097f48d8d62eb5c8ed714c9e7c813e9d0
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB scan application.
+
+Package: dvb-app-szap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 33188
+Filename: dvb-app-szap_1505-1_mipsel_24kc.ipk
+Size: 34029
+SHA256sum: 4b27487c08c1bdc76a236cd0077d551920b85b9ddd2ad5f6593e4f3ea66ea12d
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB szap application.
+
+Package: dvb-app-tzap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 29068
+Filename: dvb-app-tzap_1505-1_mipsel_24kc.ipk
+Size: 29799
+SHA256sum: d007fca79203157579edfe93a875d64ced79c9ef1428337eb3921681de8e69af
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB tzap application.
+
+Package: dvb-app-zap
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libdvbsec, libdvbapi, libucsi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 78677
+Filename: dvb-app-zap_1505-1_mipsel_24kc.ipk
+Size: 79368
+SHA256sum: ce769089746c8ef80b279c40aede3f25b677e6ce963097947cc3871c978d30f0
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB zap application.
+
+Package: dvb-keymaps-av7110
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 1622
+Filename: dvb-keymaps-av7110_1505-1_mipsel_24kc.ipk
+Size: 2452
+SHA256sum: a11e93d2d8c26f919a6f3dd0fd99f30fd702aba0fdadc2633b704820194ab530
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains keymaps for the av7110_loadkeys application.
+
+Package: generic-as102
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, as102-firmware, kmod-dvb-as102
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: generic-as102_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 912
+SHA256sum: 1ad079b48c7b77f9f1609fa587757e1c8edbf069f12b03cded03e4c345822225
+Description:  Supported:
+ ADB-100T NBox DVB-T USB dongle.
+
+Package: generic-dib0700
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, dib0700-firmware, kmod-dvb-usb-dib0700
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: generic-dib0700_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 918
+SHA256sum: 9efa92ba8b903e77ebf24f75daa06a9883f9d9ca46efdf2aa5ce394df9119b60
+Description:  Supported:
+ Medion CTX1921 (V2.1.2) USB DVB-T dongle.
+
+Package: generic-it9135
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9135-firmware, kmod-dvb-fe-af9033, kmod-dvb-usb-af9035, kmod-media-tuner-it913x
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: generic-it9135_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 968
+SHA256sum: 9cef5c01b32f0022c5b3a94ef26e132f4700f7889a5d278ab7b0f6419d0d4878
+Description:  Supported:
+ HDTV USB DVB-T dongle,
+ WandTV DVB-T digital terrestrial TV stick (EzTV869 1.0).
+
+Package: generic-rtl2838u
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, kmod-dvb-fe-rtl2832, kmod-dvb-usb-rtl28xxu
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: generic-rtl2838u_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 954
+SHA256sum: 913812a249470445a19b95e0134d067c0ee9810d6721f26b3e9bbee1ead842f1
+Description:  Supported:
+ NOT ONLY TV LV5TDLX DVB-T USB,
+ RealTek RTL2838UHIDIR,
+ Trekstor DVB-T Stick Terres 2.0.
+
+Package: hauppauge-wintv-dualhd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2157-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-em28xx-dvb
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: hauppauge-wintv-dualhd_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 932
+SHA256sum: d21dcfca84fa2c0fe1b5c1e2570396ae218ba78d691fe38874103a449fca3d17
+Description:  Supported:
+ Hauppauge WinTV dualHD.
+
+Package: it9135-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 8549
+Filename: it9135-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 9332
+SHA256sum: a4c3c8ca17fae20e9f1c721b8b979439f2926420906bbb13b5f001c7c8c48994
+Description:  ITE Tech IT9135
+
+Package: it9303-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 1484
+Filename: it9303-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 2238
+SHA256sum: 3b970827ce6856683cddb87acc967e1126ecb0bdc1652ff134aee8f55f128d84
+Description:  ITE Tech IT9303
+
+Package: libdvbapi
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 5189
+Filename: libdvbapi_1505-1_mipsel_24kc.ipk
+Size: 6005
+SHA256sum: 934efbaee9aba013d8fd51ca156a79dd36cd59d4c260311dc487187fb45ffea4
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbcfg
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 3610
+Filename: libdvbcfg_1505-1_mipsel_24kc.ipk
+Size: 4388
+SHA256sum: 0cf9f2d0e6182162a9ddf1adcda78efcf0470a1772940c2be65d3b4a7788e4d5
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvben50221
+Version: 1505-1
+Depends: libc, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 20895
+Filename: libdvben50221_1505-1_mipsel_24kc.ipk
+Size: 21711
+SHA256sum: d317e32b647880d6284c333dff2b92187b235689a7ef213a2d85cd3adb8247d2
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbsec
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 6071
+Filename: libdvbsec_1505-1_mipsel_24kc.ipk
+Size: 6852
+SHA256sum: a8185db7594110cc9138dcf8eb3c0ab0f084d1daacd34970d9db2eca0d1a8f62
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libesg
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 3867
+Filename: libesg_1505-1_mipsel_24kc.ipk
+Size: 4681
+SHA256sum: bce0a025a1398905cda1784e86de988e6aa20e10a7e1eb92548fb83aa1216d13
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libucsi
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 12239
+Filename: libucsi_1505-1_mipsel_24kc.ipk
+Size: 12868
+SHA256sum: 23c47ffc0264535116da462046756b0cf64dc3833e9e05ecd510f84d986d0ba7
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: m88ds3103-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 9062
+Filename: m88ds3103-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 9874
+SHA256sum: 56acb6be5fad74b25453b1c3d052c615b68656e253dca0e0cc3c6c194c714501
+Description:  Montage Technology M88DS3103 DVB-S/S2 demodulator
+
+Package: ngene-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 35212
+Filename: ngene-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 35982
+SHA256sum: 73da40d6d1c4ac53557b613a13c89c952572bac05c41a50c3b62b3907228e632
+Description:  Micronas nGene PCIExpress bridge
+
+Package: oscam
+Version: 1.20-11718-1
+Depends: libc
+License: GPL-3.0
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 177918
+Filename: oscam_1.20-11718-1_mipsel_24kc.ipk
+Size: 178093
+SHA256sum: de5bc71cd9f157083d08b8c269114c53e67f1778ceb17129c0ff0a11b25b8507
+Description:  Open Source Conditional Access Modul
+
+Package: pctv-460e
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, tda10071-firmware, kmod-dvb-fe-a8293, kmod-dvb-fe-tda10071, kmod-em28xx-dvb
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: pctv-460e_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 917
+SHA256sum: a8848b02e270457b053762db57f2bbab8676c40d0283ede7f64c42836ab2fbcb
+Description:  Supported:
+ PCTV Systems DVB-S2 Stick 460e.
+
+Package: pugixml
+Version: 1.13-1
+Depends: libc, libstdcpp6
+License: MIT
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 58033
+Filename: pugixml_1.13-1_mipsel_24kc.ipk
+Size: 58900
+SHA256sum: 6e9711fbd1c7ff0804e83160c394c4ba1c1dd0f4547744b628d819026667a04c
+Description:  Light-weight C++ XML processing library. It features:
+ DOM-like interface with rich traversal/modification capabilities
+ Extremely fast non-validating XML parser which constructs the DOM tree from an XML file/buffer
+ XPath 1.0 implementation for complex data-driven tree queries
+ Full Unicode support with Unicode interface variants and automatic encoding conversions
+
+Package: satpi
+Version: 1.6.2-1
+Depends: libc, libatomic1, libstdcpp6
+License: GPL-2.0
+Section: multimedia
+Architecture: mipsel_24kc
+Installed-Size: 420977
+Filename: satpi_1.6.2-1_mipsel_24kc.ipk
+Size: 421516
+SHA256sum: 141a30f5542e9532eb8a181ea7aaf07d7aecd5fc693b128054aaae9cd5d9256c
+Description:  SATIP server for linux (suitable to run on an Raspberry Pi).
+ Currently supporting DVB-S/S2/T/C and transform DVB-S requests to DVB-C.
+
+Package: si2157-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 10329
+Filename: si2157-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 11086
+SHA256sum: e389a93bd391f3b0557b1d221d684396ee3e154a78969ecd5b85144486c726b8
+Description:  Silicon Labs Si2157
+
+Package: si2158-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 3636
+Filename: si2158-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 4392
+SHA256sum: 5c97c1a2fa18ffa1a5281a553b576a9cadc9160e242700449ccd84658909281b
+Description:  Silicon Labs Si2158
+
+Package: si2168-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 67267
+Filename: si2168-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 68086
+SHA256sum: 32b34913cbead954091747b92eaccd0dd2e9542e620d385c3b892e511ca34960
+Description:  Silicon Labs Si2168
+
+Package: tda10071-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 25762
+Filename: tda10071-firmware_2021-07-19-0eaf5b39-5_mipsel_24kc.ipk
+Size: 26475
+SHA256sum: 733542e5609244bdc24e19a9d1c647e3f96f8b01732dd1b65a6e71b2ff8ab1c0
+Description:  NXP TDA10071
+
+Package: terratec-cinergy-s2-hd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, ds3000-firmware, kmod-dvb-usb-dw2102
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: terratec-cinergy-s2-hd_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 939
+SHA256sum: 582fbc8359d11a75cc2d5f291a0c3a4d726e9774b7b60ce41a62c6e3cfc224db
+Description:  Supported:
+ TerraTec CINERGY S2 Stick HD rev3,
+ TerraTec CINERGY S2 USB HD rev1,
+ TerraTec CINERGY S2 USB HD rev2,
+ TerraTec CINERGY S2 USB HD rev4.
+
+Package: terratec-cinergy-tc2-stick
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9303-firmware, si2168-firmware, kmod-dvb-fe-si2168, kmod-dvb-usb-af9035, kmod-media-tuner-si2157
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: terratec-cinergy-tc2-stick_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 954
+SHA256sum: 8aa509fad160c08096e06277b6cc00690ce33f9afc62758add47bcade15fd840
+Description:  Supported:
+ TerraTec CINERGY TC2 Stick.
+
+Package: tt-ct2-4650-ci
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2158-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-dvb-fe-sp2, kmod-dvb-fe-ts2020, kmod-dvb-usb-dvbsky
+License: GPL-2.0
+Section: dvb-devices
+Architecture: mipsel_24kc
+Installed-Size: 120
+Filename: tt-ct2-4650-ci_2022-07-17-9a225f4d-1_mipsel_24kc.ipk
+Size: 955
+SHA256sum: 49632b78344b25d9dfa3d30c4283f70ffc4dd3c321d795fe7697796282e48e85
+Description:  Supported:
+ TechnoTrend Connect CT2-4650 CI v1,
+ TechnoTrend Connect CT2-4650 CI v1.1.
+

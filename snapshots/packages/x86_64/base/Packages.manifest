@@ -1,0 +1,866 @@
+Package: as102-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: as102-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 62723
+Filename: as102-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 63351
+SHA256sum: c2e7d58c9d9b699d01ba5ad320f844018172de9c0edd252076d8946a62f6ba14
+Description:  Abilis AS102
+
+Package: cx24120-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: cx24120-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 29498
+Filename: cx24120-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 30293
+SHA256sum: 7dd73b991127f5cb098327ee400adcf976e33c9b45e502cd8d938f131a67d93c
+Description:  Conexant CX24120 DVB-S/S2 frontend
+
+Package: dib0700-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: dib0700-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 21895
+Filename: dib0700-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 22650
+SHA256sum: 258d7c1040a123903fdc203f3207a83101a99ec46159ec5b01620a1d2a73cab6
+Description:  DiBcom 0700 USB bridge
+
+Package: drxd-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: drxd-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 9839
+Filename: drxd-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 10593
+SHA256sum: 47d48c475d79bc57565d212536adf4eaf651b9caad0c9442bf1b46b1beb1c2ea
+Description:  Micronas DRXD demodulator
+
+Package: ds3000-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: ds3000-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 3944
+Filename: ds3000-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 4675
+SHA256sum: 409b6b57857030b8a4497da69c7f9cc29011a030a54de318fd007cd15fb28ce8
+Description:  Montage Technology M88DS3000
+
+Package: dvb-app-atsc_epg
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+Source: package/dvb-apps
+SourceName: dvb-app-atsc_epg
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 36911
+Filename: dvb-app-atsc_epg_1505-1_x86_64.ipk
+Size: 37576
+SHA256sum: d85cbba0c1754a9324587073576e6c4676b3b33eae5a0ef5e11e161a7bbc9607
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB atsc_epg application.
+
+Package: dvb-app-av7110_loadkeys
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-av7110_loadkeys
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 5946
+Filename: dvb-app-av7110_loadkeys_1505-1_x86_64.ipk
+Size: 6739
+SHA256sum: 610ca32f403f6300d021c5fb4d0fe7be3aacebfab4471643f5bec896436cc2ca
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB av7110_loadkeys application.
+
+Package: dvb-app-azap
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-azap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 18393
+Filename: dvb-app-azap_1505-1_x86_64.ipk
+Size: 19162
+SHA256sum: d83bb4a7e1401b86fdc77a5ad57227bd6c4e5345387042eeeb91318bd14b273a
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB azap application.
+
+Package: dvb-app-czap
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-czap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 30356
+Filename: dvb-app-czap_1505-1_x86_64.ipk
+Size: 31106
+SHA256sum: e2588fdb7a726de9818af98e958b55b0dbd405bac9cb0a586c5d63382a4b6748
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB czap application.
+
+Package: dvb-app-dib3000-watch
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-dib3000-watch
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 19302
+Filename: dvb-app-dib3000-watch_1505-1_x86_64.ipk
+Size: 20140
+SHA256sum: 222b752a8bae3b58c545cf43495fd84dc37cecd8f8018e641213ab6d038aaf92
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dib3000-watch application.
+
+Package: dvb-app-dst_test
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-dst_test
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 12970
+Filename: dvb-app-dst_test_1505-1_x86_64.ipk
+Size: 13752
+SHA256sum: d2afd90fa1e2f0321bb7a9ff93a8cc0f87181b664e46b0ede99b3a123d32e992
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dst_test application.
+
+Package: dvb-app-dvbdate
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+Source: package/dvb-apps
+SourceName: dvb-app-dvbdate
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 27681
+Filename: dvb-app-dvbdate_1505-1_x86_64.ipk
+Size: 28502
+SHA256sum: 32dbcbe3ec0c1e40b1c131050b8299098a1ed6b40851f370b02d9e026dabbbd0
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbdate application.
+
+Package: dvb-app-dvbnet
+Version: 1505-1
+Depends: libc, libdvbapi
+Source: package/dvb-apps
+SourceName: dvb-app-dvbnet
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 14110
+Filename: dvb-app-dvbnet_1505-1_x86_64.ipk
+Size: 14882
+SHA256sum: e400d7f8c3a2d88b972765c78bbc9653007c7674291b39d515d291664dd64ee4
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbnet application.
+
+Package: dvb-app-dvbscan
+Version: 1505-1
+Depends: libc, libdvbcfg, libucsi, libdvbsec, libdvbapi, libpthread
+Source: package/dvb-apps
+SourceName: dvb-app-dvbscan
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 35818
+Filename: dvb-app-dvbscan_1505-1_x86_64.ipk
+Size: 36708
+SHA256sum: bdb0cd85ee9832f304742608cf89d2ec14846f6c8dd22b5bae14c3aca40d2f81
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbscan application.
+
+Package: dvb-app-dvbtraffic
+Version: 1505-1
+Depends: libc, libdvbapi
+Source: package/dvb-apps
+SourceName: dvb-app-dvbtraffic
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 14654
+Filename: dvb-app-dvbtraffic_1505-1_x86_64.ipk
+Size: 15432
+SHA256sum: 0e68b0ce6ec0a5fa3edf340f402eccc8e23c1f56d0b0c85bd17fe76e017088ad
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbtraffic application.
+
+Package: dvb-app-femon
+Version: 1505-1
+Depends: libc, libdvbapi
+Source: package/dvb-apps
+SourceName: dvb-app-femon
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 21896
+Filename: dvb-app-femon_1505-1_x86_64.ipk
+Size: 22693
+SHA256sum: 3b576784cc22fabffff181330571b04640831e5f1599a3116c3294155acd5fae
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB femon application.
+
+Package: dvb-app-gnutv
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libucsi, libdvbsec, libdvbapi, libpthread
+Source: package/dvb-apps
+SourceName: dvb-app-gnutv
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 80248
+Filename: dvb-app-gnutv_1505-1_x86_64.ipk
+Size: 81175
+SHA256sum: fe9083499f648da6c43e97545f45fb9f4d052a5ed6c48314f08c3323e930207b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gnutv application.
+
+Package: dvb-app-gotox
+Version: 1505-1
+Depends: libc, libdvbapi, libdvbsec
+Source: package/dvb-apps
+SourceName: dvb-app-gotox
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 30492
+Filename: dvb-app-gotox_1505-1_x86_64.ipk
+Size: 31271
+SHA256sum: 402dff06fd2899b19389eefe39bb0d50b7c1501b0b479a285f6386dd6698f177
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gotox application.
+
+Package: dvb-app-scan
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-scan
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 62721
+Filename: dvb-app-scan_1505-1_x86_64.ipk
+Size: 63633
+SHA256sum: bade5d39651d13170ebd23515fe15cc30a0ae97201cc99e08e659157cbc0a05c
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB scan application.
+
+Package: dvb-app-szap
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-szap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 24552
+Filename: dvb-app-szap_1505-1_x86_64.ipk
+Size: 25286
+SHA256sum: ce0bff3a4ee3fe1869467101ef66916b9087a52b9f46d41ba31d0130708c6840
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB szap application.
+
+Package: dvb-app-tzap
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-tzap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 20765
+Filename: dvb-app-tzap_1505-1_x86_64.ipk
+Size: 21543
+SHA256sum: 9b4c1e99930a332381bdbe9352b420dd7cfeee3a230dc3588a0a10a0b9d79fe7
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB tzap application.
+
+Package: dvb-app-zap
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libdvbsec, libdvbapi, libucsi, libpthread
+Source: package/dvb-apps
+SourceName: dvb-app-zap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 64808
+Filename: dvb-app-zap_1505-1_x86_64.ipk
+Size: 65673
+SHA256sum: 39106ea3be05cf1273b26cab918dbaceca54bdf7110cdc2d57e4d6a2180fc78b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB zap application.
+
+Package: dvb-keymaps-av7110
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-keymaps-av7110
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 1622
+Filename: dvb-keymaps-av7110_1505-1_x86_64.ipk
+Size: 2453
+SHA256sum: f63f3de76b268710ebb29c67932590cad4f2db1e021312b8049e2082b12ded04
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains keymaps for the av7110_loadkeys application.
+
+Package: generic-as102
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, as102-firmware, kmod-dvb-as102
+Source: package/v4l-dvb
+SourceName: generic-as102
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: generic-as102_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 911
+SHA256sum: 5b0d413c0b92e2ff05a7d86bd1fd79d6c79122b1554c2ee5f6e6fa9550643af2
+Description:  Supported:
+ ADB-100T NBox DVB-T USB dongle.
+
+Package: generic-dib0700
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, dib0700-firmware, kmod-dvb-usb-dib0700
+Source: package/v4l-dvb
+SourceName: generic-dib0700
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: generic-dib0700_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 917
+SHA256sum: b375b083a706a039af0bc25bf75131f85727ed295880ed5d6caf350a5901ed17
+Description:  Supported:
+ Medion CTX1921 (V2.1.2) USB DVB-T dongle.
+
+Package: generic-it9135
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9135-firmware, kmod-dvb-fe-af9033, kmod-dvb-usb-af9035, kmod-media-tuner-it913x
+Source: package/v4l-dvb
+SourceName: generic-it9135
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: generic-it9135_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 968
+SHA256sum: c2f584ba7f192ab1023d15c1e4798daf4c295e0d691f1884d34f37998eebbf48
+Description:  Supported:
+ HDTV USB DVB-T dongle,
+ WandTV DVB-T digital terrestrial TV stick (EzTV869 1.0).
+
+Package: generic-rtl2838u
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, kmod-dvb-fe-rtl2832, kmod-dvb-usb-rtl28xxu
+Source: package/v4l-dvb
+SourceName: generic-rtl2838u
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: generic-rtl2838u_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 952
+SHA256sum: 1fd4ed42d893b562007e2bb19ab9fc4bd2fd2a9544c45b4b7ab9e8e5ae8f38a9
+Description:  Supported:
+ NOT ONLY TV LV5TDLX DVB-T USB,
+ RealTek RTL2838UHIDIR,
+ Trekstor DVB-T Stick Terres 2.0.
+
+Package: hauppauge-wintv-dualhd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2157-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-em28xx-dvb
+Source: package/v4l-dvb
+SourceName: hauppauge-wintv-dualhd
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: hauppauge-wintv-dualhd_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 934
+SHA256sum: b11c52e22703e2e05e606c84f0786f4c989e1e4b01516ee5379304ffe896755e
+Description:  Supported:
+ Hauppauge WinTV dualHD.
+
+Package: it9135-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: it9135-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 8549
+Filename: it9135-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 9328
+SHA256sum: 150fb2b6de9ec21b1b5373919cb2d3757a3521bee18c88728a684b544d19effe
+Description:  ITE Tech IT9135
+
+Package: it9303-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: it9303-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 1484
+Filename: it9303-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 2231
+SHA256sum: b8a52fbe83112d0f065d4ceab9d0040f56377f62affaf3c0ca2a00e8fbd23454
+Description:  ITE Tech IT9303
+
+Package: libdvbapi
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libdvbapi
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 6444
+Filename: libdvbapi_1505-1_x86_64.ipk
+Size: 7247
+SHA256sum: 92de2fd9c2ba27f395cc6e65ca2a2537f354524bf4ed6247e630789f36a31d53
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbcfg
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libdvbcfg
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 4431
+Filename: libdvbcfg_1505-1_x86_64.ipk
+Size: 5221
+SHA256sum: 6644f98152869f2a53738976e701bf5abf709a0d88548acef0a63e446cce227b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvben50221
+Version: 1505-1
+Depends: libc, libucsi
+Source: package/dvb-apps
+SourceName: libdvben50221
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 26281
+Filename: libdvben50221_1505-1_x86_64.ipk
+Size: 27024
+SHA256sum: 236467ef0dcca7aac97fbe0a597dab1b0890ed6930892416a74e91860704389c
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbsec
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libdvbsec
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 6902
+Filename: libdvbsec_1505-1_x86_64.ipk
+Size: 7723
+SHA256sum: 6508dc0fa32bdf4f8f305432b91c4070d4965ff1f8655a3a7c2a1fa5a5bef2bb
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libesg
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libesg
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 4823
+Filename: libesg_1505-1_x86_64.ipk
+Size: 5618
+SHA256sum: 914118e705261785ba72e2b39b1a70926ca114f8bb50188190ed75b231f3270b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libucsi
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libucsi
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 13082
+Filename: libucsi_1505-1_x86_64.ipk
+Size: 13728
+SHA256sum: c07d5b8c08e118ac9f6f25127f89a806060e5e78c804db935a237ff48af997b2
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: m88ds3103-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: m88ds3103-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 9062
+Filename: m88ds3103-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 9873
+SHA256sum: c12ead5628171bc5ebd08e28fb46f325d25d0f1f143e1f0515c48ad01aedef1b
+Description:  Montage Technology M88DS3103 DVB-S/S2 demodulator
+
+Package: ngene-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: ngene-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 35212
+Filename: ngene-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 35982
+SHA256sum: d333e055afc6b55918ed4913911772a7ee031b49bb128c7f648468d94b33fdc3
+Description:  Micronas nGene PCIExpress bridge
+
+Package: oscam
+Version: 1.20-11718-1
+Depends: libc
+Source: package/oscam
+SourceName: oscam
+License: GPL-3.0
+Section: net
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 213428
+Filename: oscam_1.20-11718-1_x86_64.ipk
+Size: 213829
+SHA256sum: bb1fefd72d26e2e66b6ef9f96b7ac0f9ae0e13143f40331974625ddf04207698
+Description:  Open Source Conditional Access Modul
+
+Package: pctv-460e
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, tda10071-firmware, kmod-dvb-fe-a8293, kmod-dvb-fe-tda10071, kmod-em28xx-dvb
+Source: package/v4l-dvb
+SourceName: pctv-460e
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: pctv-460e_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 918
+SHA256sum: 462d070e6f1053719aa9f752e7a4b4ed23bc155d9a2d871e9053ac8d956e76e8
+Description:  Supported:
+ PCTV Systems DVB-S2 Stick 460e.
+
+Package: pugixml
+Version: 1.13-1
+Depends: libc, libstdcpp6
+Source: package/pugixml
+SourceName: pugixml
+License: MIT
+LicenseFiles: readme.txt
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 60358
+Filename: pugixml_1.13-1_x86_64.ipk
+Size: 61433
+SHA256sum: 81bb4f071ed9f8b3a4ff30dcc2c59dd05d695d0673b5754d0a4119f062f2cf9d
+Description:  Light-weight C++ XML processing library. It features:
+ DOM-like interface with rich traversal/modification capabilities
+ Extremely fast non-validating XML parser which constructs the DOM tree from an XML file/buffer
+ XPath 1.0 implementation for complex data-driven tree queries
+ Full Unicode support with Unicode interface variants and automatic encoding conversions
+
+Package: satpi
+Version: 1.6.2-1
+Depends: libc, libatomic1, libstdcpp6
+Source: package/satpi
+SourceName: satpi
+License: GPL-2.0
+LicenseFiles: LICENSE
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 535725
+Filename: satpi_1.6.2-1_x86_64.ipk
+Size: 536458
+SHA256sum: 6bf4dbf52ee01511a59caa7be48becb2c4bdffa8a205bd1484a5ba709604e1db
+Description:  SATIP server for linux (suitable to run on an Raspberry Pi).
+ Currently supporting DVB-S/S2/T/C and transform DVB-S requests to DVB-C.
+
+Package: si2157-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: si2157-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 10329
+Filename: si2157-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 11088
+SHA256sum: 3d3c2af5768ad504bd55ed55e6df3be534fe403d0babb09c884c9c652ce95789
+Description:  Silicon Labs Si2157
+
+Package: si2158-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: si2158-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 3636
+Filename: si2158-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 4386
+SHA256sum: 12a17848f93425014e5ffcb7f1eb2fa873d9d1e8e4e172931530933a0176ab4c
+Description:  Silicon Labs Si2158
+
+Package: si2168-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: si2168-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 67267
+Filename: si2168-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 68084
+SHA256sum: 51afc93d5b0925931d64a9ee7cc9d6004a0020af395cc3b15449ab75a25e26b4
+Description:  Silicon Labs Si2168
+
+Package: tda10071-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: tda10071-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 25762
+Filename: tda10071-firmware_2021-07-19-0eaf5b39-5_x86_64.ipk
+Size: 26471
+SHA256sum: 1c5ffcae8e1be21dea33cb03e84ee8dfeba0a28d3db0dbbce1ed402492a254ee
+Description:  NXP TDA10071
+
+Package: terratec-cinergy-s2-hd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, ds3000-firmware, kmod-dvb-usb-dw2102
+Source: package/v4l-dvb
+SourceName: terratec-cinergy-s2-hd
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: terratec-cinergy-s2-hd_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 938
+SHA256sum: 69292f89720f06e166fb3d39bf6ea3a42941fdd803789d591ba60d62a28d63ce
+Description:  Supported:
+ TerraTec CINERGY S2 Stick HD rev3,
+ TerraTec CINERGY S2 USB HD rev1,
+ TerraTec CINERGY S2 USB HD rev2,
+ TerraTec CINERGY S2 USB HD rev4.
+
+Package: terratec-cinergy-tc2-stick
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9303-firmware, si2168-firmware, kmod-dvb-fe-si2168, kmod-dvb-usb-af9035, kmod-media-tuner-si2157
+Source: package/v4l-dvb
+SourceName: terratec-cinergy-tc2-stick
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: terratec-cinergy-tc2-stick_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 945
+SHA256sum: 3e72323033f22c17adf46e3876841f05503830e793072eacc8108794a7b0978f
+Description:  Supported:
+ TerraTec CINERGY TC2 Stick.
+
+Package: tt-ct2-4650-ci
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2158-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-dvb-fe-sp2, kmod-dvb-fe-ts2020, kmod-dvb-usb-dvbsky
+Source: package/v4l-dvb
+SourceName: tt-ct2-4650-ci
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: x86_64
+Installed-Size: 120
+Filename: tt-ct2-4650-ci_2022-07-17-9a225f4d-1_x86_64.ipk
+Size: 952
+SHA256sum: 8eba9b1f8849311574ca5b45686c5d6f96c6f19dbb0031eb34be9ca15b74835b
+Description:  Supported:
+ TechnoTrend Connect CT2-4650 CI v1,
+ TechnoTrend Connect CT2-4650 CI v1.1.
+

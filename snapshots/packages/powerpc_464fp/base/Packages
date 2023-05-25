@@ -1,0 +1,644 @@
+Package: as102-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 62723
+Filename: as102-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 63356
+SHA256sum: 6497eec5f655328b63e3473293a0ec774f57fc7615c1212938529d83e7c6b135
+Description:  Abilis AS102
+
+Package: cx24120-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 29498
+Filename: cx24120-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 30298
+SHA256sum: 67e2321e6844858bbc63fa653c769a65468f05d3b730fac1b4295848529ac3ff
+Description:  Conexant CX24120 DVB-S/S2 frontend
+
+Package: dib0700-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 21895
+Filename: dib0700-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 22652
+SHA256sum: 62efa659852fe8540b37e70bd885351ab7a6c1ec50f5126e1741a28639cffffd
+Description:  DiBcom 0700 USB bridge
+
+Package: drxd-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 9839
+Filename: drxd-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 10602
+SHA256sum: 560842fc8f7e2e58ebf2366b86810969870bcece5c6ed0fbf6f50305ae6aaa18
+Description:  Micronas DRXD demodulator
+
+Package: ds3000-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 3944
+Filename: ds3000-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 4677
+SHA256sum: 8579fa03c77f37c9f51c713bb2ff2fa1640fe4b7d5805d7f954bb28488b1ebef
+Description:  Montage Technology M88DS3000
+
+Package: dvb-app-atsc_epg
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 18716
+Filename: dvb-app-atsc_epg_1505-1_powerpc_464fp.ipk
+Size: 19440
+SHA256sum: 3727030046c57a7f74a0e2ef01eb67f9e7f0f3f30e812de7d600bb0c5fa3422a
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB atsc_epg application.
+
+Package: dvb-app-av7110_loadkeys
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 8422
+Filename: dvb-app-av7110_loadkeys_1505-1_powerpc_464fp.ipk
+Size: 9069
+SHA256sum: 309c5dea3172cb243a4fee67006a90864a554ce9179175b1142782382bf79dbd
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB av7110_loadkeys application.
+
+Package: dvb-app-azap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 24502
+Filename: dvb-app-azap_1505-1_powerpc_464fp.ipk
+Size: 25214
+SHA256sum: 3b0883de50e2419249d59d4a78ddafcc4dc269153700220be3c3b0eaa6a02e58
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB azap application.
+
+Package: dvb-app-czap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 39349
+Filename: dvb-app-czap_1505-1_powerpc_464fp.ipk
+Size: 39914
+SHA256sum: 99935489e1a69c06b4f29995f047234eb09edf8d8b5c9e24718a9a494e6cdd4b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB czap application.
+
+Package: dvb-app-dib3000-watch
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 26446
+Filename: dvb-app-dib3000-watch_1505-1_powerpc_464fp.ipk
+Size: 27155
+SHA256sum: d095dfc2c9315dce1501cc0f9e9c651a547c6a0f25e5bc2c2a9811f31fcb604a
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dib3000-watch application.
+
+Package: dvb-app-dst_test
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 17869
+Filename: dvb-app-dst_test_1505-1_powerpc_464fp.ipk
+Size: 18562
+SHA256sum: d54cf17174fe4f856c329f28f988c41ed94a8a9e3e1f6f821066140e376c2b97
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dst_test application.
+
+Package: dvb-app-dvbdate
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 36104
+Filename: dvb-app-dvbdate_1505-1_powerpc_464fp.ipk
+Size: 36635
+SHA256sum: c71b69b293a29ec56eb8b53fac6b6014ff1ff92b7a18a3a891b539c2d57b2f55
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbdate application.
+
+Package: dvb-app-dvbnet
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 19893
+Filename: dvb-app-dvbnet_1505-1_powerpc_464fp.ipk
+Size: 20591
+SHA256sum: 1c98cb085095cfdba0e3e8409c771b3ab46c4ca82d589bdfbdb2677ba4559e29
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbnet application.
+
+Package: dvb-app-dvbscan
+Version: 1505-1
+Depends: libc, libdvbcfg, libucsi, libdvbsec, libdvbapi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 46080
+Filename: dvb-app-dvbscan_1505-1_powerpc_464fp.ipk
+Size: 46747
+SHA256sum: 1f108936de1c3a743ae273bb2bf58c0ddaa5e2e12242a4bcf86858546440303e
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbscan application.
+
+Package: dvb-app-dvbtraffic
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 19644
+Filename: dvb-app-dvbtraffic_1505-1_powerpc_464fp.ipk
+Size: 20330
+SHA256sum: b207c7b1d56c809a5998100dd1fc8a7e616fa229eecc73840aeca1ed1197bf45
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbtraffic application.
+
+Package: dvb-app-femon
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 28247
+Filename: dvb-app-femon_1505-1_powerpc_464fp.ipk
+Size: 29033
+SHA256sum: cc8bbd719d809335339a1a3b98823af3f2cba20a201e588e9728bfafe4d9b950
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB femon application.
+
+Package: dvb-app-gnutv
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libucsi, libdvbsec, libdvbapi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 97668
+Filename: dvb-app-gnutv_1505-1_powerpc_464fp.ipk
+Size: 98247
+SHA256sum: 59172d5ca211fad13d29aca0cae6fa43ac33cf92d8d0084bce73d566b450a91a
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gnutv application.
+
+Package: dvb-app-gotox
+Version: 1505-1
+Depends: libc, libdvbapi, libdvbsec
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 39893
+Filename: dvb-app-gotox_1505-1_powerpc_464fp.ipk
+Size: 40502
+SHA256sum: d2e20a6bd0f4570cada1eaf714e2e0a070de4575964e5737ad5039da8043cc86
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gotox application.
+
+Package: dvb-app-scan
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 74065
+Filename: dvb-app-scan_1505-1_powerpc_464fp.ipk
+Size: 74699
+SHA256sum: 4da097381b8300e43709a8cd6cd3786ed3630644dba101475205dc273b3c0f63
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB scan application.
+
+Package: dvb-app-szap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 31389
+Filename: dvb-app-szap_1505-1_powerpc_464fp.ipk
+Size: 32165
+SHA256sum: a544a255a3362adea00b9e636b25e6d372d3acaadbdd5ab2ed9b567a9ef0fc72
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB szap application.
+
+Package: dvb-app-tzap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 27375
+Filename: dvb-app-tzap_1505-1_powerpc_464fp.ipk
+Size: 28130
+SHA256sum: c85c69fc4830c111921b48d071f23fbd09bc164ab0e8743aafd96818f984ad1f
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB tzap application.
+
+Package: dvb-app-zap
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libdvbsec, libdvbapi, libucsi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 78895
+Filename: dvb-app-zap_1505-1_powerpc_464fp.ipk
+Size: 79757
+SHA256sum: f0bafdb6c24473245123cc2cbdaed2630e84394ce57ad4aff19e6fce97492adc
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB zap application.
+
+Package: dvb-keymaps-av7110
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 1622
+Filename: dvb-keymaps-av7110_1505-1_powerpc_464fp.ipk
+Size: 2455
+SHA256sum: ac1ea79aeba8d221fc0ba01bd22f823b86794947eb8531dd5fe70ea7b07b43ce
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains keymaps for the av7110_loadkeys application.
+
+Package: generic-as102
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, as102-firmware, kmod-dvb-as102
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: generic-as102_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 916
+SHA256sum: 9c796938356ccec972492f68806d0c26f42a2d5ee3fd4ff816a90a0408ddb14e
+Description:  Supported:
+ ADB-100T NBox DVB-T USB dongle.
+
+Package: generic-dib0700
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, dib0700-firmware, kmod-dvb-usb-dib0700
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: generic-dib0700_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 922
+SHA256sum: 8e3df1cd23ffd086bb4b6bb2d869d15ef6b541662f0bb53bcd279e72d54e2bc4
+Description:  Supported:
+ Medion CTX1921 (V2.1.2) USB DVB-T dongle.
+
+Package: generic-it9135
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9135-firmware, kmod-dvb-fe-af9033, kmod-dvb-usb-af9035, kmod-media-tuner-it913x
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: generic-it9135_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 971
+SHA256sum: 651519964d477b72c3f54b46bf84a509e97b5cae6c44d8467f48d3018321a69e
+Description:  Supported:
+ HDTV USB DVB-T dongle,
+ WandTV DVB-T digital terrestrial TV stick (EzTV869 1.0).
+
+Package: generic-rtl2838u
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, kmod-dvb-fe-rtl2832, kmod-dvb-usb-rtl28xxu
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: generic-rtl2838u_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 956
+SHA256sum: e15938d4a6ed94fa100a5959333d1c6993d451e0f9098a6fd7e6ca1f207f659f
+Description:  Supported:
+ NOT ONLY TV LV5TDLX DVB-T USB,
+ RealTek RTL2838UHIDIR,
+ Trekstor DVB-T Stick Terres 2.0.
+
+Package: hauppauge-wintv-dualhd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2157-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-em28xx-dvb
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: hauppauge-wintv-dualhd_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 940
+SHA256sum: b844a8339960a65c6d407cc0e6a4d5f4c98aca3e4fcda7ffc082e83839adb1d1
+Description:  Supported:
+ Hauppauge WinTV dualHD.
+
+Package: it9135-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 8549
+Filename: it9135-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 9334
+SHA256sum: 64d10653cda4c1ad31ee33cc92de16586273d227210ec3c8594037fbf9a8b213
+Description:  ITE Tech IT9135
+
+Package: it9303-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 1484
+Filename: it9303-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 2241
+SHA256sum: b789c3ab99cffa83ff9196ea5ed264471dfa99009e35d822a0a140502e486c2f
+Description:  ITE Tech IT9303
+
+Package: libdvbapi
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: powerpc_464fp
+Installed-Size: 7621
+Filename: libdvbapi_1505-1_powerpc_464fp.ipk
+Size: 8362
+SHA256sum: fe493bd1eb4ac65a3995ec8486be4e439679af71642735a15f8184faeee27fba
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbcfg
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: powerpc_464fp
+Installed-Size: 4812
+Filename: libdvbcfg_1505-1_powerpc_464fp.ipk
+Size: 5440
+SHA256sum: 252aed7e091b09d57af86450ee005a3d8023b6480fa8c07a657c5f64af16a107
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvben50221
+Version: 1505-1
+Depends: libc, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: powerpc_464fp
+Installed-Size: 28099
+Filename: libdvben50221_1505-1_powerpc_464fp.ipk
+Size: 28759
+SHA256sum: c8c371a18cd85cfb6adbb8ec0af3467ff37fd2d6d0e3b98f90baaed955d92322
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbsec
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: powerpc_464fp
+Installed-Size: 8588
+Filename: libdvbsec_1505-1_powerpc_464fp.ipk
+Size: 9284
+SHA256sum: e5038eee91ec2ad9bd2d70b18401b7be9fd717d7d9e9c2e14b92976c6125d0ba
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libesg
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: powerpc_464fp
+Installed-Size: 5713
+Filename: libesg_1505-1_powerpc_464fp.ipk
+Size: 6377
+SHA256sum: d1e09bd0e4180e3678ac25df8405a35111aab944cc18e53ea3db0ce5c80b738b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libucsi
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: powerpc_464fp
+Installed-Size: 13763
+Filename: libucsi_1505-1_powerpc_464fp.ipk
+Size: 14236
+SHA256sum: a3c841e24342630eef909f67570dba4f3fb7ee5c23a618d8f367bd43d9da8d5e
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: m88ds3103-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 9062
+Filename: m88ds3103-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 9880
+SHA256sum: d7ddbbec11d7f0b2a1fff844ee043c5fc773cd4652e7455848bfd1b109679109
+Description:  Montage Technology M88DS3103 DVB-S/S2 demodulator
+
+Package: ngene-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 35212
+Filename: ngene-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 35984
+SHA256sum: 0fae2071831a0cc1b2da4ada58c34a8977ac888fbac3fd6cc35947d4a748a7cd
+Description:  Micronas nGene PCIExpress bridge
+
+Package: oscam
+Version: 1.20-11718-1
+Depends: libc
+License: GPL-3.0
+Section: net
+Architecture: powerpc_464fp
+Installed-Size: 233482
+Filename: oscam_1.20-11718-1_powerpc_464fp.ipk
+Size: 233448
+SHA256sum: 2dfbcbbd7b923c1fd25742d226ad8f78e16033345d52dca694b0154064c4f6b0
+Description:  Open Source Conditional Access Modul
+
+Package: pctv-460e
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, tda10071-firmware, kmod-dvb-fe-a8293, kmod-dvb-fe-tda10071, kmod-em28xx-dvb
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: pctv-460e_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 924
+SHA256sum: 7811d9a80b89cac50eeaa521ad4559385437c2523b28b85e38c2f871c412dc31
+Description:  Supported:
+ PCTV Systems DVB-S2 Stick 460e.
+
+Package: pugixml
+Version: 1.13-1
+Depends: libc, libstdcpp6
+License: MIT
+Section: libs
+Architecture: powerpc_464fp
+Installed-Size: 67450
+Filename: pugixml_1.13-1_powerpc_464fp.ipk
+Size: 68298
+SHA256sum: df5792ba17e7bc9f37ee22c97aeb2c0c0f216a1c4fac456d598899e9065af90e
+Description:  Light-weight C++ XML processing library. It features:
+ DOM-like interface with rich traversal/modification capabilities
+ Extremely fast non-validating XML parser which constructs the DOM tree from an XML file/buffer
+ XPath 1.0 implementation for complex data-driven tree queries
+ Full Unicode support with Unicode interface variants and automatic encoding conversions
+
+Package: satpi
+Version: 1.6.2-1
+Depends: libc, libatomic1, libstdcpp6
+License: GPL-2.0
+Section: multimedia
+Architecture: powerpc_464fp
+Installed-Size: 507369
+Filename: satpi_1.6.2-1_powerpc_464fp.ipk
+Size: 506660
+SHA256sum: 2bfaa204bf04cb8d67fec5a2e126afddb99b6fc4331c41e27790c22bf5ce6e55
+Description:  SATIP server for linux (suitable to run on an Raspberry Pi).
+ Currently supporting DVB-S/S2/T/C and transform DVB-S requests to DVB-C.
+
+Package: si2157-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 10329
+Filename: si2157-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 11090
+SHA256sum: bcee2646798b539a42b291e2b4899b4c6a9d9433d19f65cc58f6e42dd0937c65
+Description:  Silicon Labs Si2157
+
+Package: si2158-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 3636
+Filename: si2158-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 4394
+SHA256sum: 9c7bf9efacff789d7ff76620c024a50dd1c5303f0b0c8c0ce550d4522c6c37f6
+Description:  Silicon Labs Si2158
+
+Package: si2168-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 67267
+Filename: si2168-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 68085
+SHA256sum: 863569dcb01bbf22895cb84a654b3e4137f87ebfa197c775ace5b0836cda9359
+Description:  Silicon Labs Si2168
+
+Package: tda10071-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: powerpc_464fp
+Installed-Size: 25762
+Filename: tda10071-firmware_2021-07-19-0eaf5b39-5_powerpc_464fp.ipk
+Size: 26478
+SHA256sum: b5f90708db9f504dba67f7ee0ae5b4dd85dc31d28b44286c814b0ac7f283e76a
+Description:  NXP TDA10071
+
+Package: terratec-cinergy-s2-hd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, ds3000-firmware, kmod-dvb-usb-dw2102
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: terratec-cinergy-s2-hd_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 941
+SHA256sum: 153a703ef7c488ab1dc7c716efbc6e003607e3291e97b03529a93c7857e3b2ae
+Description:  Supported:
+ TerraTec CINERGY S2 Stick HD rev3,
+ TerraTec CINERGY S2 USB HD rev1,
+ TerraTec CINERGY S2 USB HD rev2,
+ TerraTec CINERGY S2 USB HD rev4.
+
+Package: terratec-cinergy-tc2-stick
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9303-firmware, si2168-firmware, kmod-dvb-fe-si2168, kmod-dvb-usb-af9035, kmod-media-tuner-si2157
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: terratec-cinergy-tc2-stick_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 953
+SHA256sum: 873a64bbc4711ec71adaafdfdaf71466c9005ffebb24972d17729dc84a4d662c
+Description:  Supported:
+ TerraTec CINERGY TC2 Stick.
+
+Package: tt-ct2-4650-ci
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2158-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-dvb-fe-sp2, kmod-dvb-fe-ts2020, kmod-dvb-usb-dvbsky
+License: GPL-2.0
+Section: dvb-devices
+Architecture: powerpc_464fp
+Installed-Size: 120
+Filename: tt-ct2-4650-ci_2022-07-17-9a225f4d-1_powerpc_464fp.ipk
+Size: 959
+SHA256sum: 86e2f1a5f6cf769e4d1e0408b00ca7be5fb3d327276811471ad8004549b1771c
+Description:  Supported:
+ TechnoTrend Connect CT2-4650 CI v1,
+ TechnoTrend Connect CT2-4650 CI v1.1.
+

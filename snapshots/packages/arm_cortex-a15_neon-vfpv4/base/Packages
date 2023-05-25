@@ -1,0 +1,644 @@
+Package: as102-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 62723
+Filename: as102-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 63368
+SHA256sum: e9b7d7a4fea0e0502f1c225e79233e6e539c9ab2eb817155b757d2e3d74dc4ea
+Description:  Abilis AS102
+
+Package: cx24120-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 29498
+Filename: cx24120-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 30303
+SHA256sum: 4c13110e7ed3e91ce3a32484361d9be0c649edda50025791b911d5494449d89f
+Description:  Conexant CX24120 DVB-S/S2 frontend
+
+Package: dib0700-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 21895
+Filename: dib0700-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 22667
+SHA256sum: d5f47db52b33b9ef067adcb14b9c2f7ebb0804120c55f9318e19fd6b513c982c
+Description:  DiBcom 0700 USB bridge
+
+Package: drxd-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 9839
+Filename: drxd-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 10611
+SHA256sum: 8f3768ba30e3a0565aeed0c4931d194e825e9c7a072c4b2d736e89386ea38e4e
+Description:  Micronas DRXD demodulator
+
+Package: ds3000-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 3944
+Filename: ds3000-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 4684
+SHA256sum: 0082c4341e4aeb4d66fd1fe8c5f1b01741e74a189787d56b2585cd076b175183
+Description:  Montage Technology M88DS3000
+
+Package: dvb-app-atsc_epg
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 15135
+Filename: dvb-app-atsc_epg_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 15897
+SHA256sum: 174376f2edfdf11ef9e17cf619f185fa3004d92dbf0c0f91dc1fd49b08fd1c60
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB atsc_epg application.
+
+Package: dvb-app-av7110_loadkeys
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 6985
+Filename: dvb-app-av7110_loadkeys_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 7834
+SHA256sum: 08d9e01c0515e108f65b03e408db7c7dcd3b22651bf4542efdaa9ac003e75cbc
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB av7110_loadkeys application.
+
+Package: dvb-app-azap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 20059
+Filename: dvb-app-azap_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 20889
+SHA256sum: 9768408037824677b55dca1bc37ae97d21d8af989e04439f42f4a3713f145c31
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB azap application.
+
+Package: dvb-app-czap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 32534
+Filename: dvb-app-czap_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 33386
+SHA256sum: f13db8179f0c21b602efff62528ab3c67ae1e7cbfdfea9657fc34db47cda19ae
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB czap application.
+
+Package: dvb-app-dib3000-watch
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 21462
+Filename: dvb-app-dib3000-watch_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 22288
+SHA256sum: 43f357c079c2de27679cf102905135e42fd1301c7a8dd5e4257596b4fcbccc47
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dib3000-watch application.
+
+Package: dvb-app-dst_test
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 14556
+Filename: dvb-app-dst_test_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 15351
+SHA256sum: fe5e34421b6d948c48da4454de2714e22404737f9a12d22dd336d524a995c3b2
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dst_test application.
+
+Package: dvb-app-dvbdate
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 30374
+Filename: dvb-app-dvbdate_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 31185
+SHA256sum: 5c377f09f964405cba7ff7f3b5fe13d39f605791323e51c5fd2bd1037910d9a9
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbdate application.
+
+Package: dvb-app-dvbnet
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 15975
+Filename: dvb-app-dvbnet_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 16727
+SHA256sum: a45a538b08bea514f016540e652dc6d132b3d027abab094a6053d4e8d96f5c9e
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbnet application.
+
+Package: dvb-app-dvbscan
+Version: 1505-1
+Depends: libc, libdvbcfg, libucsi, libdvbsec, libdvbapi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 37990
+Filename: dvb-app-dvbscan_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 38883
+SHA256sum: db60082ea0f51887ce595eb19b90ef20b9b1c01af51bbb0bc668e89295748e3e
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbscan application.
+
+Package: dvb-app-dvbtraffic
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 16491
+Filename: dvb-app-dvbtraffic_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 17298
+SHA256sum: 0141067a5d35aba0623fd9d4751e73eca02779d89a39b8148ab6ed78f51e22f6
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbtraffic application.
+
+Package: dvb-app-femon
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 24045
+Filename: dvb-app-femon_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 24828
+SHA256sum: ab38a2bb5f8097dccfbb90bab8f2022f678dd53e197773f1a045fe8658af4dfb
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB femon application.
+
+Package: dvb-app-gnutv
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libucsi, libdvbsec, libdvbapi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 82202
+Filename: dvb-app-gnutv_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 83086
+SHA256sum: f35bf8e8c8d2e77dccd64b88502a1c6c7744a7e58872491091303bdfdbf9e5cc
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gnutv application.
+
+Package: dvb-app-gotox
+Version: 1505-1
+Depends: libc, libdvbapi, libdvbsec
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 33126
+Filename: dvb-app-gotox_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 34023
+SHA256sum: 862e7c40d5ccc0980972901de9718f69c4e9310d874adf858844b2f45225d2b2
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gotox application.
+
+Package: dvb-app-scan
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 64546
+Filename: dvb-app-scan_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 65430
+SHA256sum: bcf980514c6714a3dac8095018f817502fed1fc4da1234f66cfb88fb382367f6
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB scan application.
+
+Package: dvb-app-szap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 26282
+Filename: dvb-app-szap_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 27061
+SHA256sum: bffd4e477e2a21f5ae2100b37e99ee6bbb6817e0ab32328ff5727fa95e16203b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB szap application.
+
+Package: dvb-app-tzap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 22641
+Filename: dvb-app-tzap_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 23396
+SHA256sum: f1a81ae2239fee9fbd06091a9839cb1d385edede020f1dbfcf4d5563791d9091
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB tzap application.
+
+Package: dvb-app-zap
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libdvbsec, libdvbapi, libucsi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 66296
+Filename: dvb-app-zap_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 67143
+SHA256sum: 282e53bdd1aad9b959ad2a1e852944f52b8d61d63e24b935dced6d88dc60b20e
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB zap application.
+
+Package: dvb-keymaps-av7110
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 1622
+Filename: dvb-keymaps-av7110_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 2466
+SHA256sum: e73a24c02b1b5f13826122f17038022fe5dc9214c2541c034ce270e230f93e9c
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains keymaps for the av7110_loadkeys application.
+
+Package: generic-as102
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, as102-firmware, kmod-dvb-as102
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: generic-as102_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 914
+SHA256sum: a3d41374647dd1ba28792f35c24e11242b27aaa5352fc1d3263120044c741cb7
+Description:  Supported:
+ ADB-100T NBox DVB-T USB dongle.
+
+Package: generic-dib0700
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, dib0700-firmware, kmod-dvb-usb-dib0700
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: generic-dib0700_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 929
+SHA256sum: a71864cab3d73e75747fc61ab87bb5581b2aab81894fe0c8c39e1541161bc6b4
+Description:  Supported:
+ Medion CTX1921 (V2.1.2) USB DVB-T dongle.
+
+Package: generic-it9135
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9135-firmware, kmod-dvb-fe-af9033, kmod-dvb-usb-af9035, kmod-media-tuner-it913x
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: generic-it9135_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 983
+SHA256sum: a9fde1c1dd37d369838ca1d5f08b22856888bcd441937aad652c3d2308921a37
+Description:  Supported:
+ HDTV USB DVB-T dongle,
+ WandTV DVB-T digital terrestrial TV stick (EzTV869 1.0).
+
+Package: generic-rtl2838u
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, kmod-dvb-fe-rtl2832, kmod-dvb-usb-rtl28xxu
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: generic-rtl2838u_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 967
+SHA256sum: c8b4e92b8a4ccbe9585b87e06f755b439041d979b1e62ba267dc7064d3992f5a
+Description:  Supported:
+ NOT ONLY TV LV5TDLX DVB-T USB,
+ RealTek RTL2838UHIDIR,
+ Trekstor DVB-T Stick Terres 2.0.
+
+Package: hauppauge-wintv-dualhd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2157-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-em28xx-dvb
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: hauppauge-wintv-dualhd_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 946
+SHA256sum: f7c82a8293404fafc169132550564205d3946710165f5a2b1efe0f72b574ee54
+Description:  Supported:
+ Hauppauge WinTV dualHD.
+
+Package: it9135-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 8549
+Filename: it9135-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 9344
+SHA256sum: b115111ba663288b95e1d9eb545f02a1b734818bb5ab7d7aac57cb1df26aa4b6
+Description:  ITE Tech IT9135
+
+Package: it9303-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 1484
+Filename: it9303-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 2247
+SHA256sum: ae8ffbfc46dd73a89448708bc034c90c7e3f20308263fdd18d9c4737c3457634
+Description:  ITE Tech IT9303
+
+Package: libdvbapi
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 5908
+Filename: libdvbapi_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 6718
+SHA256sum: 7ee6eaac44e0e546344455bf61ea12b5c79afe8b7e45bc7f04c01c97b681d635
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbcfg
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 3919
+Filename: libdvbcfg_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 4680
+SHA256sum: 913d9a6f1bfaec8b7cbb7d75bb601058d8cb39153ea3f44545793ed0e0cf1d41
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvben50221
+Version: 1505-1
+Depends: libc, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 23610
+Filename: libdvben50221_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 24353
+SHA256sum: 0571e08982b160c7d682b1c02cbbe6a24b373293c28af4200ee74a37e0c3d78b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbsec
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 6525
+Filename: libdvbsec_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 7364
+SHA256sum: f56cc465c80c32fb6e3202fc54899d3d4603b1c3c7eeee846b7c46272226f2a8
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libesg
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 4131
+Filename: libesg_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 4912
+SHA256sum: a86f478d8e35d83b8b6d906b9c29091ca3001b49378db9f0448ee852cabf3ef1
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libucsi
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 12151
+Filename: libucsi_1505-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 12856
+SHA256sum: e541ada430ea3719e8f9cb4bb8a922b52f18fdefc9c8e97d8bcd2a472daa24a7
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: m88ds3103-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 9062
+Filename: m88ds3103-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 9885
+SHA256sum: 9e897ecc5bf5053c449149458e46c97a96bff8c65fbd2db0c4782b17dc122091
+Description:  Montage Technology M88DS3103 DVB-S/S2 demodulator
+
+Package: ngene-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 35212
+Filename: ngene-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 35993
+SHA256sum: 391b7de2134c801dd659b0e5eb6ca2f518ba3f2238a58ecb3a1ddafcf4b51ca4
+Description:  Micronas nGene PCIExpress bridge
+
+Package: oscam
+Version: 1.20-11718-1
+Depends: libc
+License: GPL-3.0
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 202763
+Filename: oscam_1.20-11718-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 202842
+SHA256sum: 275214d73f91ab1b48e671c8aecfb5d0c2300378a6593f4a8ce6cf8242a6dad4
+Description:  Open Source Conditional Access Modul
+
+Package: pctv-460e
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, tda10071-firmware, kmod-dvb-fe-a8293, kmod-dvb-fe-tda10071, kmod-em28xx-dvb
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: pctv-460e_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 933
+SHA256sum: 6f3f299d1d673936cd733eca7c4184a4454e9dfdf30c938227b1e23fc16d71b2
+Description:  Supported:
+ PCTV Systems DVB-S2 Stick 460e.
+
+Package: pugixml
+Version: 1.13-1
+Depends: libc, libstdcpp6
+License: MIT
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 52478
+Filename: pugixml_1.13-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 53440
+SHA256sum: 3b07165710e8c2349b7fa464fabc084cadf313cd31c7e3122ab5af2ae8ee7d25
+Description:  Light-weight C++ XML processing library. It features:
+ DOM-like interface with rich traversal/modification capabilities
+ Extremely fast non-validating XML parser which constructs the DOM tree from an XML file/buffer
+ XPath 1.0 implementation for complex data-driven tree queries
+ Full Unicode support with Unicode interface variants and automatic encoding conversions
+
+Package: satpi
+Version: 1.6.2-1
+Depends: libc, libatomic1, libstdcpp6
+License: GPL-2.0
+Section: multimedia
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 479476
+Filename: satpi_1.6.2-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 480083
+SHA256sum: 478173b98624974c2dc5c4d8315c560bd01ccb3db2362bbbae734e631c0d6a69
+Description:  SATIP server for linux (suitable to run on an Raspberry Pi).
+ Currently supporting DVB-S/S2/T/C and transform DVB-S requests to DVB-C.
+
+Package: si2157-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 10329
+Filename: si2157-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 11102
+SHA256sum: 98c29f89e71c5f593cbda0f28dd940c09df31dcbc0aeacb0529c97a6839bdac5
+Description:  Silicon Labs Si2157
+
+Package: si2158-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 3636
+Filename: si2158-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 4400
+SHA256sum: cb78b5cc8b5b680de46e3eecbd9520ba63d7e188858137a78e7e54203156ba39
+Description:  Silicon Labs Si2158
+
+Package: si2168-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 67267
+Filename: si2168-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 68093
+SHA256sum: 010bfedefa5a1c6cb35792f49a8fe49f23a0c649ff3192c123ede440280e176b
+Description:  Silicon Labs Si2168
+
+Package: tda10071-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 25762
+Filename: tda10071-firmware_2021-07-19-0eaf5b39-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 26487
+SHA256sum: 97e46405823dac5b6bc3fbd5cd00de440cf02bff89ecc257b134caae13813ce9
+Description:  NXP TDA10071
+
+Package: terratec-cinergy-s2-hd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, ds3000-firmware, kmod-dvb-usb-dw2102
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: terratec-cinergy-s2-hd_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 952
+SHA256sum: b5117ae81d561aaa1b475dbd0a3fbf2ca77d6eae5165f073b3e385cd07cbe212
+Description:  Supported:
+ TerraTec CINERGY S2 Stick HD rev3,
+ TerraTec CINERGY S2 USB HD rev1,
+ TerraTec CINERGY S2 USB HD rev2,
+ TerraTec CINERGY S2 USB HD rev4.
+
+Package: terratec-cinergy-tc2-stick
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9303-firmware, si2168-firmware, kmod-dvb-fe-si2168, kmod-dvb-usb-af9035, kmod-media-tuner-si2157
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: terratec-cinergy-tc2-stick_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 962
+SHA256sum: c73c7bd06031bfe7ff81d6ea10183c0f27e6c37853890d8bb71871623aabe8be
+Description:  Supported:
+ TerraTec CINERGY TC2 Stick.
+
+Package: tt-ct2-4650-ci
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2158-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-dvb-fe-sp2, kmod-dvb-fe-ts2020, kmod-dvb-usb-dvbsky
+License: GPL-2.0
+Section: dvb-devices
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 120
+Filename: tt-ct2-4650-ci_2022-07-17-9a225f4d-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 966
+SHA256sum: 435e05b6f969fcf99ac34eee8be7b679dce6d7f1c8b415ceb38c55b6430d6c42
+Description:  Supported:
+ TechnoTrend Connect CT2-4650 CI v1,
+ TechnoTrend Connect CT2-4650 CI v1.1.
+

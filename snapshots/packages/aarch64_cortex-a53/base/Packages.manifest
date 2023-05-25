@@ -1,0 +1,866 @@
+Package: as102-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: as102-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 62723
+Filename: as102-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 63358
+SHA256sum: 8c6e94eaf99f03ee9c1e46d34ff9a74ea6d036fb569cb1f1b8926519c38223a1
+Description:  Abilis AS102
+
+Package: cx24120-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: cx24120-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 29498
+Filename: cx24120-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 30300
+SHA256sum: e811f1929358ac56cd9db83130787f93f1728f7f42a5b4ade42f3be75e86c40c
+Description:  Conexant CX24120 DVB-S/S2 frontend
+
+Package: dib0700-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: dib0700-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 21895
+Filename: dib0700-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 22659
+SHA256sum: 6cad3c8a9b559a41162bbb4db154b43220465f5d994ebd66429a7193116b4a27
+Description:  DiBcom 0700 USB bridge
+
+Package: drxd-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: drxd-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 9839
+Filename: drxd-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 10605
+SHA256sum: 059985a5acd199b83b2eb3116a6497523576b8332ba40e36c64482de651ef62b
+Description:  Micronas DRXD demodulator
+
+Package: ds3000-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: ds3000-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 3944
+Filename: ds3000-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 4685
+SHA256sum: 2d70385273f564de73cfcd01475358ab0ed604db554983729382b5a67c251686
+Description:  Montage Technology M88DS3000
+
+Package: dvb-app-atsc_epg
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+Source: package/dvb-apps
+SourceName: dvb-app-atsc_epg
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 19920
+Filename: dvb-app-atsc_epg_1505-1_aarch64_cortex-a53.ipk
+Size: 20568
+SHA256sum: a94028ee39b539e674dfed0b1364af8a72c3f63c03beadfd12b733c8b3737e4f
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB atsc_epg application.
+
+Package: dvb-app-av7110_loadkeys
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-av7110_loadkeys
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 6811
+Filename: dvb-app-av7110_loadkeys_1505-1_aarch64_cortex-a53.ipk
+Size: 7468
+SHA256sum: 6ede88a25b7740fbf4b3a58199c674a29bfdd2941bbe43d9f4f67c603c7f9c4d
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB av7110_loadkeys application.
+
+Package: dvb-app-azap
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-azap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 24316
+Filename: dvb-app-azap_1505-1_aarch64_cortex-a53.ipk
+Size: 24964
+SHA256sum: 55be380619c28e1ff4b213b66fcd2278a02b7028fcb1d9232d4e819541665e0b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB azap application.
+
+Package: dvb-app-czap
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-czap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 40008
+Filename: dvb-app-czap_1505-1_aarch64_cortex-a53.ipk
+Size: 40494
+SHA256sum: 39426cb9a5612911c35ff235b42834a3ad1442a3953f039f5cc186982a812d04
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB czap application.
+
+Package: dvb-app-dib3000-watch
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-dib3000-watch
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 28276
+Filename: dvb-app-dib3000-watch_1505-1_aarch64_cortex-a53.ipk
+Size: 28997
+SHA256sum: 4571b021178c1b8be8b91c33dc7ec117af76d5938d55038c0806820cd24a43a1
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dib3000-watch application.
+
+Package: dvb-app-dst_test
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-dst_test
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 18814
+Filename: dvb-app-dst_test_1505-1_aarch64_cortex-a53.ipk
+Size: 19447
+SHA256sum: ccfba5691b252a549775be3230f93b109269ef0b0d9edba6fe7ff09d022a4d78
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dst_test application.
+
+Package: dvb-app-dvbdate
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+Source: package/dvb-apps
+SourceName: dvb-app-dvbdate
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 34235
+Filename: dvb-app-dvbdate_1505-1_aarch64_cortex-a53.ipk
+Size: 35079
+SHA256sum: bf26bab728ce20cd43e4b94e87d2e70b671c3676db6039c3d70347640c6dce6f
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbdate application.
+
+Package: dvb-app-dvbnet
+Version: 1505-1
+Depends: libc, libdvbapi
+Source: package/dvb-apps
+SourceName: dvb-app-dvbnet
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 20159
+Filename: dvb-app-dvbnet_1505-1_aarch64_cortex-a53.ipk
+Size: 20808
+SHA256sum: c17ef4bdffd7c6293e8076f361ea2e0db57caa63437f60c1b085e95e24c32538
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbnet application.
+
+Package: dvb-app-dvbscan
+Version: 1505-1
+Depends: libc, libdvbcfg, libucsi, libdvbsec, libdvbapi, libpthread
+Source: package/dvb-apps
+SourceName: dvb-app-dvbscan
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 46214
+Filename: dvb-app-dvbscan_1505-1_aarch64_cortex-a53.ipk
+Size: 46795
+SHA256sum: 41053826439fb97b1dbb0b3bc113c8be8632f36073b3132ea3c1a5b490f5eb8c
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbscan application.
+
+Package: dvb-app-dvbtraffic
+Version: 1505-1
+Depends: libc, libdvbapi
+Source: package/dvb-apps
+SourceName: dvb-app-dvbtraffic
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 20746
+Filename: dvb-app-dvbtraffic_1505-1_aarch64_cortex-a53.ipk
+Size: 21392
+SHA256sum: 82572439508f1860e70b5f63754578013398863c2610e45c08fc43e2efc56d22
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbtraffic application.
+
+Package: dvb-app-femon
+Version: 1505-1
+Depends: libc, libdvbapi
+Source: package/dvb-apps
+SourceName: dvb-app-femon
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 28204
+Filename: dvb-app-femon_1505-1_aarch64_cortex-a53.ipk
+Size: 28918
+SHA256sum: 6fd428cd2125848a17ef216f9ec234638a4ba725b04c22566fc3649dcccf3be8
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB femon application.
+
+Package: dvb-app-gnutv
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libucsi, libdvbsec, libdvbapi, libpthread
+Source: package/dvb-apps
+SourceName: dvb-app-gnutv
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 91748
+Filename: dvb-app-gnutv_1505-1_aarch64_cortex-a53.ipk
+Size: 92437
+SHA256sum: 8e781ec6546ac1227572a52d5d26bbf4fdf3fd886c0b2ea06718bc3fc797d6c7
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gnutv application.
+
+Package: dvb-app-gotox
+Version: 1505-1
+Depends: libc, libdvbapi, libdvbsec
+Source: package/dvb-apps
+SourceName: dvb-app-gotox
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 40682
+Filename: dvb-app-gotox_1505-1_aarch64_cortex-a53.ipk
+Size: 41212
+SHA256sum: 87d8ee8bccfa9f94a8e4a316adbe1f1376b4eb21f87d2b490aab82a1c223d134
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gotox application.
+
+Package: dvb-app-scan
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-scan
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 72202
+Filename: dvb-app-scan_1505-1_aarch64_cortex-a53.ipk
+Size: 73105
+SHA256sum: f9f5f22c4402cb1b0291fd6e9deda6547e0d3b4314ddc0f99fcc1e573b286479
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB scan application.
+
+Package: dvb-app-szap
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-szap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 30448
+Filename: dvb-app-szap_1505-1_aarch64_cortex-a53.ipk
+Size: 31175
+SHA256sum: 727d1003841c3c71ab197418ab3f69e91ccb96e6ebd5fe83adb42273cd7d1f83
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB szap application.
+
+Package: dvb-app-tzap
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-app-tzap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 26773
+Filename: dvb-app-tzap_1505-1_aarch64_cortex-a53.ipk
+Size: 27470
+SHA256sum: 3f156cac5604f3f1e104c625050439e366e99de7aa8cdd2c6a524637e1933f51
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB tzap application.
+
+Package: dvb-app-zap
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libdvbsec, libdvbapi, libucsi, libpthread
+Source: package/dvb-apps
+SourceName: dvb-app-zap
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 75591
+Filename: dvb-app-zap_1505-1_aarch64_cortex-a53.ipk
+Size: 76153
+SHA256sum: 3198ea9fb3dc17e6e48477cb23e73dd6e376a72ddbc67723e62f3cebf75fb9f4
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB zap application.
+
+Package: dvb-keymaps-av7110
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: dvb-keymaps-av7110
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 1622
+Filename: dvb-keymaps-av7110_1505-1_aarch64_cortex-a53.ipk
+Size: 2460
+SHA256sum: f91490723a0695bd473d41bb4ee22ef9f44d58c6010c12e2e3591cdbfb66daff
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains keymaps for the av7110_loadkeys application.
+
+Package: generic-as102
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, as102-firmware, kmod-dvb-as102
+Source: package/v4l-dvb
+SourceName: generic-as102
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: generic-as102_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 912
+SHA256sum: 1e0fd4efc05972617a8b0ace597515e22cef8efbc2b86a6509dc19292ccbb06f
+Description:  Supported:
+ ADB-100T NBox DVB-T USB dongle.
+
+Package: generic-dib0700
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, dib0700-firmware, kmod-dvb-usb-dib0700
+Source: package/v4l-dvb
+SourceName: generic-dib0700
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: generic-dib0700_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 925
+SHA256sum: ecbe0bd450ea0eccda181e17e5599caff2e4605b0f24e2e53066d8c9f0f8b723
+Description:  Supported:
+ Medion CTX1921 (V2.1.2) USB DVB-T dongle.
+
+Package: generic-it9135
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9135-firmware, kmod-dvb-fe-af9033, kmod-dvb-usb-af9035, kmod-media-tuner-it913x
+Source: package/v4l-dvb
+SourceName: generic-it9135
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: generic-it9135_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 974
+SHA256sum: 059d569429078f795dbe38a8a917e78fdcdcdaf1cd50abede0aa2f3841614969
+Description:  Supported:
+ HDTV USB DVB-T dongle,
+ WandTV DVB-T digital terrestrial TV stick (EzTV869 1.0).
+
+Package: generic-rtl2838u
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, kmod-dvb-fe-rtl2832, kmod-dvb-usb-rtl28xxu
+Source: package/v4l-dvb
+SourceName: generic-rtl2838u
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: generic-rtl2838u_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 962
+SHA256sum: cf6c82485fc4303308ef4931743a779c7ca4e12ffaf0a8d53ecb3c0b4a382286
+Description:  Supported:
+ NOT ONLY TV LV5TDLX DVB-T USB,
+ RealTek RTL2838UHIDIR,
+ Trekstor DVB-T Stick Terres 2.0.
+
+Package: hauppauge-wintv-dualhd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2157-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-em28xx-dvb
+Source: package/v4l-dvb
+SourceName: hauppauge-wintv-dualhd
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: hauppauge-wintv-dualhd_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 939
+SHA256sum: 188a0d4d7eb73298cde4928a125034201925cb9f42ea11d8dbd084ce7d3839e0
+Description:  Supported:
+ Hauppauge WinTV dualHD.
+
+Package: it9135-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: it9135-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 8549
+Filename: it9135-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 9339
+SHA256sum: 173608341c4fbbf2e3c57a8eaf9ab802005ee0b2a8ebc14487cbdb3cb1880105
+Description:  ITE Tech IT9135
+
+Package: it9303-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: it9303-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 1484
+Filename: it9303-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 2242
+SHA256sum: 9a7f6d3ddc13fe8cfd5608aaf93f6e960f5581c4a4158badceb99bac12ab87a6
+Description:  ITE Tech IT9303
+
+Package: libdvbapi
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libdvbapi
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 6770
+Filename: libdvbapi_1505-1_aarch64_cortex-a53.ipk
+Size: 7560
+SHA256sum: 05a0cec9f9171a1beb1acac98ad583982285260aa3e4fdaaf61fae5af8c40aac
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbcfg
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libdvbcfg
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 4826
+Filename: libdvbcfg_1505-1_aarch64_cortex-a53.ipk
+Size: 5484
+SHA256sum: 5698f7d908e60a7a11b18ca34151654a7bd8cc6a6468248ee7a536e754069ec3
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvben50221
+Version: 1505-1
+Depends: libc, libucsi
+Source: package/dvb-apps
+SourceName: libdvben50221
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 25785
+Filename: libdvben50221_1505-1_aarch64_cortex-a53.ipk
+Size: 26577
+SHA256sum: db4755523c1963436306bbfe6a790a7ebd062e0e81b82d4e103d83898b60d130
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbsec
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libdvbsec
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 7356
+Filename: libdvbsec_1505-1_aarch64_cortex-a53.ipk
+Size: 8094
+SHA256sum: e88fb1c83e98c4e38e7af56cc0a7863b6ead73546c838a120f59cdc963445043
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libesg
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libesg
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 5176
+Filename: libesg_1505-1_aarch64_cortex-a53.ipk
+Size: 5804
+SHA256sum: 750d45d6bd601d61e9ea6be1a9eb618109071627175d93de2acde3e06ea337f3
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libucsi
+Version: 1505-1
+Depends: libc
+Source: package/dvb-apps
+SourceName: libucsi
+License: GPL-2.0 LGPL-2.1
+LicenseFiles: COPYING COPYING.LGPL
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 13410
+Filename: libucsi_1505-1_aarch64_cortex-a53.ipk
+Size: 13909
+SHA256sum: 7acec2df0426e5e4bd9ad1efaa5b76a1abc846d6429bc687524d040b5f1f6655
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: m88ds3103-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: m88ds3103-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 9062
+Filename: m88ds3103-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 9880
+SHA256sum: 5c4c03d0251b249ea0f9669a2725acc0c543d871441c3fcc6cc1c8a2e70e58ca
+Description:  Montage Technology M88DS3103 DVB-S/S2 demodulator
+
+Package: ngene-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: ngene-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 35212
+Filename: ngene-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 35988
+SHA256sum: 60a7e1a37d32ba330562b44b4ad077759a2976653db2fad520917cc29e3d7678
+Description:  Micronas nGene PCIExpress bridge
+
+Package: oscam
+Version: 1.20-11718-1
+Depends: libc
+Source: package/oscam
+SourceName: oscam
+License: GPL-3.0
+Section: net
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 216831
+Filename: oscam_1.20-11718-1_aarch64_cortex-a53.ipk
+Size: 216360
+SHA256sum: 180d8f81b82c3f574e29de938a71c19404cbc9d136f0e8b3299a65a0cd99b2c9
+Description:  Open Source Conditional Access Modul
+
+Package: pctv-460e
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, tda10071-firmware, kmod-dvb-fe-a8293, kmod-dvb-fe-tda10071, kmod-em28xx-dvb
+Source: package/v4l-dvb
+SourceName: pctv-460e
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: pctv-460e_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 925
+SHA256sum: c2b8d47c02ff8a7012694ef6d9b689419d63bdba5d9a3202df89bfa34c81d16a
+Description:  Supported:
+ PCTV Systems DVB-S2 Stick 460e.
+
+Package: pugixml
+Version: 1.13-1
+Depends: libc, libstdcpp6
+Source: package/pugixml
+SourceName: pugixml
+License: MIT
+LicenseFiles: readme.txt
+Section: libs
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 60945
+Filename: pugixml_1.13-1_aarch64_cortex-a53.ipk
+Size: 61911
+SHA256sum: f24112633e6a4b66daa528128ab462c4d0045c6da2955277646f0ee5b25daa95
+Description:  Light-weight C++ XML processing library. It features:
+ DOM-like interface with rich traversal/modification capabilities
+ Extremely fast non-validating XML parser which constructs the DOM tree from an XML file/buffer
+ XPath 1.0 implementation for complex data-driven tree queries
+ Full Unicode support with Unicode interface variants and automatic encoding conversions
+
+Package: satpi
+Version: 1.6.2-1
+Depends: libc, libatomic1, libstdcpp6
+Source: package/satpi
+SourceName: satpi
+License: GPL-2.0
+LicenseFiles: LICENSE
+Section: multimedia
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 504758
+Filename: satpi_1.6.2-1_aarch64_cortex-a53.ipk
+Size: 504907
+SHA256sum: 3b5144bdaa349fb262fdb759e4145693eb9318a9f0b788858938546a369a6aea
+Description:  SATIP server for linux (suitable to run on an Raspberry Pi).
+ Currently supporting DVB-S/S2/T/C and transform DVB-S requests to DVB-C.
+
+Package: si2157-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: si2157-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 10329
+Filename: si2157-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 11091
+SHA256sum: aef1f7c184bdab2d179e24a5f67684d14f705e14dfb88edb4619ff44f14d4f28
+Description:  Silicon Labs Si2157
+
+Package: si2158-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: si2158-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 3636
+Filename: si2158-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 4396
+SHA256sum: 560cb463100a76eb60b33a485a71a62e7605a16e4209ad90bcb28bd424ae6fd8
+Description:  Silicon Labs Si2158
+
+Package: si2168-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: si2168-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 67267
+Filename: si2168-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 68090
+SHA256sum: c2a54e38699b6e944027dbbae5705fc186710d3d880e6966e2ab2828ff42286e
+Description:  Silicon Labs Si2168
+
+Package: tda10071-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Source: package/dvb-firmware
+SourceName: tda10071-firmware
+Section: firmware
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 25762
+Filename: tda10071-firmware_2021-07-19-0eaf5b39-5_aarch64_cortex-a53.ipk
+Size: 26481
+SHA256sum: b3c602fcd5968256e8e95865189ef304f82ee5ff84b523ec5305b99187104b5a
+Description:  NXP TDA10071
+
+Package: terratec-cinergy-s2-hd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, ds3000-firmware, kmod-dvb-usb-dw2102
+Source: package/v4l-dvb
+SourceName: terratec-cinergy-s2-hd
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: terratec-cinergy-s2-hd_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 944
+SHA256sum: 68bc73aa5fcfa86cdc550a89c7571f409ef36d91dd53f1fd47dbdfd9e7a9fd2e
+Description:  Supported:
+ TerraTec CINERGY S2 Stick HD rev3,
+ TerraTec CINERGY S2 USB HD rev1,
+ TerraTec CINERGY S2 USB HD rev2,
+ TerraTec CINERGY S2 USB HD rev4.
+
+Package: terratec-cinergy-tc2-stick
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9303-firmware, si2168-firmware, kmod-dvb-fe-si2168, kmod-dvb-usb-af9035, kmod-media-tuner-si2157
+Source: package/v4l-dvb
+SourceName: terratec-cinergy-tc2-stick
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: terratec-cinergy-tc2-stick_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 954
+SHA256sum: a0a90bfebeb8756395c5b94788913b185d5ef18384777b8e263af6faa010cec2
+Description:  Supported:
+ TerraTec CINERGY TC2 Stick.
+
+Package: tt-ct2-4650-ci
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2158-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-dvb-fe-sp2, kmod-dvb-fe-ts2020, kmod-dvb-usb-dvbsky
+Source: package/v4l-dvb
+SourceName: tt-ct2-4650-ci
+License: GPL-2.0
+Section: dvb-devices
+SourceDateEpoch: 1685050511
+Maintainer: Tomasz Maciej Nowak <tmn505@gmail.com>
+Architecture: aarch64_cortex-a53
+Installed-Size: 120
+Filename: tt-ct2-4650-ci_2022-07-17-9a225f4d-1_aarch64_cortex-a53.ipk
+Size: 958
+SHA256sum: ee3c9d872f4a7523d7bf9e18baa0395d1d25493b5a00b76841ab7bc220027fae
+Description:  Supported:
+ TechnoTrend Connect CT2-4650 CI v1,
+ TechnoTrend Connect CT2-4650 CI v1.1.
+

@@ -1,0 +1,644 @@
+Package: as102-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 62723
+Filename: as102-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 63360
+SHA256sum: ae6520563b3c3466ad0edc622af7eed64f4aee350dbf0a6b502e7502019eb18d
+Description:  Abilis AS102
+
+Package: cx24120-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 29498
+Filename: cx24120-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 30299
+SHA256sum: a81f975b06b59111d0bed856988d890a9e19339dc472e38bdd673a6780e0f1eb
+Description:  Conexant CX24120 DVB-S/S2 frontend
+
+Package: dib0700-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 21895
+Filename: dib0700-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 22656
+SHA256sum: 546e3b530d62e2b5492d3475c00c7c23f9acb25db3019af02bbde74f42608cf8
+Description:  DiBcom 0700 USB bridge
+
+Package: drxd-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 9839
+Filename: drxd-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 10602
+SHA256sum: 2502382a6e2f06d1b54b001ea5aed75db28f00d8e6303228845b6e73077da3c0
+Description:  Micronas DRXD demodulator
+
+Package: ds3000-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 3944
+Filename: ds3000-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 4682
+SHA256sum: f45ba6e2e95ff81615bc3a0e00f01d289dcc5465c92654ab14943fc89d7d1eea
+Description:  Montage Technology M88DS3000
+
+Package: dvb-app-atsc_epg
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 39017
+Filename: dvb-app-atsc_epg_1505-1_i386_pentium-mmx.ipk
+Size: 39779
+SHA256sum: 90fc0d82cd62e779da9d33e89a8c9623487c49881c9cb142fbe8fe49410bda86
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB atsc_epg application.
+
+Package: dvb-app-av7110_loadkeys
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 6481
+Filename: dvb-app-av7110_loadkeys_1505-1_i386_pentium-mmx.ipk
+Size: 7349
+SHA256sum: 93e55ab2ae6bc8524466525406757a9510513da2c12c97024d986adfbfb3c34b
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB av7110_loadkeys application.
+
+Package: dvb-app-azap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 19473
+Filename: dvb-app-azap_1505-1_i386_pentium-mmx.ipk
+Size: 20307
+SHA256sum: 63e6849520d56abc3697fa33856c12c4c975b36280d4e019f6500a535a3afc2c
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB azap application.
+
+Package: dvb-app-czap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 31068
+Filename: dvb-app-czap_1505-1_i386_pentium-mmx.ipk
+Size: 31898
+SHA256sum: c5d60ac9fc85b26f63687d58d3cb39aa62c4e61e4b9dba3764be10e55cbe65d5
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB czap application.
+
+Package: dvb-app-dib3000-watch
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 20154
+Filename: dvb-app-dib3000-watch_1505-1_i386_pentium-mmx.ipk
+Size: 20942
+SHA256sum: 06d3db4215dbc3b6a1b1fd9827a3c6c92983e5beda6918e30b2ecf0eda8160cc
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dib3000-watch application.
+
+Package: dvb-app-dst_test
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 13787
+Filename: dvb-app-dst_test_1505-1_i386_pentium-mmx.ipk
+Size: 14548
+SHA256sum: 909c9fd226469118ab4f3d8a0a526fb2bd78cf8f74b16e97cc8620531f5a3794
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dst_test application.
+
+Package: dvb-app-dvbdate
+Version: 1505-1
+Depends: libc, libdvbapi, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 30038
+Filename: dvb-app-dvbdate_1505-1_i386_pentium-mmx.ipk
+Size: 30816
+SHA256sum: 9b21a572b4ccbe28a6b4ab93e64d20c48af4d678a831cc71f5fcfd361c0a9f06
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbdate application.
+
+Package: dvb-app-dvbnet
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 15483
+Filename: dvb-app-dvbnet_1505-1_i386_pentium-mmx.ipk
+Size: 16262
+SHA256sum: c5f0f01e026cd7d4ac650855edafffaa82bb43d2d8dcb92f43ca98ad78fd8057
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbnet application.
+
+Package: dvb-app-dvbscan
+Version: 1505-1
+Depends: libc, libdvbcfg, libucsi, libdvbsec, libdvbapi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 37597
+Filename: dvb-app-dvbscan_1505-1_i386_pentium-mmx.ipk
+Size: 38542
+SHA256sum: 461178c9873cb3a7102d28c2442a8b09a759f6812bb282e4ab0a301bd75cded7
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbscan application.
+
+Package: dvb-app-dvbtraffic
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 15790
+Filename: dvb-app-dvbtraffic_1505-1_i386_pentium-mmx.ipk
+Size: 16570
+SHA256sum: bf677afe635f829377ea985d2992f1178eed45a57dbe8f272ea077ef481b9023
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB dvbtraffic application.
+
+Package: dvb-app-femon
+Version: 1505-1
+Depends: libc, libdvbapi
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 23134
+Filename: dvb-app-femon_1505-1_i386_pentium-mmx.ipk
+Size: 23944
+SHA256sum: 621f6c8f587c1ac7818ded587461201686bfca55087cccaf0038c4a5a4561cdd
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB femon application.
+
+Package: dvb-app-gnutv
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libucsi, libdvbsec, libdvbapi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 83792
+Filename: dvb-app-gnutv_1505-1_i386_pentium-mmx.ipk
+Size: 84690
+SHA256sum: 2bfd43610836c6da8e67d485434714b431fa60f325b4f5c83be67571cb087424
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gnutv application.
+
+Package: dvb-app-gotox
+Version: 1505-1
+Depends: libc, libdvbapi, libdvbsec
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 32233
+Filename: dvb-app-gotox_1505-1_i386_pentium-mmx.ipk
+Size: 33087
+SHA256sum: 7b9165bc13547df32e9503e941178ef7a22d498557968624dea933ed00def24c
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB gotox application.
+
+Package: dvb-app-scan
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 62936
+Filename: dvb-app-scan_1505-1_i386_pentium-mmx.ipk
+Size: 63821
+SHA256sum: 64bdbc6501edc62d80345d9abf9fe560838919e9b75f7310879b5f14b792b973
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB scan application.
+
+Package: dvb-app-szap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 25304
+Filename: dvb-app-szap_1505-1_i386_pentium-mmx.ipk
+Size: 26030
+SHA256sum: 2790c5e79e9f920d6efb7d65609c1d7676321fc7fbc719c174a5389a8bfe7c9d
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB szap application.
+
+Package: dvb-app-tzap
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 22151
+Filename: dvb-app-tzap_1505-1_i386_pentium-mmx.ipk
+Size: 22934
+SHA256sum: b8c6d4866fb52c8bd588c091674a3a0356976ad95a0ed391ed51bbd25a6c9a77
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB tzap application.
+
+Package: dvb-app-zap
+Version: 1505-1
+Depends: libc, libdvbcfg, libdvben50221, libdvbsec, libdvbapi, libucsi, libpthread
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 68441
+Filename: dvb-app-zap_1505-1_i386_pentium-mmx.ipk
+Size: 69390
+SHA256sum: c516a1a23df2f72316c187f10d4612fa263b30b3aaa240d5cd1cc72fabffb4b9
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB zap application.
+
+Package: dvb-keymaps-av7110
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 1622
+Filename: dvb-keymaps-av7110_1505-1_i386_pentium-mmx.ipk
+Size: 2462
+SHA256sum: bb5031a5b1fcf5820c00dd865f67d1990846b8b15b9b7d1ae7856adf9b41b068
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains keymaps for the av7110_loadkeys application.
+
+Package: generic-as102
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, as102-firmware, kmod-dvb-as102
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: generic-as102_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 916
+SHA256sum: 13860bbb78bdd51a2c695991733f0ab6627eb2b9bd7702a98de929a712056a9d
+Description:  Supported:
+ ADB-100T NBox DVB-T USB dongle.
+
+Package: generic-dib0700
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, dib0700-firmware, kmod-dvb-usb-dib0700
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: generic-dib0700_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 923
+SHA256sum: 6c237d220f2c009969b5e4b0965b4a505b0152d41a1d2b1878f38846eb862a6f
+Description:  Supported:
+ Medion CTX1921 (V2.1.2) USB DVB-T dongle.
+
+Package: generic-it9135
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9135-firmware, kmod-dvb-fe-af9033, kmod-dvb-usb-af9035, kmod-media-tuner-it913x
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: generic-it9135_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 972
+SHA256sum: 79a5bfcc70029f774aea99afb812aa5349374bc3b9ba18860edaaefcda92f789
+Description:  Supported:
+ HDTV USB DVB-T dongle,
+ WandTV DVB-T digital terrestrial TV stick (EzTV869 1.0).
+
+Package: generic-rtl2838u
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, kmod-dvb-fe-rtl2832, kmod-dvb-usb-rtl28xxu
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: generic-rtl2838u_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 963
+SHA256sum: 1bb87c5854d79950f443742760421976b9ceafb298d7c6bb9e224342594d1117
+Description:  Supported:
+ NOT ONLY TV LV5TDLX DVB-T USB,
+ RealTek RTL2838UHIDIR,
+ Trekstor DVB-T Stick Terres 2.0.
+
+Package: hauppauge-wintv-dualhd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2157-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-em28xx-dvb
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: hauppauge-wintv-dualhd_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 943
+SHA256sum: 7d7e59ddae5935d7a41c391a3fc4c5e6b27eec49e04d4501a5e7a0e983787d59
+Description:  Supported:
+ Hauppauge WinTV dualHD.
+
+Package: it9135-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 8549
+Filename: it9135-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 9332
+SHA256sum: 3b30c7201779917467347c361bc9e2c75d962a97cfd437bb8bf4ff1c478cdd74
+Description:  ITE Tech IT9135
+
+Package: it9303-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 1484
+Filename: it9303-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 2237
+SHA256sum: 995e11e7c78f2ab8d313ce2e867431c861d31ff3ac9168de89ce2c0496a10a2b
+Description:  ITE Tech IT9303
+
+Package: libdvbapi
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: i386_pentium-mmx
+Installed-Size: 6242
+Filename: libdvbapi_1505-1_i386_pentium-mmx.ipk
+Size: 7100
+SHA256sum: 43397de4aff7af3f4172755915872a12da742a950e73a19e48c02d452dd735c4
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbcfg
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: i386_pentium-mmx
+Installed-Size: 3790
+Filename: libdvbcfg_1505-1_i386_pentium-mmx.ipk
+Size: 4588
+SHA256sum: 253353540453d0393b0a616cadaa428a968411db4a61b3e40ebbfc987594b5e6
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvben50221
+Version: 1505-1
+Depends: libc, libucsi
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: i386_pentium-mmx
+Installed-Size: 24935
+Filename: libdvben50221_1505-1_i386_pentium-mmx.ipk
+Size: 25727
+SHA256sum: 5c46874116606401e2a09a397b0f17db3a6c4d0fba7816d73b0d021241231187
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libdvbsec
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: i386_pentium-mmx
+Installed-Size: 6890
+Filename: libdvbsec_1505-1_i386_pentium-mmx.ipk
+Size: 7724
+SHA256sum: 679b8166c303dc3413ff539ea0f90989617d988a5253ece54ee52fe0198e5748
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libesg
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: i386_pentium-mmx
+Installed-Size: 4905
+Filename: libesg_1505-1_i386_pentium-mmx.ipk
+Size: 5716
+SHA256sum: 255fd496434cc29ba2a075c89c0b63ff42898165cbb783aaa9c6a9bb3008165a
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: libucsi
+Version: 1505-1
+Depends: libc
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Architecture: i386_pentium-mmx
+Installed-Size: 13113
+Filename: libucsi_1505-1_i386_pentium-mmx.ipk
+Size: 13777
+SHA256sum: e27f594743aae85e6a5d831a8d3aefeed08e78a179254f28d07e19f3543e6862
+Description:  Linux DVB API applications and utilities.
+ .
+ This package contains the Linux DVB  library.
+
+Package: m88ds3103-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 9062
+Filename: m88ds3103-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 9883
+SHA256sum: a02a8f294929bb68c33f57c642c47342020cb3c0673c03207b597740a71704df
+Description:  Montage Technology M88DS3103 DVB-S/S2 demodulator
+
+Package: ngene-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 35212
+Filename: ngene-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 35990
+SHA256sum: 787ae6a32e173aa06e3d608869c18cc50efd2a29d900da5401605b121b44285d
+Description:  Micronas nGene PCIExpress bridge
+
+Package: oscam
+Version: 1.20-11718-1
+Depends: libc
+License: GPL-3.0
+Section: net
+Architecture: i386_pentium-mmx
+Installed-Size: 202311
+Filename: oscam_1.20-11718-1_i386_pentium-mmx.ipk
+Size: 202555
+SHA256sum: 94e43200f5790b2b4900810f2d0d4e28868eca0f461d02e1d1e181c2f9260031
+Description:  Open Source Conditional Access Modul
+
+Package: pctv-460e
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, tda10071-firmware, kmod-dvb-fe-a8293, kmod-dvb-fe-tda10071, kmod-em28xx-dvb
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: pctv-460e_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 924
+SHA256sum: 6fb78516943fb02ee8cb7189bd072e6f8b33011370762abffce2f49312840f4b
+Description:  Supported:
+ PCTV Systems DVB-S2 Stick 460e.
+
+Package: pugixml
+Version: 1.13-1
+Depends: libc, libstdcpp6
+License: MIT
+Section: libs
+Architecture: i386_pentium-mmx
+Installed-Size: 61854
+Filename: pugixml_1.13-1_i386_pentium-mmx.ipk
+Size: 62928
+SHA256sum: 5aa90b03b12cab1579c68b05c587e5e70e831c4140a6077feef07cf6f7cceb08
+Description:  Light-weight C++ XML processing library. It features:
+ DOM-like interface with rich traversal/modification capabilities
+ Extremely fast non-validating XML parser which constructs the DOM tree from an XML file/buffer
+ XPath 1.0 implementation for complex data-driven tree queries
+ Full Unicode support with Unicode interface variants and automatic encoding conversions
+
+Package: satpi
+Version: 1.6.2-1
+Depends: libc, libatomic1, libstdcpp6
+License: GPL-2.0
+Section: multimedia
+Architecture: i386_pentium-mmx
+Installed-Size: 471427
+Filename: satpi_1.6.2-1_i386_pentium-mmx.ipk
+Size: 471903
+SHA256sum: 8a1d97a1ade60250e5543dd48b158bd9354fe056862afdd99b519fd82bbc3d11
+Description:  SATIP server for linux (suitable to run on an Raspberry Pi).
+ Currently supporting DVB-S/S2/T/C and transform DVB-S requests to DVB-C.
+
+Package: si2157-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 10329
+Filename: si2157-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 11098
+SHA256sum: 17ab662e10b55135ca739de554b4c8f3035467b523b53b4342841cdb529030bb
+Description:  Silicon Labs Si2157
+
+Package: si2158-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 3636
+Filename: si2158-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 4394
+SHA256sum: 8e956c277c09cfabcd04364aef6bc34b39c2784d8bc215b1c252d1f0b2653829
+Description:  Silicon Labs Si2158
+
+Package: si2168-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 67267
+Filename: si2168-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 68091
+SHA256sum: bbbd7bd1fad58cf24658181bc567a0d2711043dc4af0355f8ac2eae106acb29a
+Description:  Silicon Labs Si2168
+
+Package: tda10071-firmware
+Version: 2021-07-19-0eaf5b39-5
+Depends: libc
+Section: firmware
+Architecture: i386_pentium-mmx
+Installed-Size: 25762
+Filename: tda10071-firmware_2021-07-19-0eaf5b39-5_i386_pentium-mmx.ipk
+Size: 26479
+SHA256sum: fcac5dd0ced08d4d612f8f16e007d09c6aff5d781b9ebce46a2dc20065d97f91
+Description:  NXP TDA10071
+
+Package: terratec-cinergy-s2-hd
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, ds3000-firmware, kmod-dvb-usb-dw2102
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: terratec-cinergy-s2-hd_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 942
+SHA256sum: 1b971ce3abfaf34bc193ec7f46005a4f9ca0be0e001a003d46e847787126c406
+Description:  Supported:
+ TerraTec CINERGY S2 Stick HD rev3,
+ TerraTec CINERGY S2 USB HD rev1,
+ TerraTec CINERGY S2 USB HD rev2,
+ TerraTec CINERGY S2 USB HD rev4.
+
+Package: terratec-cinergy-tc2-stick
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, it9303-firmware, si2168-firmware, kmod-dvb-fe-si2168, kmod-dvb-usb-af9035, kmod-media-tuner-si2157
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: terratec-cinergy-tc2-stick_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 956
+SHA256sum: 5206d13f3ff6a574e4461bfb1208ca0ff5459904db51e238a7a267b326dfb9db
+Description:  Supported:
+ TerraTec CINERGY TC2 Stick.
+
+Package: tt-ct2-4650-ci
+Version: 2022-07-17-9a225f4d-1
+Depends: libc, si2158-firmware, si2168-firmware, kmod-media-tuner-si2157, kmod-dvb-fe-si2168, kmod-dvb-fe-sp2, kmod-dvb-fe-ts2020, kmod-dvb-usb-dvbsky
+License: GPL-2.0
+Section: dvb-devices
+Architecture: i386_pentium-mmx
+Installed-Size: 120
+Filename: tt-ct2-4650-ci_2022-07-17-9a225f4d-1_i386_pentium-mmx.ipk
+Size: 963
+SHA256sum: 565459abe5e534e53ab7ba099bcf72b63fff90dd55e21fb530cae1b0b0901b6a
+Description:  Supported:
+ TechnoTrend Connect CT2-4650 CI v1,
+ TechnoTrend Connect CT2-4650 CI v1.1.
+
