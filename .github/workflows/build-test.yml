@@ -23,7 +23,7 @@ jobs:
 
       - name: Download sources
         run: |
-          printenv
+          printenv | sort
           SDK_TAR="$(curl -s https://downloads.openwrt.org/snapshots/targets/tegra/generic/sha256sums | awk -F'*' '/openwrt-sdk/ {printf $2}')"
           git clone --depth 1 ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git sdk/package
           curl -O https://downloads.openwrt.org/snapshots/targets/tegra/generic/${SDK_TAR}
